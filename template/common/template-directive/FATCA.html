@@ -1,0 +1,72 @@
+<div style="margin-top:2em;">
+    <!--start summary information-->
+    <table style="border: none;" class="format-table-all-new  none-border arabic-style">
+        <tr>
+            <td style="text-align: right; width:21%;font-size:10pt;">{{data.application.documentRelation.productCurrencyCase}}</td>
+            <td style="text-align: right; width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+            <td></td>
+            <td style="text-align: center; width:21%; font-weight:bold; font-size:12pt;">تصريح</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="width:21%"></td>
+            <td style="text-align: right; width:18%;font-size:10pt;">:وثيقة رقم</td>
+            <td style="text-align: right; font-weight:bold;">{{data.inputPdf.productName}}</td>
+            <td style="text-align: center;">وثيقة</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.quotation.metaData.businessProfile">
+                {{data.quotation.metaData.businessProfile == "BA" ? data.quotation.basicPlan.information.bankBranchName : item.branchName}}
+            </td>
+            <td style="text-align: right;">:الفرع</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.quotation.metaData.businessProfile">
+                {{data.quotation.metaData.businessProfile == "BA" ? "MLI / HO" : item.regionName}}
+            </td>
+            <td style="text-align: right;">:المنطقة</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+            <td style="text-align: right;">:تحريراً في</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <!--end summary information-->
+    <table style="border: none;" width="100%">
+        <tbody style="line-height: 23pt;" dir="rtl">
+            <tr>
+                <hr style="border-top: #0fb273 solid 1px !important;">
+            </tr>
+            <tr>
+                <td>
+                    <span>
+                        اصرح انا &nbsp;<b>{{data.nameOfClient}}</b>&nbsp; الموقع ادناه لشركة مصر لتأمينات الحياة بالافصاح عن اية بيانات او معلومات خاصة بوثائق التأمين الخاصة بى لدى الشركة لاى جهه ذات صلة بتنفيذ قانون الامتثال الضريبي على الحسابات الاجنبية ( FATCA ) وذلك سواء كانت تلك الجهة محلية أو خارجية مع التصريح لتلك الجهة بتبادل تلك المعلومات مع اطراف آخرى لاغراض تطبيق هذا القانون .
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>المتعاقد:</span>
+                    <span>{{data.nameOfClient}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="line-height: 8rem;">
+                    <span>التوقــــــيع:</span>
+                    <span style="border-bottom: 1px solid;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>التـــــــاريخ :</span>
+                    <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

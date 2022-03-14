@@ -1,0 +1,122 @@
+.body-new {
+    font-family: 'Segoe UI', sans-serif !important;
+    padding-left: 12.7mm !important;
+    padding-right: 12.7mm !important;
+    width: 210mm !important;
+}
+.page,
+.last-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.pageHeader {
+    text-align: center;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    ul,
+    img {
+        break-inside: avoid;
+    }
+    footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .page,
+    .last-page {
+        top: 150px;
+    }
+    .page {
+        page-break-after: always;
+    }
+    .page:last-child {
+        page-break-after: auto;
+    }
+    header {
+        position: fix;
+        width: 100%;
+        top: 0;
+    }
+    header img {
+        /* position: fixed;*/
+    }
+}
+
+.table {
+    width: 100%;
+    font-size: 16px;
+}
+
+.table p {
+    padding-right: 0.5em;
+}
+
+.title-salary-deduction {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.font-size-new {
+    font-size: 10pt;
+}
+
+.line-space {
+    line-height: 2.5em;
+}
+
+.head-new {
+    text-align: right;
+    height: 38mm !important;
+}
+
+.header-img {
+    margin-top: 12.7mm;
+    height: 25.3mm;
+    width: auto;
+}
+
+footer {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.foot {
+    text-align: left;
+    height: 29mm !important;
+}
+
+.foot-img {
+    margin-bottom: 12.7mm;
+    height: 16mm;
+    width: auto;
+}
+
+.email-break {
+    width: 200px;
+    word-break: break-all;
+}
+
+.margin-left-30 {
+    margin-left: 30px;
+}
+
+.margin-top-2 {
+    margin-top: 2em;
+}
+
+.margin-top-2 p {
+    margin-right: 0.5em;
+}

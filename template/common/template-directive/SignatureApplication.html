@@ -1,0 +1,38 @@
+<table class="table-statue">
+    <tbody class="center">
+        <tr class="bg-title">
+            <td width="33%" class="non-border-top"> <span>الوسيط </span><br><span>Agent</span></td>
+            <td width="33%" class="non-border-top"><span>المتعاقد </span><br><span>Policy holder</span></td>
+            <td width="33%" class="non-border-top"><span>المؤمن عليه </span><br><span>Insured name</span>
+            </td>
+        </tr>
+        <tr>
+            <td><span>الاسم </span><br><span>Agent name</span></td>
+            <td><span>الاسم </span><br><span>Policy holder name</span></td>
+            <td><span>الاسم </span><br><span>Insured name</span></td>
+        </tr>
+        <tr>
+            <td>
+                <span ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</span>
+                <span ng-if="data.licenseFlag != 'true'">{{data.managerName}}</span>
+            </td>
+            <td>{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</td>
+            <td>
+                <span
+                    ng-if="data.application.laisTheSameWithPO==1">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</span>
+                <span
+                    ng-if="data.application.laisTheSameWithPO==0">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td><span>التوقيع </span><br><span>Signature</span></td>
+            <td><span>التوقيع </span><br><span>Signature</span></td>
+            <td><span>التوقيع </span><br><span>Signature</span></td>
+        </tr>
+        <tr class="text-signature">
+            <td>........................................</td>
+            <td>........................................</td>
+            <td>........................................</td>
+        </tr>
+    </tbody>
+</table>

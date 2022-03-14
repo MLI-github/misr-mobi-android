@@ -1,0 +1,239 @@
+<!--1.Policy holder's details-->
+<table class="table-none-border">
+    <tbody dir="rtl">
+        <tr>
+            <td colspan="6" class="spacing"></td>
+        </tr>
+        <tr class="bg-title">
+            <td colspan="6" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">1.Policy holder's details</span>
+                <span>1. بيانات المتعاقد</span>
+            </td>
+        </tr>
+        <tr class="nowrap">
+            <td colspan="2">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.genderCode == 'F'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">انثى</div>
+                    <div>Female</div>
+                </span>
+
+            </td>
+            <td>
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.genderCode == 'M'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">ذكر </div>
+                    <div >Male</div>
+                </span>
+            </td>
+            <td>
+                <div>النوع </div>
+                <div>Gender</div>
+            </td>
+            <td>
+                <span style="white-space: normal;">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+            </td>
+            <td>
+                <div>الاســــــم بالكـــــــــامل</div>
+                <div>Full Name</div>
+            </td>
+        </tr>
+        <tr class="nowrap">
+            <td colspan="3">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'P'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl"> جواز سفر </div>
+                    <div>Passport No</div>
+                </span>
+            </td>
+            <td width="25%">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 7px;" class="float-right" type="checkbox" ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'E'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">بطاقة رقم قومى </div>
+                    <div>National ID</div>
+                </span>
+            </td>
+            <td dir="ltr" class="text-align-right">
+                {{data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].value}}
+            </td>
+            <td>
+                <div> رقم تحقيق الشخصية </div>
+                <div dir="ltr" class="text-align-right">ID No.</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div ng-if="data.application.lifeAssuredDetails[0].larelationship == null">Self</div>
+            </td>
+            <td>
+                <div>درجة قرابته من المؤمن عليه </div>
+                <div>Relationship of the insured</div>
+            </td>
+            <td>
+                {{data.inputPdf.policyOwner.nationality}}
+            </td>
+            <td>
+                <div>الجنسية </div>
+                <div>Nationality</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                {{data.application.policyOwnerDetails.proporserInformation.otherInformation.placeOfBirth}}
+            </td>
+            <td>
+                <div>محل الميلاد </div>
+                <div>Place of birth</div>
+            </td>
+            <td>
+                {{data.application.policyOwnerDetails.proporserInformation.person.basic.birthDate|
+                              date:'dd/MM/yyyy'}}
+            </td>
+            <td>
+                <div>تاريخ الميلاد</div>
+                <div>D.O.B</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" dir="ltr" class="email-format">
+                {{data.application.policyOwnerDetails.proporserInformation.person.contacts.email}}
+            </td>
+            <td>
+                <div>البريد الاليكتروني </div>
+                <div>E-mail</div>
+            </td>
+            <td>
+                {{'ipos.maritalStatus.' +
+                              data.application.policyOwnerDetails.proporserInformation.person.basic.maritalStatusCode |
+                              translate}}
+            </td>
+            <td>
+                <div>لحالة الاجتماعية</div>
+                <div>Marital Status</div>
+            </td>
+        </tr>
+        <tr dir="ltr" style="text-align: right;">
+            <td colspan="4" style="padding: 0px;">
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].street}}</span>
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].unitNo}}</span>
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].district}}</span><br>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[0].governorates}}</span>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[0].country}}</span><br>
+                <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.addresses[0].postalCode != null">{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].postalCode}}</span>
+            </td>
+            <td colspan="2">
+                <div>العنوان الدائم</div>
+                <div>Permanent Address</div>
+            </td>
+        </tr>
+        <tr dir="ltr" style="text-align: right;">
+            <td style="padding: 0px;" colspan="4" ng-if="data.application.mailingAddress.differentMailingAddress != 'Y'">
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].street}}</span>
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].unitNo}}</span>
+                <span>{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].district}}</span><br>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[0].governorates}}</span>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[0].country}}</span><br>
+                <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.addresses[0].postalCode != null">{{data.application.policyOwnerDetails.proporserInformation.person.addresses[0].postalCode}}</span>
+            </td>
+            <td style="padding: 0px;" colspan="4" ng-if="data.application.mailingAddress.differentMailingAddress == 'Y'">
+                <span>{{data.application.mailingAddress.street}}</span>
+                <span>{{data.application.mailingAddress.unitNo}}</span>
+                <span>{{data.application.mailingAddress.district}}</span><br>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[1].governorates}}</span>
+                <span dir="rtl">{{data.inputPdf.policyOwner.address[1].country}}</span><br>
+                <span ng-if="data.application.mailingAddress.postalCode != null">{{data.application.mailingAddress.postalCode}}</span>
+            </td>
+            <td colspan="2">
+                *<span>عنوان المراسلات</span><br>
+                <span dir="ltr">*Correspondence's address</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.otherInformation.employerName != null">{{data.application.policyOwnerDetails.proporserInformation.otherInformation.employerName}}</span>
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.otherInformation.employerName == null">N.A</span>
+            </td>
+            <td>
+                <div>اسم الشركة </div>
+                <div>Company name</div>
+            </td>
+            <td>
+                <div
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.otherInformation.employmentStatus != null">
+                    {{'ipos.natureOfWork.' + data.application.policyOwnerDetails.proporserInformation.otherInformation.employmentStatus
+                                 | translate}}
+                </div>
+                <div
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.otherInformation.employmentStatus == null">
+                    N.A</div>
+            </td>
+            <td>
+                <div>طبيعة العمل</div>
+                <div>Nature of work</div>
+            </td>
+            <td dir="ltr" style="text-align: right;">
+                {{data.occupationValuePO}} <br>
+            </td>
+            <td>
+                <div>المهـــــــــــــــــــــــنة </div>
+                <div>Occupation</div>
+            </td>
+        </tr>
+        <tr>
+            <td dir="ltr" style="text-align: right;" width="20%">
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone}}</span>
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone === null">N.A</span>
+            </td>
+            <td width="15%">
+                <div>تليفون العمل </div>
+                <div>Work phone</div>
+            </td>
+            <td dir="ltr" style="text-align: right;" width="15%">
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone}}</span>
+                <span
+                    ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone === null">N.A</span>
+            </td>
+            <td width="15%">
+                <div>تليفون المنزل</div>
+                <div>Home phone</div>
+            </td>
+            <td dir="ltr" style="text-align: right;" width="20%">
+                {{data.application.policyOwnerDetails.proporserInformation.person.contacts.mobilePhone}}
+            </td>
+            <td width="15%">
+                <div>تليفون المحمول </div>
+                <div> Mobile no</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                <span>* يجب على المتعاقد افادة الشركة بكل تغيير فى العنوان والا تحمل وحده نتائج عدم
+                    استلام
+                    مراسلات
+                    الشركة له.</span>
+                <p dir="ltr" style="text-align: right;">The policy holder must inform the company of any
+                    change in the correspondence's address otherwise he will bear the result of none
+                    receiving* the correspondence letters.
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--End Section 1 Policy holder's details -->

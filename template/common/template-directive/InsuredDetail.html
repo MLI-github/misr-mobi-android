@@ -1,0 +1,361 @@
+<!--Section 2 Insured details -->
+<table class="table-none-border">
+    <tbody dir="rtl">
+        <tr></tr>
+        <tr class="bg-title">
+            <td colspan="6" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">2.Insured details (if different from the Policyholder)</span>
+                <span>2.بيانات المؤمن عليه (في حالة اختلاف المؤمن عليه عن المتعاقد)</span>
+            </td>
+        </tr>
+        <tr class="nowrap">
+            <td colspan="2">
+                <span class="no-padding">
+                     <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.genderCode == 'F'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">انثى</div>
+                    <div> Female </div>
+                </span>
+
+            </td>
+            <td>
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.genderCode == 'M'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">ذكر </div>
+                    <div>Male</div>
+                </span>
+
+            </td>
+            <td>
+                <div>النوع </div>
+                <div>Gender</div>
+            </td>
+            <td>
+                <span style="white-space: normal;"
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</span>
+                <span  style="white-space: normal; display: block; width: 10rem;"
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full == null">N.A</span>
+            </td>
+            <td class="border-right-1">
+                <span>الاســــــم بالكـــــــــامل</span><br>
+                <span>Full Name</span>
+            </td>
+        </tr>
+        <tr class="nowrap">
+            <td colspan="3">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'P'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl"> جواز سفر </div>
+                    <div>Passport No</div>
+                </span>
+
+            </td>
+            <td width="25%">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox"
+                           ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'E'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">بطاقة رقم قومى </div>
+                    <div>National ID</div>
+                </span>
+            </td>
+            <td dir="ltr" class="text-align-right">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value == null">N.A</span>
+            </td>
+            <td>
+                <div> رقم تحقيق الشخصية</div>
+                <div dir="ltr" class="text-align-right">ID No.</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <div ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+                    {{'ipos.relationShip.' + data.application.lifeAssuredDetails[0].larelationship | translate}}
+                </div>
+                <div ng-if="data.application.lifeAssuredDetails[0].larelationship == null">N.A</div>
+            </td>
+            <td>
+                <div>درجة قرابته من المؤمن عليه </div>
+                <div>Relationship of the insured</div>
+            </td>
+            <td>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.nationalityCode != null">
+                    {{data.inputPdf.lifeInsured[0].nationality}}</div>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.nationalityCode == null">
+                    N.A</div>
+            </td>
+            <td>
+                <div>الجنسية </div>
+                <div>Nationality</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth == null">N.A</span>
+            </td>
+            <td>
+                <div>محل الميلاد </div>
+                <div>Place of birth</div>
+            </td>
+            <td>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.birthDate != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.birthDate|
+                                 date:'dd/MM/yyyy'}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.birthDate == null">N.A</span>
+            </td>
+            <td>
+                <div>تاريخ الميلاد</div>
+                <div>D.O.B</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email != null"
+                    dir="ltr" class="email-format">
+                    {{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email}}
+                </span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email == null">N.A</span>
+            </td>
+            <td>
+                <div>البريد الاليكتروني</div>
+                <div>E-mail</div>
+            </td>
+            <td>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.maritalStatusCode != null">
+                    {{'ipos.maritalStatus.' + data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.maritalStatusCode
+                              | translate}}
+                </div>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.maritalStatusCode == null">
+                    N.A</div>
+            </td>
+            <td>
+                <div>لحالة الاجتماعية</div>
+                <div>Marital Status</div>
+            </td>
+        </tr>
+        <tr dir="ltr" style="text-align: right;">
+            <td style="padding: 0px;" colspan="4" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].street != null">
+                <span>{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].street}}</span>
+                <span>{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].unitNo}}</span>
+                <span>{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].district}}</span><br>
+                <span dir="rtl">{{data.inputPdf.lifeInsured[0].address[0].governorates}}</span>
+                <span dir="rtl">{{data.inputPdf.lifeInsured[0].address[0].country}}</span><br>
+                <span ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].postalCode != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].postalCode}}</span>
+            </td>
+            <td style="padding: 0px;" colspan="4" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].street == null"></td>
+            <td colspan="2">
+                <div>العنوان الدائم</div>
+                <div>Permanent Address</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+            <td colspan="2" class="border-right-1">
+                <span>عنوان المراسلات</span>*<br>
+                <span dir="ltr">*Correspondence's address</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employerName != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employerName}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employerName == null">N.A</span>
+            </td>
+            <td>
+                <div>اسم الشركة </div>
+                <div> Company name</div>
+            </td>
+            <td>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employmentStatus != null">
+                    {{'ipos.natureOfWork.' + data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employmentStatus
+                              | translate}}
+                </div>
+                <div
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employmentStatus == null">
+                    N.A</div>
+            </td>
+            <td>
+                <div>طبيعة العمل</div>
+                <div>Nature of work</div>
+            </td>
+            <td dir="ltr">
+                <div style="text-align: right;">
+                    {{data.occupationValueLI}} <br>
+                </div>
+            </td>
+            <td>
+                <div>المهـــــــــــــــــــــــنة </div>
+                <div>Occupation</div>
+            </td>
+        </tr>
+        <tr>
+            <td dir="ltr" style="text-align: right;" width="20%">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone === null">N.A</span>
+            </td>
+            <td width="15%">
+                <div>تليفون العمل </div>
+                <div>Work phone</div>
+            </td>
+            <td dir="ltr" style="text-align: right;" width="15%">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone === null">N.A</span>
+            </td>
+            <td width="15%">
+                <div>تليفون المنزل</div>
+                <div>Home phone</div>
+            </td>
+            <td dir="ltr" style="text-align: right;" width="20%">
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone}}</span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone === null">N.A</span>
+            </td>
+            <td width="15%">
+                <div>تليفون المحمول </div>
+                <div> Mobile no</div>
+            </td>
+        </tr>
+        <tr ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+            <td width="10%">
+                <span>
+                     <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'N'" />
+                </span>
+                &nbsp;
+                <span class="float-right">
+                    <div dir="rtl">لا </div>
+                    <div>No</div>
+                </span>
+            </td>
+            <td>
+                <span>
+                     <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y'" />
+                </span>
+                &nbsp;
+                <span class="float-right">
+                    <div dir="rtl">نعم</div>
+                    <div>Yes</div>
+                </span>
+            </td>
+            <td colspan="4" dir="ltr" style="text-align: right;" class="border-right-1">
+                <div>هل سبق للمطلوب التامين على حياته او تقدم بطلب تامين لدى شركتنا او لدى الشركات
+                    الاخرى ؟
+                </div>
+                <div>Have you ever been submit application to our company or other company ?</div>
+                <div>اذا كانت الاجابة بنعم برجاء ذكر قرار القبول </div>
+                <div>If yes please mention the decision</div>
+            </td>
+        </tr>
+        <tr ng-if="data.application.lifeAssuredDetails[0].larelationship == null">
+            <td class="center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right" type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'N'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <div dir="rtl">لا </div>
+                    <div>No</div>
+                </span>
+
+            </td>
+            <td class="center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem;" class="float-right"
+                            type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y'" />
+                </span>
+                &nbsp;
+                <span class="float-right no-padding">
+                    <span dir="rtl">نعم</span><br/>
+                    <span>Yes</span>
+                </span>
+            </td>
+            <td colspan="4" dir="ltr" style="text-align: right;">
+                <div>هل سبق للمطلوب التامين على حياته او تقدم بطلب تامين لدى شركتنا او لدى الشركات
+                    الاخرى ؟
+                </div>
+                <div>Have you ever been submit application to our company or other company ?</div>
+                <div>اذا كانت الاجابة بنعم برجاء ذكر قرار القبول </div>
+                <div>If yes please mention the decision</div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table class="table-none-border">
+    <tbody dir="rtl">
+        <tr>
+            <td colspan="5" style="text-align: right;">
+                <span>رجاء اذكر الوثائق الخاصة بشركتنا او الشركات الأخرى. </span><br>
+                <span>Please mention the policies in our company or other companies</span>
+            </td>
+        </tr>
+        <tr class="bg-title border-both center">
+            <td>السبب </td>
+            <td>القرار </td>
+            <td>مبلغ التامين </td>
+            <td>رقم الوثيقة </td>
+            <td>اسم الشركة </td>
+        </tr>
+        <tr style="height:25px;" class="border-both"
+            ng-if=" (data.quotation.isAddLifeInsured =='0' && data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue != 'Y') ||
+                    (data.quotation.isAddLifeInsured =='1' && data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue != 'Y')">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="border-both center"
+            ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestylePolicies.lifestylePoliciesItems">
+            <td>{{item.reason}}</td>
+            <td>{{'ipos.decision.' + item.decision | translate}}</td>
+            <td>{{item.insuranceAmount}}</td>
+            <td dir="ltr">{{item.documentNumber}}</td>
+            <td>{{item.companyName}}</td>
+        </tr>
+        <tr class="border-both center"
+            ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestylePolicies.lifestylePoliciesItems">
+            <td>{{item.reason}}</td>
+            <td>{{'ipos.decision.' + item.decision | translate}}</td>
+            <td>{{item.insuranceAmount}}</td>
+            <td dir="ltr">{{item.documentNumber}}</td>
+            <td>{{item.companyName}}</td>
+        </tr>
+        <tr>
+            <td colspan="5" style="text-align: right;">
+                <span>* يجب على المؤمن عليه اخطار الشركة فى حالة تغيير المهنة .</span><br>
+                <span>* The insured must inform the company in the case of changing his occupation</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 2 Insured details -->

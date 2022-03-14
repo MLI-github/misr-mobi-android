@@ -1,0 +1,406 @@
+<div id="report-content">
+    <div>
+        <span class="main-section-header">تفويض</span>
+    </div>
+    <div style="padding:5px">
+        <div style="float: right; padding-left: 1em;">
+            <span>السيد / مدير البنك  فرع</span>
+        </div>
+        <div class="span-header">
+            <span ng-if="data.inputPdf.paymentDetails.arBankBranch != null">{{data.inputPdf.paymentDetails.arBankBranch}}</span>
+            <span class="span-header" ng-if="data.inputPdf.paymentDetails.arBankBranch == null">N.A</span>
+        </div>
+    </div>
+    <br>
+    <div dir="rtl" style="padding:5px 5px">
+        <span>تحية طيبة وبعد</span>
+    </div>
+
+    <!--Start EG Bank-->
+    <div ng-if="data.application.paymentDetails.bankNameBranchCity == 602">
+        <table style="padding:10px">
+            <tr dir="rtl">
+                <td colspan="4" class="padding-right-5">
+                    <div style="padding-right: 3em;">
+                        <span>افوض انا /</span>
+                        <span class="padding-right-10">{{data.application.delegationInfo.proposerName}}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td colspan="4" class="padding-5">
+                    <div>
+                        <span>بطاقة رقم قومي / رقم جواز السفر</span>
+                        <span>{{data.application.delegationInfo.idNumber}}</span>
+                    </div>
+                    <div>
+                        <span>بنك</span>
+                        <span ng-if="data.inputPdf.paymentDetails.arBankName != null" class="span-padding">{{data.inputPdf.paymentDetails.arBankName}}</span>
+                        <span ng-if="data.inputPdf.paymentDetails.arBankName == null" class="span-padding">N.A</span>
+                        <span>في خصم ما يستحق لشركة لتامينات الحياة من قيمة الاقساط الدورية وذلك خصما من حسابى .</span>
+                    </div>
+                    <div>
+                        <span>رقم الحساب </span>
+                        <span>{{data.application.delegationInfo.accountNo}}</span>
+                    </div>
+                    <div>
+                        <span>وذلك لسداد وثيقة</span>
+                        <span ng-if="data.inputPdf.productName != null" class="span-padding">{{data.inputPdf.productName}}</span>
+                        <span ng-if="data.inputPdf.productName == null" class="span-padding">N.A</span>
+                        <span>وقيد القيمة لحساب الشركة المذكورة وأعفى البنك من أي مسئولية قد تنشا عن الخصم سواء من حيث القيمة او الاستحقاق او اية ملاحظات فيما يتعلق بموضوع تلك الوثيقة.</span>
+                    </div>
+                    <div>
+                        <span>ويكون الخصم بصفة دورية ولحين اخطار البنك من جانبي بايقاف الخصم وذلك قبل حلول ميعاد الاستحقاق بشهر على الاقل وبدون أدنى مسئوليه او التزام على البنك فيما تقرر الشركة اتخاذه من اجراءات حال عدم كفاية رصيد حسابي خلال فترة السداد المحددة بواسطة الشركة.</span>
+                    </div>
+                    <div>
+                        <span>هذا وللبنك الحق فى خصم قيمة ما يستحق له من عمولات او مصرفات نتيجة قيامه بتحويل مستحقات الشركة من حسابي الدائن لديه.</span>
+                    </div>
+                    <div class="padding-bottom-10">
+                        <span>واتعهد بعدم الاعتراض على اية قيود يجريها البنك بحسابى المذكور طرفكم بقيمة سداد هذه المستحقات وأسقط الحق في المنازعة فيها باى وجه من وجوه المنازعة.</span>
+                    </div>
+                    <div class="padding-bottom-10">
+                        <span>وتفضلوا بقبول فائق الاحترام</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="padding-bottom-20" rowspan="4" dir="rtl">
+                    <div class="div-stamp">
+                        <span>ختم مطابق</span>
+                    </div>
+                </td>
+                <td class="padding-bottom-10 text-left" rowspan="4" dir="rtl">
+                    <span>التصديق على التوقيع ختم مطابق</span>
+                </td>
+                <td class="padding-bottom-10" dir="rtl">
+                    <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                </td>
+                <td class="padding-right-5 padding-bottom-10" dir="rtl">
+                    <span>التاريخ :</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="padding-bottom-10" dir="rtl">
+                    <span>{{data.application.delegationInfo.proposerName}}</span>
+                </td>
+                <td class="padding-right-5 padding-bottom-10" dir="rtl">
+                    <span>الاسـم :</span>
+                </td>
+            </tr>
+            <tr>
+                <td dir="rtl"></td>
+                <td class="padding-right-5 padding-bottom-10" dir="rtl">
+                    <span>التوقيع :</span>
+                </td>
+            </tr>
+        </table>
+        <div dir="rtl" class="sub-section-header">
+            <span style="vertical-align: -webkit-baseline-middle;">إقرار</span>
+        </div>
+        <table style="padding:10px">
+            <tr dir="rtl">
+                <td colspan="2" class="padding-5">
+                    <span>اقر انا / {{data.application.delegationInfo.proposerName}} باننى على دراية كاملة بطبيعة وثيقة التامين وشروطهاواحكامها . وان المنتج التامينى الذى قمت بالتقدم بطلب تامين رقم / {{data.application.documentRelation.productCurrencyCase}}  يخص شركة مصر لتامينات الحياة دون ادنى مسئولية من البنك وذلك طبقا لضوابط البنك المركزى والهيئة العامة للرقابه المالية المتعلة بممارسة اعمال التامين المصرفى .</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td colspan="2" class="padding-5">
+                    <span>وهذا اقرار مني بذلك</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td style="padding:10px">
+                    <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                </td>
+                <td style="padding:5px">
+                    <span>التاريخ :</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td style="padding-right:10px">
+                    <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                </td>
+                <td style="padding-right:5px" width="10%">
+                    <span>الاسـم :</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td dir="rtl"></td>
+                <td style="padding-bottom:10px; padding-right:5px; padding-top:10px">
+                    <span>التوقيع :</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--End EG Bank-->
+
+    <!--Start Agricultural Bank Of Egypt-->
+    <div ng-if="data.application.paymentDetails.bankNameBranchCity == 609 || data.application.paymentDetails.bankNameBranchCity == 999">
+        <table class="avoid-break-inside" style="padding:5px">
+            <tr dir="rtl">
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span> بموجب هذا التفويض أفوض أنا/ {{data.application.delegationInfo.proposerName}} البنك الزراعي المصري – فرع {{data.inputPdf.paymentDetails.arBankBranch}} ،  في خصم ما يستحق لشركة مصر لتأمينات الحياة بموجب العقد المؤرخ {{data.currentDate | date:'dd/MM/yyyy'}} والمبرم بيني وبين شركة مصر لتأمينات الحياة  من قيم الأقساط الدورية ، و ذلك خصماً من حسابي الجاري / التوفير الدائن بالجنيه المصري / الدولار الأمريكي لدي البنك الزراعي المصري – فرع {{data.inputPdf.paymentDetails.arBankBranch}} رقم {{data.application.delegationInfo.accountNo}} وذلك لســـــداد وثيقة {{data.application.delegationInfo.policyName}} وقـــيد القيمة لحساب الشركة المـــذكورة .</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span>وأقر بإعفاء البنك من أي مسئولية قد تنشأ عن الخصم سواء من حيث القيمة أو الإستحقاق أو أية ملاحظات فيما يتعلق بموضوع تلك الوثيقة.</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span>ويكون الخصم بصفة دورية ولحين إخطار البنك من جانبي بإيقاف الخصم وذلك قبل حلول ميعاد الاستحقاق بشهر على الاقل وبدون أدنى مسئولية أو التزام على البنك فيم تقرر الشركة اتخاذه من إجراءات  حال عدم كفاية رصيد حساب خلال فترة السداد المحددة بواسطة الشركة .</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span>هذا وللبنك الحق في إجراء الخصم أعلاه وفقاً لشروطه الخاصة ، بالإضافة إلى خصم قيمة ما يستحق له من عمولات أو مصروفات نتيجة قيامه بتحويل مستحقات الشركة من حسابي الجاري / التوفير الدائن لديه .</span>
+                </td>
+            </tr>
+            <tr dir="rtl">
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span>وأتعهد بعدم الاعتراض على أية قيود يجريها البنك بحسابي المذكور طرفه بقيمة سداد هذه المستحقات وأسقط الحق في المنازعة فيها بأي وجه من وجوه المنازعة.</span>
+                </td>
+            </tr>
+            <tr dir="rtl" >
+                <td dir="rtl" style="padding-right: 5px;">
+                    <span>وتفضلوا بقبول فائق الاحترام،،،</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding:5px 5px;" dir="rtl">
+                    <span>بطاقة رقم قومي/  رقم جواز سفر {{data.application.delegationInfo.idNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td class="padding-bottom-10" rowspan="4" dir="rtl">
+                                <div style="width:90px !important; height: 60px !important;" class="div-stamp">
+                                    <span>ختم مطابق</span>
+                                </div>
+                            </td>
+                            <td class="text-left" rowspan="4" dir="rtl">
+                                <span>التصديق  على  التوقيع  ختم  مطابق</span>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td dir="rtl">
+                                            <span>:{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                                        </td>
+                                        <td class="padding-right-5" dir="rtl">
+                                            <span>التاريخ</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td dir="rtl">
+                                            <span>: {{data.application.delegationInfo.proposerName}}</span>
+                                        </td>
+                                        <td class="padding-right-5" dir="rtl">
+                                            <span>الاسـم</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td dir="rtl">
+                                            <span>: _______________________________</span>
+                                        </td>
+                                        <td class="padding-right-5" dir="rtl">
+                                            <span>التوقيع</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div dir="rtl" class="main-section-header">
+            <span style="color: white !important; vertical-align: -webkit-baseline-middle;">إقرار</span>
+        </div>
+        <table class="avoid-break-inside" style="padding:5px">
+            <tr dir="rtl">
+                <td colspan="2" class="padding-5">
+                    <div>
+                        <span>قر انا /</span>
+                        <span class="padding-right-10">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                    </div>
+                    <div>
+                        <span>بطاقة رقم قومي/  رقم جواز سفر </span>
+                        <span class="padding-right-10">{{data.application.delegationInfo.idNumber}}</span>
+                    </div>
+                    <div>
+                        <span>صادرة بتاريخ</span>
+                    </div>
+                    <div>
+                        <span>المقيم في</span>
+                        <span dir="ltr" class="padding-right-10" ng-if="data.application.delegationInfo.proposerPrimaryAddress != null">{{data.application.delegationInfo.proposerPrimaryAddress}}</span>
+                        <span class="padding-right-10" ng-if="data.application.delegationInfo.proposerPrimaryAddress == null">N.A</span>
+                    </div>
+                    <div>
+                        <span>بأننى قد تعاقدت مع شركة مصر لتأمينات الحياة بتاريخ</span>
+                        <span ng-if="data.application.delegationInfo.bankName != null">{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                        <span ng-if="data.application.delegationInfo.bankName == null">N.A</span>
+                        <span>وأنني على دراية كاملة بطبيعة وثيقة التأمين وشروطها وأحكامها ، وأن البنك الزراعي المصري ما هو إلا قناة للتسويق فقط وليس له علاقة أو طرف في وثيقة التأمين ، كما أنه ليس مسئولاً مسئولية مدنية أو جنائية عن شروط وأحكام وثيقة التأمين وعن سداد أية تعويضات قد تنتج عنها وأن الشركة قامت بإصدارها لصالحي منفردة.</span>
+                    </div>
+                    <div class="padding-bottom-5">
+                        <span>وهذا إقرار مني بذلك،،،،</span>
+                    </div>
+                    <div>
+                        <div style="float:right; width:8%">
+                            <span>التاريخ :</span>
+                        </div>
+                        <div style="float:right;">
+                            <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                    <div style="clear: both; padding-top:5px">
+                        <div style="float:right; width:8%">
+                            <span>الاسم :</span>
+                        </div>
+                        <div style="float:right;">
+                            <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                        </div>
+                    </div>
+                    <div style="padding-top:5px; clear: both;">
+                        <span>التوقيع :</span>
+                    </div>
+                    <div style="clear: both; padding-top:5px">
+                        <div style="float:right; width:8%">
+                            <span>التوقيع</span>
+                        </div>
+                        <div style="float:right;">
+                            <span>: _______________________________</span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--End Agricultural Bank Of Egypt-->
+
+
+    <!--Start Orther Bank-->
+    <div ng-if="data.application.paymentDetails.bankNameBranchCity != 602 && data.application.paymentDetails.bankNameBranchCity != 609 && data.application.paymentDetails.bankNameBranchCity != 999">
+        <table style="padding:10px">
+            <tr dir="rtl">
+                <td colspan="4" class="padding-right-5">
+                    <div>
+                        <span style="margin-right: 4em;">بموجب هذا التفويض يكون لبنك</span>
+                        <span ng-if="data.inputPdf.paymentDetails.arBankName != null" class="span-padding">{{data.inputPdf.paymentDetails.arBankName}}</span>
+                        <span ng-if="data.inputPdf.paymentDetails.arBankName == null" class="span-padding">N.A</span>
+                        <span>الحق في خصم ما يستحق لشركة مصر لتأمينات الحياة  من قيم الأقساط الدورية و ذلك خصماً من حسابي الجاري / التوفير الدائن بالجنيه المصري / الدولار الأمريكي لديكم  رقم</span>
+                        <span ng-if="data.application.delegationInfo.accountNo != null" class="span-padding">{{data.application.delegationInfo.accountNo}}</span>
+                        <span ng-if="data.application.delegationInfo.accountNo == null" class="span-padding">N.A</span>
+                        <span>وذلك لســـــداد وثيقة </span>
+                        <span ng-if="data.inputPdf.productName != null" class="span-padding">{{data.inputPdf.productName}}</span>
+                        <span ng-if="data.inputPdf.productName == null" class="span-padding">N.A</span>
+                        <span>وقـــيد القيمة لحساب الشركة المـــذكورة .</span>
+                    </div>
+                    <div>
+                        <span>واعفي البنك من أي مسئولية قد تنشأ عن الخصم سواء من حيث القيمة أو الاستحقاق أو أية ملاحظات فيما يتعلق بموضوع تلك الوثيقة .</span>
+                    </div>
+                    <div>
+                        <span>ويكون الخصم بصفة دورية ولحين إخطار البنك من جانبي بإيقاف الخصم وذلك قبل حلول ميعاد الاستحقاق بشهر على الاقل وبدون أدنى مسئولية أو التزام على البنك فيم تقرر الشركة اتخاذه من إجراءات  حال عدم كفاية رصيد حساب خلال فترة السداد المحددة بواسطة الشركة .</span>
+                    </div>
+                    <div>
+                        <span>هذا وللبنك الحق في خصم قيمة ما يستحق له من عمولات أو مصروفات نتيجة قيامه بتحويل مستحقات الشركة من حسابي الجاري / التوفير الدائن لديه .</span>
+                    </div>
+                    <div>
+                        <span>وأتعهد بعدم الاعتراض على أية قيود يجريها البنك بحسابي المذكور طرفكم بقيمة سداد هذه المستحقات وأسقط الحق في المنازعة فيها بأي وجه من وجوه المنازعة.</span>
+                    </div>
+                    <div class="padding-bottom-10">
+                        <span>وتفضلوا بقبول فائق الاحترام</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="padding-bottom-10" rowspan="4" dir="rtl">
+                    <div class="div-stamp">
+                        <span>ختم مطابق</span>
+                    </div>
+                </td>
+                <td style="text-align: left;" rowspan="4" dir="rtl">
+                    <span>التصديق على التوقيع ختم مطابق</span>
+                </td>
+                <td dir="rtl">
+                    <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                </td>
+                <td class="padding-right-5" class="padding-bottom:10px" dir="rtl">
+                    <span>التاريخ :</span>
+                </td>
+            </tr>
+            <tr>
+                <td dir="rtl">
+                    <span>{{data.application.delegationInfo.proposerName}}</span>
+                </td>
+                <td class="padding-right-5" dir="rtl">
+                    <span>الاسـم :</span>
+                </td>
+            </tr>
+            <tr>
+                <td dir="rtl"></td>
+                <td width="9%" class="padding-bottom-10 padding-right-5" dir="rtl">
+                    <span>التوقيع :</span>
+                </td>
+            </tr>
+        </table>
+        <div dir="rtl" class="sub-section-header">
+            <span style="vertical-align: -webkit-baseline-middle;">إقرار</span>
+        </div>
+        <table style="padding:10px">
+            <tr dir="rtl">
+                <td colspan="2" class="padding-5">
+                    <div>
+                        <span>قر انا /</span>
+                        <span class="padding-right-10">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                    </div>
+                    <div>
+                        <span>بطاقة رقم قومي/  رقم جواز سفر </span>
+                        <span class="padding-right-10">{{data.application.delegationInfo.idNumber}}</span>
+                    </div>
+                    <div>
+                        <span>صادرة بتاريخ</span>
+                    </div>
+                    <div>
+                        <span>المقيم في</span>
+                        <span dir="ltr" class="padding-right-10" ng-if="data.application.delegationInfo.proposerPrimaryAddress != null">{{data.application.delegationInfo.proposerPrimaryAddress}}</span>
+                        <span class="padding-right-10" ng-if="data.application.delegationInfo.proposerPrimaryAddress == null">N.A</span>
+                    </div>
+                    <div>
+                        <span>باننى قد تعاقدت مع شركة مصر لتأمينات الحياة ، وأنني على دراية كاملة بطبيعة وثيقة التامين وشروطها واحكامها . وان بنك</span>
+                        <span ng-if="data.application.delegationInfo.bankName != null">{{data.inputPdf.paymentDetails.arBankName}}</span>
+                        <span ng-if="data.application.delegationInfo.bankName == null">N.A</span>
+                        <span>ما هو الا قناة للتسويق فقط وليس له علاقة أو طرف في وثيقة التأمين كما أنه ليس مسئولاً عن شروط وأحكام وثيقة التأمين ولا سداد أية تعويضات قد تنتج عنها وأن الشركة قامت بإصدارها لصالحي منفردة.</span>
+                    </div>
+                    <div class="padding-bottom-10">
+                        <span>وهذا اقرار مني بذلك</span>
+                    </div>
+                    <div>
+                        <div style="float:right; width:8%">
+                            <span>التاريخ :</span>
+                        </div>
+                        <div style="float:right;">
+                            <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                        </div>
+                    </div>
+                    <div style="margin-top:10px;clear: both; padding-top:10px">
+                        <div style="float:right; width:8%">
+                            <span>الاسم :</span>
+                        </div>
+                        <div style="float:right;">
+                            <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                        </div>
+                    </div>
+                    <div style="padding-top:10px; clear: both;">
+                        <span>التوقيع :</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <!--End Orther Bank-->
+
+</div>

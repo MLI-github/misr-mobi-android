@@ -1,0 +1,145 @@
+<div>
+    <table style="border: none !important;" class="format-table-all-new none-border arabic-style">
+        <tr>
+            <td style="text-align: right; width:21%;font-size:10pt;">{{data.productCurrencyCase}}</td>
+            <td style="text-align: right; width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+            <td></td>
+            <td style="text-align: center; width:33%; font-weight:bold; font-size:12pt;">تقرير سرى وخاص لمسوق التامين</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="width:21%"></td>
+            <td style="text-align: right; width:18%;font-size:10pt;">:وثيقة رقم</td>
+            <td></td>
+            <td>
+                <table style="border: none !important;">
+                    <tr>
+                        <td ng-if="data.application.metaData.productName != 'mbe'" style="text-align: left; font-weight:bold;">{{data.inputPdf.productName}}</td>
+                        <td ng-if="data.application.metaData.productName == 'mbe'" style="text-align: left; font-weight:bold;">{{data.strProductNamePart1}}</td>
+
+
+                        <td style="text-align: right;">وثيقة</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{ item.role == "BA" ? data.bankBranchName : data.branchName}}
+            </td>
+            <td style="text-align: right;">:الفرع</td>
+            <td></td>
+            <td ng-if="data.application.metaData.productName == 'mbe'" style="text-align: left; font-weight:bold;">{{data.strProductNamePart2}}</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}
+            </td>
+            <td style="text-align: right;">:المنطقة</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+            <td style="text-align: right;">:تحريراً في</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <table style="border: none !important;">
+        <tbody dir="rtl">
+            <tr>
+                <hr style="border-top: #0fb273 solid 1px !important;">
+            </tr>
+            <tr>
+                <td class="format-right" width="10%">
+                    <span class="font-size-new">لا </span><br>
+                    No
+                </td>
+                <td class="format-left" width="10%">
+                    <span class="font-size-new"> نعم </span><br>
+                    Yes
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="format-right">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration1 == 'N'"/>
+                </td>
+                <td class="format-left">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration1 == 'Y'"/>
+                </td>
+                <td>
+                    <span class="font-size-new">1.هل قابلت طالب التأمين شخصياً ؟
+                    </span><br><br>
+                    <span dir="ltr" style="float: left;">1.Have you met the Proposer / Life to be Assured?</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="format-right">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration2 =='N'"/>
+                </td>
+                <td class="format-left">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration2 == 'Y'"/>
+                </td>
+                <td>
+                    <span class="font-size-new">2.اذا لم تقابل العميل , هل تحدثت الي العميل مباشرة وحصلت على معلومات منه ؟
+                    </span><br><br>
+                    <span dir="ltr" style="float: left;">2. If you have not met the customer, have you spoken to
+                        the customer and obtained information
+                        directly from the customer?</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="format-right">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration3 =='N'"/>
+                </td>
+                <td class="format-left">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration3 == 'Y'"/>
+                </td>
+                <td>
+                    <span class="font-size-new">3.هل لك صله قرابة بينك وبين المؤمن علية او المتعاقد ؟ </span><br><br>
+                    <span dir="ltr" style="float: left;">3. Do you have a relationship with the life insured or
+                        Policyholder?</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="format-right">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration4 == 'N'"/>
+                </td>
+                <td class="format-left">
+                    <input type="radio" ng-checked="data.agentDeclarationList.questionAgentDeclaration4 == 'Y'"/>
+                </td>
+                <td>
+                    <span class="font-size-new">4.ما هو الغرض من التامين ؟ </span><br>
+                    <span class="font-size-new">هل الغرض من التأمين استعماله ضمانا لقرض ؟ </span><br><br>
+                    <span></span>
+                    <span dir="ltr" style="float: left;">4. What is the purpose of the insurance?</span>
+                    <span dir="ltr" style="float: left;">Is the purpose of covering a loan?
+                    </span><br><br>
+                    <span>{{data.agentDeclarationList.reasonAgentDeclaration}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div dir="rtl" style="padding:0.5em">
+        <p>
+            <span class="font-size-new">اسم مسوق التامين  : </span>
+            <span ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</span>
+            <span ng-if="data.licenseFlag != 'true'">{{data.managerName}}</span>
+        </p>
+        <p>
+            <span style="line-height: 8rem;">
+                <span>التوقــــــيع:</span>
+                <span style="border-bottom: 1px solid;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </span>
+        </p>
+        <p>
+            <span>رقم القيد في الهيئة العامة للرقابة المالية :</span>
+            <span ng-if="data.licenseFlag == 'true'">
+                <span ng-repeat="item in data.account.profile.insurerProfiles"
+                      ng-if="item.role === data.currentRole">{{item.licenseNumber != "" ? item.licenseNumber : "N/A"}}</span>
+            </span>
+            <span ng-if="data.licenseFlag != 'true'">{{data.managerLicense != "" ? data.managerLicense : "N/A"}}</span>
+        </p>
+    </div>
+</div>

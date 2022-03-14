@@ -1,0 +1,138 @@
+.body-new {
+    font-family: 'Segoe UI', sans-serif !important;
+    padding-left: 12.7mm !important;
+    padding-right: 12.7mm !important;
+    width: 210mm !important;
+}
+.page,
+.last-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.pageHeader {
+    text-align: center;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    ul,
+    img {
+        break-inside: avoid;
+    }
+    footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .page,
+    .last-page {
+        top: 150px;
+    }
+    .page {
+        page-break-after: always;
+    }
+    .page:last-child {
+        page-break-after: auto;
+    }
+    header {
+        position: fix;
+        width: 100%;
+        top: 0;
+    }
+}
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+    font-size: 10pt;
+}
+
+table td {
+    padding: 0.25em;
+}
+
+.title-app-pdf {
+    background-color: #0f9d58 !important;
+    padding-left: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.format-left {
+    text-align: center;
+    border-left: none;
+}
+
+.format-right {
+    text-align: center;
+    border-right: none;
+}
+
+.font-16 {
+    font-size: 16px;
+}
+.font-size-new {
+    font-size: 10pt;
+}
+.BC-title {
+    font-size: 12pt;
+    float: left;
+    margin-bottom: 5mm;
+}
+
+.head-new {
+    text-align: right;
+    height: 38mm !important;
+}
+
+.header-img {
+    margin-top: 12.7mm;
+    height: 25.3mm;
+    width: auto;
+}
+
+footer {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.foot {
+    text-align: left;
+    height: 29mm !important;
+}
+
+.foot-img {
+    margin-bottom: 12.7mm;
+    height: 16mm;
+    width: auto;
+}
+
+/********************/
+/* Custom checkbox */
+/********************/
+
+input[type=checkbox] {
+    transform: scale(1.4);
+}
+
+input[type=checkbox].small-checkbox {
+    transform: scale(1);
+}
+
+input[type=radio] {
+    transform: scale(1.6);
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+
+/* Custom checkbox */

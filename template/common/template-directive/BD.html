@@ -1,0 +1,79 @@
+<!--Beneficiary Declaration-->
+<div>
+    <table style="border: none !important;" class="format-table-all-new none-border arabic-style">
+        <tr>
+            <td style="text-align: right; width:21%;font-size:10pt;">{{data.beneficiaryDeclaration.policiesNumber}}</td>
+            <td style="text-align: right; width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+            <td></td>
+            <td style="text-align: center; width:33%; font-weight:bold; font-size:12pt;">اقرار جنسية للمستفيد بالتأمين</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="width:21%"></td>
+            <td style="text-align: right; width:18%;font-size:10pt;">:وثيقة رقم</td>
+            <td></td>
+            <td>
+                <table style="border: none !important;">
+                    <tr>
+                        <td style="text-align: left; font-weight:bold;">{{data.beneficiaryDeclaration.productName}}</td>
+                        <td style="text-align: center;">وثيقة</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{ item.role == "BA" ? data.bankBranchName : item.branchName}}
+            </td>
+            <td style="text-align: right;">:الفرع</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}
+            </td>
+            <td style="text-align: right;">:المنطقة</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+            <td style="text-align: right;">:تحريراً في</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <table style="border: none !important;">
+        <tbody dir="rtl">
+        <tr>
+            <hr style="border-top: #0fb273 solid 1px !important;">
+        </tr>
+        <tr>
+            <td>
+                <span style="line-height: 3rem;">اقر انا&nbsp;{{data.beneficiaryDeclaration.nameOfBeneficiary}}&nbsp; الموقع ادناه والمستفيد بالتأمين للوثائق ارقام &nbsp;<b>{{data.beneficiaryDeclaration.policiesNumber}}</b>&nbsp; باجمالى مبالغ تأمين &nbsp;{{data.beneficiaryDeclaration.sumAtRisk}}&nbsp;.</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span style="line-height: 3rem;">ان جنسيتى&nbsp;{{data.beneficiaryDeclaration.nationality}}&nbsp;واحمل جنسيات آخرى (ان وجدت)&nbsp;{{data.beneficiaryDeclaration.otherNationalityCode}}&nbsp;وفى حالة ظهور اى امر مخالف للحقيقة اتحمل المسئولية كاملة دون ادنى مسئوليه على شركة مصر لتأمينات الحياة.</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div dir="rtl" style="padding:0.5em">
+        <p>
+            <span class="font-size-new">المستفيد: </span>
+            <span>{{data.beneficiaryDeclaration.nameOfBeneficiary}}</span>
+        </p>
+        <p>
+            <span style="line-height: 8rem;">
+                <span>التوقــــــيع:</span>
+                <span style="border-bottom: 1px solid;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </span>
+        </p>
+        <p>
+            <span>التوقــــــيع:</span>
+            <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,222 @@
+<div>
+    <table style="border: none !important;" class="format-table-all-new none-border arabic-style">
+        <tr>
+            <td style="text-align: right; width:20%;font-size:10pt;">{{data.productCurrencyCase}}</td>
+            <td style="text-align: right; width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+            <td></td>
+            <td style="text-align: center; width:62%; font-weight:bold; font-size:12pt;">استمارة تعارف لعملاء التأمين المختلط بمبلغ تأمين 50,000 دولار</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="width:20%"></td>
+            <td style="text-align: right; width:18%;font-size:10pt;">:وثيقة رقم</td>
+            <td></td>
+            <td>
+                <table style="border: none !important;">
+                    <tr>
+                        <td style="text-align: right; font-weight:bold;">{{data.inputPdf.productName}}</td>
+                        <td style="text-align: right;">وثيقة</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{ item.role == "BA" ? data.bankBranchName : item.branchName}}
+            </td>
+            <td style="text-align: right;">:الفرع</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}
+            </td>
+            <td style="text-align: right;">:المنطقة</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+            <td style="text-align: right;">:تحريراً في</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <table style="border: none !important;">
+        <tbody dir="rtl">
+        <tr>
+            <hr style="border-top: #0fb273 solid 1px !important;">
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>
+                <table style="border: none !important;">
+                    <tr>
+                        <td>
+                            <span>المتعاقد :</span>
+                            <span>{{data.nameOfClient}}</span>
+                        </td>
+                        <td>
+                            <span>الجـنسية :</span>
+                            <span>{{data.inputPdf.policyOwner.nationality}}</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right" width="10%">
+                <span class="font-size-new">لا </span><br>
+                No
+            </td>
+            <td class="format-left" width="10%">
+                <span class="font-size-new"> نعم </span><br>
+                Yes
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[0].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[0].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">1. هل تحمل الجنسية الامريكية او اى جنسيات آخرىً ؟
+                </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[1].fatcaQuestionnaireValue =='N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[1].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">2. هل تحمل جواز سفر امريكي ؟
+                </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[2].fatcaQuestionnaireValue =='N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[2].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">3. هل تقيم إقامة دائمة بصورة شرعية بالولايات المتحدة الامريكية ؟ </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[3].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[3].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">4. اذا كنت شخص غير امريكي هل سبق لك ان اقمت بالولايات المتحدة الامريكيه ؟ </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[4].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[4].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">5. هل لديك شراكه او شركة محلية داخل الولايات المتحدة الامريكية ؟ </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[5].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[5].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">6. هل لديك محل اقامة او ارقام هواتف بالخارج ؟ </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[6].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[6].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">7. هل لديك عناوين مراسلات فى الخارج ؟ </span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[7].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[7].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <span class="font-size-new">8. هل تقوم بتحويل أموال لحساب قائم بالخارج أو ترد لك تحويلات من الخارج ؟</span><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="format-right">
+                <input type="radio" ng-checked="data.listQuestion[8].fatcaQuestionnaireValue == 'N'"/>
+            </td>
+            <td class="format-left">
+                <input type="radio" ng-checked="data.listQuestion[8].fatcaQuestionnaireValue == 'Y'"/>
+            </td>
+            <td>
+                <table style="border: none !important;">
+                    <tbody dir="rtl">
+                        <tr>
+                            <td style="padding-right: 0px !important; padding-left: 0px !important;">
+                                <span class="font-size-new">9. ؟إذا كنت تحمل الجنسية الأمريكية ما هو الرقم الضريبي الخاص بك( TIN ) ورقم حسابك ؟ </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right: 0px !important; padding-left: 0px !important;" ng-if="data.listQuestion[8].fatcaQuestionnaireValue == 'Y'">
+                                <span>الرقم الضريبي :</span><span>&nbsp;&nbsp;{{data.listQuestion[8].numberId}}</span><br>
+                                <span>رقـــم الحسـاب :</span><span>&nbsp;&nbsp;{{data.listQuestion[8].accountNumber}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table style="border: none !important;">
+        <tbody dir="rtl">
+            <tr>
+                <td>
+                    <span class="font-size-new">أقر بان الاجابة على الاسئلة الواردة أعلاة صحيحة ومطابقة للواقع وتحت مسئوليتى وفى حالة ظهور آى أمر مخالف للحقيقة أو إخفاء</span><br>
+                    <span class="font-size-new">أيه مؤشرات تدل على الهوية الامريكية فللشركة الحق فى انهاء التامين</span><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div dir="rtl" style="padding:0.5em">
+        <p>
+            <span class="font-size-new">المتعاقد : </span>
+            <span>{{data.nameOfClient}}</span>
+        </p>
+        <p>
+            <span style="line-height: 5rem;">
+                <span>التوقـــيع :</span>
+                <span style="border-bottom: 1px solid;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </span>
+        </p>
+        <p>
+            <span>التــــاريخ :</span>
+            <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+        </p>
+    </div>
+</div>

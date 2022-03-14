@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link href="../../common/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../common/css/segoeui-font.css" rel="stylesheet" type="text/css">
+    <link href="../../common/css/pdf_ML.css" rel="stylesheet">
+    <script src="../../common/lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="../../common/js/directive/others_pdf_directive.js" type="text/javascript"></script>
+    <script src="../../common/js/pdf_ML.js" type="text/javascript"></script>
+
+    <script src="../../common/lib/angular-translate/dist/angular-translate.js" type="text/javascript"></script>
+    <script src="../../common/lib/loader-static-files/angular-translate-loader-static-files.js" type="text/javascript"></script>
+</head>
+
+<body class="body-new" ng-app="mainApp" ng-controller="Ctrl">
+<table>
+    <thead class="header-space">
+    <tr>
+        <td>
+            <header>
+                <div class="head-new">
+                    <img class="header-img" src="../../common/images/misr-logo-3.png" alt=""/>
+                </div>
+            </header>
+        </td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <div class="page">
+                <!--start summary information-->
+                <table style="border: none;" class="format-table-all-new none-border arabic-style avoid-break-inside">
+                    <tr>
+                        <td style="text-align: right; width:21%;font-size:10pt;">{{data.application.documentRelation.productCurrencyCase}}</td>
+                        <td style="text-align: right; width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+                        <td></td>
+                        <td style="text-align: right; width:12%; font-weight:bold; font-size:12pt;">اعرف عميلك</td>
+                    </tr>
+                    <tr style="font-size:10pt;">
+                        <td style="width:21%"></td>
+                        <td style="text-align: right; width:18%;font-size:10pt;">:وثيقة رقم</td>
+                        <td dir="rtl" style="text-align: right; font-weight:bold;">{{data.inputPdf.productName}}</td>
+                        <td style="text-align: right;">وثيقة</td>
+                    </tr>
+                    <tr style="font-size:10pt;">
+                        <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                            {{data.currentRole == "BA" ? data.bankBranchName : item.branchName}}
+                        </td>
+                        <td style="text-align: right;">:الفرع</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="font-size:10pt;">
+                        <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                            {{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}
+                        </td>
+                        <td style="text-align: right;">:المنطقة</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr style="font-size:10pt;">
+                        <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+                        <td style="text-align: right;">:تحريراً في</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <!--end summary information-->
+                <table class="avoid-break-inside">
+                    <tr>
+                        <td>
+                            <table style="border: none;" width="100%">
+                                <tbody dir="rtl">
+                                <tr>
+                                    <hr style="border-top: #0fb273 solid 1px !important;">
+                                </tr>
+                                <tr class="table-header-black white-text-color">
+                                    <td style="text-align: center; width:100%;">بيانات المؤمن عليه</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color">
+                                    <td>بيانات العميل الشخصية</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 70%; text-align: right;">{{data.application.lifeAssuredDetails[1].moneyLaundering.fullName}}</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">اسم المؤمن عليه الرباعي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 60%; text-align: right;">
+                            <span ng-if="data.application.mailingAddress.differentMailingAddress != 'Y'">
+                                {{data.inputPdf.lifeInsured[0].address[0].fullAddress}}
+                            </span>
+                                        <span ng-if="data.application.mailingAddress.differentMailingAddress == 'Y'">
+                                {{data.inputPdf.lifeInsured[0].address[1].fullAddress}}
+                            </span>
+                                    </td>
+                                    <td dir="rtl" class="padding-text none-border-top" style="width: 40%; text-align: right;">عنوان الاقامة في مصر (المراسلات)</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 80%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].postalCode}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">صندوق بريد</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 60%; text-align: right;">{{data.inputPdf.lifeInsured[1].address[0].fullAddress}}</td>
+                                    <td class="padding-text none-border-top" style="width: 40%; text-align: right;">عنوان الإقامة بتحقيق الشخصية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.contacts.homePhone}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">هاتف المنزل</td>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.contacts.mobilePhone}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">رقم المحمول</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">رقم الفاكس</td>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">هواتف اخرى</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 73%; text-align: right;">
+                                        <table width="100%">
+                                            <tr>
+                                                <td width="18%">
+                                                    <span>بطاقة عسكرية</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;">
+                                        </span>
+                                                </td>
+                                                <td width="17%">
+                                                    <span>جواز السفر</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;" ng-checked="data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.basic.idList[0].code =='P'">
+                                        </span>
+                                                </td>
+                                                <td width="25%">
+                                                    <span>بطاقة الرقم القومي</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;" ng-checked="data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.basic.idList[0].code =='E'">
+                                        </span>
+                                                </td>
+                                                <td width="25%">
+                                                    <span>بطاقة الرقم البريدي</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;">
+                                        </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="padding-text none-border-top" style="width: 27%; text-align: right;">عنوان الإقامة بتحقيق الشخصية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">تاريخ الاصدار</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">جهة الاصدار</td>
+                                    <td class="padding-text none-border-top" style="width: 22%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.basic.idList[0].value}}</td>
+                                    <td class="padding-text none-border-top" style="width: 8%; text-align: right;">الرقم</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[1].gender}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">النوع</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.otherInformation.placeOfBirth}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">محل الميلاد</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">تاريخ الميلاد</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[1].education}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">المؤهل الدراسي</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">جنسيات اخرى</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[1].nationality}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الجنسية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 85%; text-align: right;">{{data.inputPdf.lifeInsured[1].occupation}}</td>
+                                    <td dir="rtl" class="padding-text none-border-top" style="width: 15%; text-align: right;">المهنة :</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.contacts.email}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">البريد الالكتروني</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">{{data.application.lifeAssuredDetails[1].moneyLaundering.workAddress}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">عنوان  العمل</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.person.contacts.officePhone}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">رقم هاتف العمل</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.otherInformation.employerName}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">اسم جهة العمل</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 85%; text-align: right;">{{data.inputPdf.lifeInsured[1].industry}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">نشاط جهة العمل</td>
+                                </tr>
+                            </table>
+                            <table dir="rtl">
+                                <tr class="table-header-green white-text-color">
+                                    <td>مصادر الدخل ومبالغها</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">معاش</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">اراضي</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">ميراث</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">{{data.application.lifeAssuredDetails[1].lifeAssuredInformation.otherInformation.annualEmployeeIncome}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">مرتب</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 80%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 12%; text-align: right;">مصادر اخرى</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">عدد الابناء</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">{{data.inputPdf.lifeInsured[1].maritalStatus}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">الحالة الاجتماعية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">مهنة الزوجة/ الزوج</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">الاسم الرباعي للزوجة / للزوج</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">بطاقة ضريبية رقم</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الدولة</td>
+                                    <td class="padding-text none-border-top" style="width: 40%; text-align: right;">هل تخضع للنظم الضريبية خارج مصر ؟</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td style="padding-top: 1%;">توقيع المؤمن عليه</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 5%;">....................................</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="avoid-break-inside">
+                    <tr>
+                        <td>
+                            <table style="border: none;" width="100%">
+                                <tbody dir="rtl">
+                                <tr class="table-header-black white-text-color">
+                                    <td style="text-align: center; width:100%;">بيانات المؤمن عليه</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 45%; text-align: right;">{{data.inputPdf.lifeInsured[1].relationship}}</td>
+                                    <td class="padding-text none-border-top" style="width: 55%; text-align: right;">صلة القرابة او طبيعة العلاقة بين المؤمن عليه والمتعاقد</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 70%; text-align: right;">{{data.application.lifeAssuredDetails[0].moneyLaundering.fullName}}</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">اسم المؤمن عليه الرباعي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 60%; text-align: right;">
+                            <span ng-if="data.application.mailingAddress.differentMailingAddress != 'Y'">
+                                {{data.inputPdf.lifeInsured[0].address[0].fullAddress}}
+                            </span>
+                                        <span ng-if="data.application.mailingAddress.differentMailingAddress == 'Y'">
+                                {{data.inputPdf.lifeInsured[0].address[1].fullAddress}}
+                            </span>
+                                    </td>
+                                    <td dir="rtl" class="padding-text none-border-top" style="width: 40%; text-align: right;">عنوان الاقامة في مصر (المراسلات)</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 80%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.addresses[0].postalCode}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">صندوق بريد</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">هاتف المنزل</td>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">رقم المحمول</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">رقم الفاكس</td>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">هواتف اخرى</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">جنسيات اخرى</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[0].nationality}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">الجنسية</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15; text-align: right;">البريد الالكتروني</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 73%; text-align: right;">
+                                        <table width="100%">
+                                            <tr>
+                                                <td width="18%">
+                                                    <span>بطاقة عسكرية</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;">
+                                        </span>
+                                                </td>
+                                                <td width="17%">
+                                                    <span>جواز السفر</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;" ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code =='P'">
+                                        </span>
+                                                </td>
+                                                <td width="25%">
+                                                    <span>بطاقة الرقم القومي</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;" ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code =='E'">
+                                        </span>
+                                                </td>
+                                                <td width="25%">
+                                                    <span>بطاقة الرقم البريدي</span>
+                                                    <span>
+                                            <input type="radio" style="vertical-align: middle;">
+                                        </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="padding-text none-border-top" style="width: 27%; text-align: right;">مستند البيانات الشخصية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">تاريخ الاصدار</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">جهة الاصدار</td>
+                                    <td class="padding-text none-border-top" style="width: 22%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value}}</td>
+                                    <td class="padding-text none-border-top" style="width: 8%; text-align: right;">الرقم</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[0].gender}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">النوع</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">محل الميلاد</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">تاريخ الميلاد</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">{{data.inputPdf.lifeInsured[0].occupation}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">المهنة</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">{{data.inputPdf.lifeInsured[0].education}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">المؤهل الدراسي</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">{{data.inputPdf.lifeInsured[0].maritalStatus}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">الحالة الاجتماعية</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 85%; text-align: right;">{{data.application.lifeAssuredDetails[0].moneyLaundering.workAddress}}</td>
+                                    <td dir="rtl" class="padding-text none-border-top" style="width: 15%; text-align: right;">عنوان  العمل</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.inputPdf.lifeInsured[0].industry}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">نشاط جهة العمل</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.employerName}}</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">اسم جهة العمل</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">{{data.application.lifeAssuredDetails[0].moneyLaundering.bankBranch}}</td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الفرع</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">{{data.application.lifeAssuredDetails[0].moneyLaundering.bankName}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">بنك التعامل الررئيسي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 80%; text-align: right;">{{data.application.lifeAssuredDetails[0].moneyLaundering.bankAccountNo}}</td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">رقم الحساب الجاري</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">بطاقة ضريبية رقم</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الدولة</td>
+                                    <td class="padding-text none-border-top" style="width: 40%; text-align: right;">هل تخضع للنظم الضريبية خارج مصر ؟</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td style="padding-top: 1%;">توقيع المتعاقد</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 5%;">....................................</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="avoid-break-inside">
+                    <tr>
+                        <td>
+                            <table style="border: none;" width="100%">
+                                <tbody dir="rtl">
+                                <tr class="table-header-green white-text-color">
+                                    <td dir="rtl" style="text-align: center; width:100%;">استكمالا لبيانات العميل سواء (المؤمن عليه/المتعاقد)</td>
+                                </tr>
+                                <tr class="table-header-black white-text-color">
+                                    <td>بيانات العميل ذو المناصب العامة والسياسية والعسكرية</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 70%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">اسم العميل الرباعي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">عضو برلمان</td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">وزير / شخصية سياسية / دبلوماسي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">منصب حكومي عالي</td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;"></td>
+                                    <td dir="rtl" class="padding-text none-border-top" style="width: 30%; text-align: right;">رتبة عسكرية عليا (جيش /شرطة)</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 65%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 35%; text-align: right;">من اقارب أيا مما سبق ، أذكر</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 32%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الفرع</td>
+                                    <td class="padding-text none-border-top" style="width: 33%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">بنك التعامل الررئيسي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 75%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">رقم الحساب الجاري</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">بطاقة ضريبية رقم</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الدولة</td>
+                                    <td class="padding-text none-border-top" style="width: 40%; text-align: right;">هل تخضع للنظم الضريبية خارج مصر ؟</td>
+                                </tr>
+                            </table>
+                            <table style="border: none;" width="100%">
+                                <tbody dir="rtl">
+                                <tr class="table-header-black white-text-color">
+                                    <td>بيانات العميل الأجنبي</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 70%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">اسم العميل الرباعي</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 23%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">رقم هواتف المنزل خارج مصر</td>
+                                    <td class="padding-text none-border-top" style="width: 22%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">رقم الجوال خارج مصر</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 23%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">صندوق البريد خارج مصر</td>
+                                    <td class="padding-text none-border-top" style="width: 22%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;">عنوان الإقامة خارج مصر</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;">تاريخ انتهائها</td>
+                                    <td class="padding-text none-border-top" style="width: 30%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 25%; text-align: right;">نوع التأشيرة</td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 20%; text-align: right;">بطاقة ضريبية رقم</td>
+                                    <td class="padding-text none-border-top" style="width: 15%; text-align: right;"></td>
+                                    <td class="padding-text none-border-top" style="width: 10%; text-align: right;">الدولة</td>
+                                    <td class="padding-text none-border-top" style="width: 40%; text-align: right;">هل تخضع للنظم الضريبية خارج مصر ؟</td>
+                                </tr>
+                            </table>
+                            <table width="100%">
+                                <tr>
+                                    <td style="padding-top: 1%;">التوقيع</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 5%;">....................................</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td dir="rtl" style="padding-top: 5%;">ارشادات عامة :</td>
+                                </tr>
+                                <tr>
+                                    <td dir="rtl" style="padding-right: 5%;">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top;">1.&nbsp;&nbsp;&nbsp;</td>
+                                                <td>في حالة أي تغيير يطرأ على هذه البيانات يجب على (المؤمن عليه / المتعاقد ) اخطار الشركة فورا ومرفقا بالمستندات والمحررات الرسمية المؤيدة لهذا التغيير.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td dir="rtl" style="padding-right: 5%;">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top;">2.&nbsp;&nbsp;&nbsp;</td>
+                                                <td>للشركة الحق في تحديث البيانات متى ارتأت ذلك ضروريا وعل (المؤمن عليه / المتعاقد ) الالتزام منى طلب منه.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td>
+            <footer>
+                <div class="foot">
+                    <img class="foot-img" src="../../common/images/misr-footer1.png" alt=""/>
+                </div>
+            </footer>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!-- Start Section 4 Beneficiary details -->
+<table class="table-border">
+    <tbody dir="rtl">
+        <tr class="bg-title">
+            <td colspan="6" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">4.Beneficiary details</span>
+                <span>4. بيانات المستفيدون</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="6" dir="ltr" style="text-align: right;">
+                <div>
+                    <span>الورثة الشرعيين</span>
+                    <input type="radio" ng-checked="data.application.beneficiaryDetailsLegalInheritance == 'Y'" />
+                </div>
+                <div>
+                    <span>حسب الجدول</span>
+                    <input type="radio" ng-checked="data.application.beneficiaryDetailsLegalInheritance != 'Y'" />
+                </div>
+                <div>رجاء ذكر الاسم و لقب المستفيدين ،درجة قرابتهم ونسب التوزيع بينهم
+                </div>
+                <div>Please mention the name and Surname of the beneficiaries, Relationship to the the
+                    insured and Percentages.</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg-title center">
+                <span>صلة القرابة </span><br>
+                <span>Relationship</span>
+            </td>
+            <td colspan="2" class="bg-title center">
+                <span>النسبة </span><br>
+                <span>Percentage</span>
+            </td>
+            <td colspan="2" class="bg-title center">
+                <span>المستفيدون حالة الاستحقاق </span><br>
+                <span>Maturity beneficiary</span>
+            </td>
+        </tr>
+        <tr ng-repeat="item in data.inputPdf.benefitDetails"
+            ng-if="item.beneficiaryDetailsBeneficiaryType == 'MB'">
+            <td colspan="2" class="center">{{item.relationship}}</td>
+            <td colspan="2" class="center">{{item.share}}%</td>
+            <td colspan="2" class="center">{{item.fullName}}</td>
+        </tr>
+    </tbody>
+    <tbody dir="rtl">
+        <tr>
+            <td colspan="6">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg-title center">
+                <span>صلة القرابة </span><br>
+                <span>Relationship</span>
+            </td>
+            <td colspan="2" class="bg-title center">
+                <span>النسبة </span><br>
+                <span>Percentage</span>
+            </td>
+            <td colspan="2" class="bg-title center">
+                <span>المستفيدون حالة الوفاة </span><br>
+                <span>Death beneficiary</span>
+            </td>
+        </tr>
+        <tr ng-if="data.application.beneficiaryDetailsLegalInheritance == 'Y'">
+            <td colspan="2"></td>
+            <td colspan="2"></td>
+            <td colspan="2">
+                <div>Legal inheritance</div>
+                <div>الورثة الشرعيين</div>
+            </td>
+        </tr>
+        <tr ng-repeat="item in data.inputPdf.benefitDetails"
+            ng-if="item.beneficiaryDetailsBeneficiaryType == 'DB'">
+            <td colspan="2" class="center">{{item.relationship}}</td>
+            <td colspan="2" class="center">{{item.share}}%</td>
+            <td colspan="2" class="center">
+                <span>{{item.fullName}}</span>
+                <span ng-if="data.corporatesBankBranch != null">{{data.corporatesBankBranch}}</span>
+            </td>
+        </tr>
+    </tbody>
+    <tbody dir="rtl">
+        <tr>
+            <td class="center non-border-right">
+                <span>
+                    <input class="float-right middle-radio"
+                            type="checkbox" ng-checked="data.application.beneficiaryDetailsQuestion == 'N'" />
+                </span>
+                <span class="float-right">
+                    <div dir="rtl">لا </div>
+                    <div>No</div>
+                </span>
+            </td>
+            <td class="center non-border-right non-border-left">
+                <span>
+                    <input class="float-right middle-radio" type="checkbox" ng-checked="data.application.beneficiaryDetailsQuestion == 'Y'" />
+                </span>
+                <span class="float-right">
+                    <div dir="rtl">نعم</div>
+                    <div>Yes</div>
+                </span>
+            </td>
+            <td colspan="4" class="non-border-left">هل ترغب في الاحتفاظ بحقك في تغيير المستفيدين
+                بالوثيقة ؟
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 4 Beneficiary details -->

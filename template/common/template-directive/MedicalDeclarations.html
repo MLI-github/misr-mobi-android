@@ -1,0 +1,473 @@
+<!-- Start Section 5 Medical Declarations -->
+<table class="table-question">
+    <tbody dir="rtl">
+        <tr class="bg-title">
+            <td colspan="3" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">5.Medical Declarations</span>
+                <span>5.الاقرارات الصحية</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="bg-title center">
+                <span>المؤمن عليه</span><br>
+                <span>Life Insured</span>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="center">
+                <span
+                    ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionHeight}}</span>
+                <span
+                    ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionHeight}}</span>
+                &nbsp;CMS
+            </td>
+            <td>
+                <span>الرجاء تحديد طولك (سم). </span><br>
+                <span>Please specify your height in cm</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="center">
+                <span
+                    ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionWeight}}</span>
+                <span
+                    ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionWeight}}</span>
+                &nbsp; KGS
+            </td>
+            <td>
+                <span>الرجاء تحديد وزنك (كجم). </span><br>
+                <span>Please specify your weight in kg</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <span>نعم</span><br>
+                <span>Yes</span>
+            </td>
+            <td class="center non-border-left">
+                <span>لا</span><br>
+                <span>No</span>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'" />
+
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'N'" />
+            </td>
+            <td>
+                <span>1 .هل وزنك تعير خلال اخر سنتين؟ </span><br>
+                <span dir="ltr" style="text-align: right;">1.Did your weight change during the previous
+                    two years?</span><br /><br />
+                <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'">
+                    <span ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                          ng-if="item.isIncrease == 'Y'">
+                        Increase(kg): &nbsp;{{item.healthQIncreaseKG}}<br>
+                        Reason of Changes:&nbsp;{{item.healthQReason}} <br>
+                    </span>
+                    <span ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                          ng-if="item.isIncrease == 'N'">
+                        Decrease(kg): &nbsp;{{item.healthQDecreaseKG}}<br>
+                        Reason of Changes:&nbsp;{{item.healthQReason}}<br>
+                    </span>
+                </span>
+                <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'">
+                    <span ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                        ng-if="item.isIncrease == 'Y'">
+                        Increase(kg): &nbsp;{{item.healthQIncreaseKG}}<br>
+                        Reason of Changes:&nbsp; {{item.healthQReason}} <br>
+                    </span>
+                    <span ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                        ng-if="item.isIncrease == 'N'">
+                        Decrease(kg): &nbsp;{{item.healthQDecreaseKG}}<br>
+                        Reason of Changes: &nbsp; {{item.healthQReason}}<br>
+                    </span>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' || data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' || data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'N' && data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'N' && data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>2. هل انت مدخن او تتعاطى مخدرات او كحول الان او خلال السنوات السابقة؟</span><br>
+                <span>اذا كانت الاجابة بنعم رجاء اذكر النوع والكمية?</span><br>
+                <span dir="ltr" style="text-align: right;">2.Are you smoker or do you drink drugs or
+                    alcohol now or during previous year? <br>IF yes please state the type and
+                    amount</span><br /><br />
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship != null">
+                    Type:{{'ipos.smoketype.' + data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].smokerType | translate}}
+                    &nbsp;&nbsp;&nbsp;
+                    Stick(s) or Unit /
+                    Day:{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].smokerUnit}}
+                    <br>
+                </span>
+                <span
+                    ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship != null">
+                    Type:{{'ipos.drunktype.' + data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].drinkerType | translate}}
+                    &nbsp;&nbsp;&nbsp;
+                    Amount or Unit /
+                    Day:{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].drinkerAmount}}
+                </span>
+                <span
+                    ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship == null">
+                    Type:{{'ipos.smoketype.' + data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].smokerType | translate}}
+                    &nbsp;&nbsp;&nbsp;
+                    Stick(s) or Unit /
+                    Day:{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].smokerUnit}}
+                    <br>
+                </span>
+                <span
+                    ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship == null">
+                    Type:{{'ipos.drunktype.' +  data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].drinkerType | translate}}
+                    &nbsp;&nbsp;&nbsp;
+                    Amount or Unit /
+                    Day:{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].drinkerAmount}}
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>3 .هل اعفيت من الخدمة العسكرية ؟ </span><br>
+                <span>اذا كانت الاجابة بنعم رجاء اذكر السبب? </span><br>
+                <span dir="ltr" style="text-align: right;">3.Have you been exempted from military
+                    service?</span><br>
+                <span dir="ltr" style="text-align: right;">If yes please state the reason</span><br /><br />
+                {{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail}}
+                {{data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail}}
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[2].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[2].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[2].questionValue == 'N'" />
+
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[2].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>4.هل تتلقى اى علاج بصفة منتظمة؟ </span><br>
+                <span>اذا كانت الاجابة بنعم اذكر التفاصيل </span><br>
+                <span dir="ltr" style="text-align: right;">4.Do you take any medication regularly?<br> If
+                    yes please state the details</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[3].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[3].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[3].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[3].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>5.هل اجرى لك عملية جراحية ؟ </span><br>
+                <span>اذا كانت الاجابة بنعم اذكر التفاصيل </span><br>
+                <span dir="ltr" style="text-align: right;">5.Have you been had a surgery?<br> If yes
+                    please state the Details</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="non-border-right"></td>
+            <td class="non-border-left"></td>
+            <td colspan="2">
+                <span>6.هل تعانى او عانيت من اى من : </span><br>
+                <span dir="ltr" style="text-align: right;">6.Do you suffer from or have you been suffered
+                    from:</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[4].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[4].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[4].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[4].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>أ.ارتفاع ضغط الدم او امراض القلب.  </span><br>
+                <span dir="ltr" style="text-align: right;">A.Hypertension or Heart Disease.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[5].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[5].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[5].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[5].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>ب.السكر او زلال بالبول. </span><br>
+                <span dir="ltr" style="text-align: right;">B.Diabetes Mellitus or Albuminuria.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[6].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[6].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[6].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[6].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>جـ.امراض الكبد او امراض الكلى. </span><br>
+                <span dir="ltr" style="text-align: right;">C.Liver Diseases or Kidney Diseases.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[7].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[7].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[7].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[7].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>دـ.الربو او امراض الصدر. </span><br>
+                <span dir="ltr" style="text-align: right;">D.Asthma or Chest Diseases.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[8].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[8].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[8].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[8].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>هـ.اورام او تضخم فى الغدد اوتضخم فى الغدد اليمفاوية او امراض سرطانية.</span> <br>
+                <span dir="ltr" style="text-align: right;">E.Tumor ,Enlarged glands, Enlarged lymph gland, cancerous diseases.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[9].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[9].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[9].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[9].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>و.اى امراض باجهاز العصبى او اضطرابات نفسية. </span><br>
+                <span dir="ltr" style="text-align: right;">F.Any nervous system Diseases psychiatric
+                    disturbance.</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[10].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[10].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[10].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[10].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>7.هل تعانى من اى امراض بالعين؟ </span><br>
+                <span dir="ltr" style="text-align: right;">7.Do you suffer from any eyes diseases?</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[11].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[11].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[11].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[11].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>8.هل تلبس نظارة؟ </span><br>
+                <span dir="ltr" style="text-align: right;">8.Do you wear glasses or lenses?</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[12].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[12].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[12].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[12].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>9.هل عولجت بالانسولين او اى ادوية بالسكر؟</span><br>
+                <span dir="ltr" style="text-align: right;">9.Have you been treated with insulin or any
+                    diabetes medication?</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="center non-border-right">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[13].questionValue == 'Y'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[13].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                    ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[13].questionValue == 'N'" />
+                <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                    ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[13].questionValue == 'N'" />
+            </td>
+            <td>
+                <span>10.هل اجرى لك نقل دم؟</span><br>
+                <span dir="ltr" style="text-align: right;">10.Have you ever been suffered or diagnosed
+                    from HIV?</span>
+            </td>
+        </tr>
+        <tr ng-if="data.application.laisTheSameWithPO == '1' && data.quotation.lifeInsured[0].person.genderCode == 'F'">
+            <td class="center non-border-right">
+                <input type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[14].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[14].questionValue == 'N'" />
+            </td>
+            <td>
+                <span><u>للإناث فقط </u></span><br>
+                <span>11.هل انتى حامل اذا كان نعم فى اى شهر؟ </span><br>
+                <span><u>For female</u></span><br>
+                <span dir="ltr" style="text-align: right;">11.Are you pregnant If yes at any month?</span>
+            </td>
+        </tr>
+        <tr ng-if="data.application.laisTheSameWithPO != '1' && data.quotation.policyOwner.person.genderCode == 'F'">
+            <td class="center non-border-right">
+                <input type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[14].questionValue == 'Y'" />
+            </td>
+            <td class="center non-border-left">
+                <input type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[14].questionValue == 'N'" />
+            </td>
+            <td>
+                <span><u>للإناث فقط </u></span><br>
+                <span>11.هل انتى حامل اذا كان نعم فى اى شهر؟ </span><br>
+                <span><u>For female</u></span><br>
+                <span dir="ltr" style="text-align: right;">11.Are you pregnant If yes at any month?</span>
+            </td>
+        </tr>
+        <tr ng-if="data.questionValueYes.showBlankRow != true">
+            <td colspan="3">
+                <span>اذا كانت الاجابة على الاسئلة من (4-11) بنعم رجاء اذكر التفاصيل بالجدول
+                    التالى</span><br>
+                <span>IF the answer of the question from (4-11) is Yes please state details in The
+                    following table</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- Health Question detail table -->
+<table ng-if="data.questionValueYes.showBlankRow != true" class="table-statue center" width="100%">
+    <tbody dir="rtl" ng-if="data.application.policyOwnerDetails.larelationship == null">
+        <tr class="bg-title">
+            <td class="non-border-top"><span>الحالة الصحية الحالية</span><br><span>The current Health
+                    State</span></td>
+            <td class="non-border-top"><span>العلاج</span><br><span>Medication</span></td>
+            <td class="non-border-top"><span>تاريخ التشخيص</span><br><span>Date of diagnosis</span></td>
+            <td class="non-border-top"><span>التفاصيل </span><br><span>Details</span> </td>
+            <td class="non-border-top"><span>الحالة الصحية الحالية</span><br><span>Question No</span>
+            </td>
+        </tr>
+        <tr ng-repeat="item in data.inputPdf.policyOwner.healthQuestions"
+            ng-if="item.currentHealthState != ''">
+            <td>{{item.currentHealthState}}</td>
+            <td>{{item.medication}}</td>
+            <td>{{item.diagnosisDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.details}}</td>
+            <td dir="ltr">{{item.questionNo}}</td>
+        </tr>
+        <tr ng-repeat="item in data.inputPdf.lifeInsured[0].healthQuestions"
+            ng-if="item.currentHealthState != ''">
+            <td>{{item.currentHealthState}}</td>
+            <td>{{item.medication}}</td>
+            <td>{{item.diagnosisDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.details}}</td>
+            <td dir="ltr">{{item.questionNo}}</td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 5 Medical Declarations -->

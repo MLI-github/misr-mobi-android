@@ -1,0 +1,128 @@
+<!--Start Salary Deduction Delegation-->
+<div>
+    <table width="100%" style="border: none !important;" class="format-table-all-new none-border arabic-style">
+        <tr>
+            <td width="25%" style="text-align: right; font-size:10pt;">{{data.productCurrencyCase}}</td>
+            <td width="25%" style="text-align: right; font-size:10pt;"> : طلب التأمين رقم</td>
+            <td width="50%" style="text-align: right; font-weight:bold; font-size:12pt;">تفويض الخصم من المرتب</td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td width="25%"></td>
+            <td width="25%" style="text-align: right; font-size:10pt;">:وثيقة رقم</td>
+            <td width="50%">
+                <table width="100%" style="border: none !important;">
+                    <tr>
+                        <td style="text-align: right; font-weight:bold;">{{data.inputPdf.productName}}</td>
+                        <td style="text-align: right;">وثيقة</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{ item.role == "BA" ? data.bankBranchName : data.branchName}}
+            </td>
+            <td style="text-align: right;">:الفرع</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.currentRole">
+                {{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}
+            </td>
+            <td style="text-align: right;">:المنطقة</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr style="font-size:10pt;">
+            <td style="text-align: right;">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+            <td style="text-align: right;">:تحريراً في</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <table width="100%" style="line-height: 3rem; border: none !important;">
+        <tbody dir="rtl">
+            <tr>
+                <hr style="border-top: #0fb273 solid 1px !important;">
+            </tr>
+            <tr>
+                <td>
+                    <span>السادة</span>
+                    <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                    <span>{{data.salaryDeductionDelegation.subGovernmentName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>تحية طيبة وبعد</td>
+            </tr>
+            <tr>
+                <td>
+                    <span>افوض انا الموقع ادنا</span>
+                    <span>&nbsp;&nbsp;{{data.salaryDeductionDelegation.policyOwnerName}}&nbsp;&nbsp;</span>
+                    <span>بطاقة رقم قومي</span>
+                    <span>&nbsp;&nbsp;{{data.salaryDeductionDelegation.poIdNumber}}&nbsp;&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>رقم العامل </span>
+                    <span>&nbsp;&nbsp;{{data.salaryDeductionDelegation.employeeIdNumber}}&nbsp;&nbsp;</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>الهيئة</span>
+                    <span>&nbsp;&nbsp;{{data.salaryDeductionDelegation.subGovernmentName}}&nbsp;&nbsp;</span>
+                    <span>التى اعمل بها في خصم ما يستحق لشركة لتامينات الحياة من قيمة</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>الاقســــاط الــــدورية شـــهريا خصمـاً من المــرتب لـــوثيقة التــأمين</span>
+                    <span>&nbsp;&nbsp;{{data.inputPdf.productName}}&nbsp;&nbsp;</span>
+                    <span>برقم طلـــب تــأمين</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>{{data.productCurrencyCase}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>وأقر بأن هذا التفويض لايترتب عليه اى إلتزامات على الهيئة التي اعمل بها او حكومة جمهورية مصر العربية</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ويكون الخصم بصفة دورية ولحين اخطار الهيئة من جانبي بايقاف الخصم وبدون أدنى مسئوليه او التزام على الهيئة.</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>و تفضلوا بقبول فائق الاحترام</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div dir="rtl" style="padding:0.5em">
+        <p>
+            <span class="font-size-new">اسم المتعاقد</span>
+            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+            <span>{{data.salaryDeductionDelegation.policyOwnerName}}</span>
+        </p>
+        <p>
+            <span style="line-height: 8rem;">
+                <span>توقيع المتعاقد</span>
+                <span style="border-bottom: 1px solid;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </span>
+        </p>
+        <p>
+            <span class="font-size-new">التاريخ</span>
+            <span>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+            <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+        </p>
+    </div>
+</div>
+<!--End Salary Deduction Delegation-->

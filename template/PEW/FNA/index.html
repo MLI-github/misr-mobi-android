@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="apple-mobile-web-app-capable" content="yes" />
+   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+   <link href="../../common/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+   <link href="../../common/css/pdf_FNA.css" rel="stylesheet">
+   <link href="../../common/css/segoeui-font.css" rel="stylesheet" type="text/css">
+   <script src="../../common/lib/angular/angular.min.js" type="text/javascript"></script>
+   <script src="../../common/lib/canvas/canvasjs.min.js" type="text/javascript"></script>
+   <script src="../../common/js/directive/others_pdf_directive.js" type="text/javascript"></script>
+   <script src="../../common/js/pdf_FNA.js" type="text/javascript"></script>
+   <script src="../../common/lib/angular/angular.js" type="text/javascript"></script>
+   <script src="../../common/lib/angular-translate/dist/angular-translate.js" type="text/javascript"></script>
+   <script src="../../common/lib/angular/angular-route.js" type="text/javascript"></script>
+   <script src="../../common/lib/filters/filters.js" type="text/javascript"></script>
+   <script src="../../common/lib/moment/moment.js" type="text/javascript"></script>
+   <script src="../../common/lib/loader-static-files/angular-translate-loader-static-files.js" type="text/javascript"></script>
+</head>
+
+<body class="body-new" ng-app="mainApp" ng-controller="Ctrl">
+<table width="100%">
+   <thead class="header-space">
+      <tr>
+         <td>
+            <header>
+               <div class="head-new">
+                  <img class="header-img" src="../../common/images/misr-logo-3.png" alt=""/>
+               </div>
+            </header>
+         </td>
+      </tr>
+   </thead>
+   <tbody>
+   <tr>
+      <td>
+         <template-fna></template-fna>
+      </td>
+   </tr>
+   </tbody>
+   <tfoot>
+   <tr>
+      <td>
+         <footer>
+            <div style="height: 5mm !important;">
+            </div>
+         </footer>
+      </td>
+   </tr>
+   </tfoot>
+</table>
+</body>
+</html>

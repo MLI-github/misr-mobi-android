@@ -1,0 +1,63 @@
+<!-- Start Section 8 Dangerous Activities -->
+<table class="table-none-border" width="100%">
+    <tbody dir="rtl">
+        <tr class="bg-title">
+            <td colspan="3" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">8.Dangerous Activities</span>
+                <span dir="rtl">8.الانشطة الخطرة</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;" type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'N'" />
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;" type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                       ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'N'" />
+                </span>
+                <span class="no-padding">
+                    <div>لا</div>
+                    <div>NO</div>
+                </span>
+            </td>
+            <td style="text-align:center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;"  type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'Y'" />
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;"  type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                       ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'Y'" />
+                </span>
+                <span class="no-padding">
+                    <div>نعم</div>
+                    <div>YES</div>
+                </span>
+            </td>
+            <td width="75%">
+                <span>هل تشارك فى اية اشكال الطيران الخاص ، سباق السيارات ، الغطس ، او اى نوع اخر من
+                    انواع
+                    الرياضات
+                    او الانشطة الخطرة ؟</span><br>
+                <span>اذا كانت الاجابة بنعم ( برجاء اذكر اسم الرياضة )</span><span>&nbsp; :</span>
+                <span ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+                    <span
+                        ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail != null">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail}}</span>
+                    <span
+                        ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail == null">.................</span>
+                </span>
+                <span ng-if="data.application.lifeAssuredDetails[0].larelationship == null">
+                    <span
+                        ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail != null">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail}}</span>
+                    <span
+                        ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail == null">.................</span>
+                </span>
+                <br>
+                <span dir="ltr">Do you take part in or have you any prospect or intention of taking part
+                    in any
+                    hazardous sports, hobbies Or pursuits? (eg. In aviation other than as a fare paying
+                    passenger,
+                    diving, mountaineering, racing etc.)?</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 8 Dangerous Activities -->

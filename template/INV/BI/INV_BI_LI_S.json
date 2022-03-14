@@ -1,0 +1,1427 @@
+{
+  "productCurrencyCase": "MC12330580384",
+  "quotation": {
+    "id": "71c04dd8-cff6-4905-a18e-96cd3ffab664",
+    "version": 0,
+    "acceptedDate": null,
+    "basicPlan": {
+      "annualRate": null,
+      "exclusion": null,
+      "funds": [],
+      "information": {
+        "annualPremium": 76320.72,
+        "annualUnitPremium": null,
+        "annuityAmount": null,
+        "annuityAndRecurringAmount": null,
+        "annuityOption": null,
+        "backDatingDate": null,
+        "bankBranch": null,
+        "bankBranchName": null,
+        "basicAnnualPremiumPDF": 0,
+        "basicPremium": null,
+        "billingCurrency": "EGP",
+        "childAge": null,
+        "childBirthdate": null,
+        "contractCurrency": "EGP",
+        "durationOfAnnuity": null,
+        "effectiveDate": "2020-07-06",
+        "enableRCD": "true",
+        "expirationDate": "2020-07-16",
+        "installmentPremium": 76320.72,
+        "investmentAnnualPremiumPDF": 0,
+        "investmentPremium": null,
+        "isExpire": 0,
+        "isMaturityAgeTextInputEnable": null,
+        "isRiskCommencement": "false",
+        "jointAge": null,
+        "lumpSumAmount": null,
+        "lumpSumAndRecurringAmount": null,
+        "maturityAge": "43",
+        "maturityDate": "2032-07-01",
+        "monthlyAnnuityLimit": 75,
+        "monthlyPayment": null,
+        "occupationClass": "1",
+        "policyTerm": 12,
+        "premiumForCI": null,
+        "premiumForDeath": null,
+        "premiumForInvestment": null,
+        "premiumFrequency": "S",
+        "premiumTerm": 1,
+        "recPremiumFrequency": null,
+        "recPremiumFrequencyAmount": null,
+        "regularLumpSumAmount": null,
+        "regularMonthlyAnnuityAmount": null,
+        "regularPremium": 76320.72,
+        "renewalPaymentMethod": "N",
+        "riskCommencementDate": "2020-07-01",
+        "singleLumpSumAmount": null,
+        "singleMonthlyAnnuityAmount": null,
+        "singlePremium": null,
+        "sumAssured": 100000,
+        "totalAnnualPremium": null,
+        "ciannualPremiumPDF": 0
+      },
+      "loadingInformation": [
+        {
+          "loading": null,
+          "loadingType": null,
+          "reason": null
+        }
+      ],
+      "loanDetails": {
+        "loanAmount": 100000,
+        "loanInstalments": null,
+        "loanPaymentFrequency": null,
+        "loanTerm": 12,
+        "sumAssuredDecreasingFrequency": null
+      },
+      "singleTopUp": [
+        {
+          "singleTopUpAmount": null,
+          "year": null
+        }
+      ],
+      "withdrawal": [
+        {
+          "withdrawalAmount": null,
+          "year": null
+        }
+      ]
+    },
+    "benefitAmount": 100000,
+    "benefitIllustration": {
+      "inputPdf": "{\"benefitIllustration\":{\"benefitIllustrationTable\":[{\"year\":null,\"age\":null,\"annualPremium\":null,\"totalPaidPremium\":null,\"x1\":null,\"x2\":null,\"x3\":null,\"ratio\":null}]},\"totalDividend1\":null,\"totalDividend2\":null,\"totalDividend3\":null,\"sa1\":null,\"sa2\":null,\"sa3\":null,\"totalBenefitsAge\":null,\"totalBenefitsAge1\":null,\"totalBenefitsAge2\":null,\"totalBenefitsAge3\":null}",
+      "outputPdf": "{\"benefitIllustration\" : {\"benefitIllustrationTable\" : [{\"year\" : \"0\",\"age\" : \"31\",\"annualAmount\" : \"76320.72\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"0\",\"ratio1\" : \"0\",\"ratio2\" : \"0\",\"ratio3\" : \"0\",\"guaranteedProfits\" : \"0\",\"account\" : \"\"},{\"year\" : \"1\",\"age\" : \"32\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"9\",\"ratio1\" : \"5000\",\"ratio2\" : \"6000\",\"ratio3\" : \"7000\",\"guaranteedProfits\" : \"4000\",\"account\" : \"\"},{\"year\" : \"2\",\"age\" : \"33\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"18\",\"ratio1\" : \"10000\",\"ratio2\" : \"12000\",\"ratio3\" : \"14000\",\"guaranteedProfits\" : \"8000\",\"account\" : \"\"},{\"year\" : \"3\",\"age\" : \"34\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"28\",\"ratio1\" : \"15000\",\"ratio2\" : \"18000\",\"ratio3\" : \"21000\",\"guaranteedProfits\" : \"12000\",\"account\" : \"\"},{\"year\" : \"4\",\"age\" : \"35\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"37\",\"ratio1\" : \"20000\",\"ratio2\" : \"24000\",\"ratio3\" : \"28000\",\"guaranteedProfits\" : \"16000\",\"account\" : \"\"},{\"year\" : \"5\",\"age\" : \"36\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"46\",\"ratio1\" : \"25000\",\"ratio2\" : \"30000\",\"ratio3\" : \"35000\",\"guaranteedProfits\" : \"20000\",\"account\" : \"\"},{\"year\" : \"6\",\"age\" : \"37\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"55\",\"ratio1\" : \"30000\",\"ratio2\" : \"36000\",\"ratio3\" : \"42000\",\"guaranteedProfits\" : \"24000\",\"account\" : \"\"},{\"year\" : \"7\",\"age\" : \"38\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"64\",\"ratio1\" : \"35000\",\"ratio2\" : \"42000\",\"ratio3\" : \"49000\",\"guaranteedProfits\" : \"28000\",\"account\" : \"\"},{\"year\" : \"8\",\"age\" : \"39\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"73\",\"ratio1\" : \"40000\",\"ratio2\" : \"48000\",\"ratio3\" : \"56000\",\"guaranteedProfits\" : \"32000\",\"account\" : \"\"},{\"year\" : \"9\",\"age\" : \"40\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"83\",\"ratio1\" : \"45000\",\"ratio2\" : \"54000\",\"ratio3\" : \"63000\",\"guaranteedProfits\" : \"36000\",\"account\" : \"\"},{\"year\" : \"10\",\"age\" : \"41\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"92\",\"ratio1\" : \"50000\",\"ratio2\" : \"60000\",\"ratio3\" : \"70000\",\"guaranteedProfits\" : \"40000\",\"account\" : \"\"},{\"year\" : \"11\",\"age\" : \"42\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"101\",\"ratio1\" : \"55000\",\"ratio2\" : \"66000\",\"ratio3\" : \"77000\",\"guaranteedProfits\" : \"44000\",\"account\" : \"\"},{\"year\" : \"12\",\"age\" : \"43\",\"annualAmount\" : \"0\",\"totalPaidPremium\" : \"76320.72\",\"guaranteedDividend\" : \"\",\"ratio\" : \"110\",\"ratio1\" : \"60000\",\"ratio2\" : \"72000\",\"ratio3\" : \"84000\",\"guaranteedProfits\" : \"48000\",\"account\" : \"\"}]},\"totalDividend1\" : \"60000\",\"totalDividend2\" : \"72000\",\"totalDividend3\" : \"84000\",\"expectedDividend1\" : \"5%\",\"expectedDividend2\" : \"6%\",\"expectedDividend3\" : \"7%\",\"percentAnnualInstallments1\" : \"11.5%\",\"percentAnnualInstallments2\" : \"12.4%\",\"percentAnnualInstallments3\" : \"13.25%\",\"expectedDividendYears\" : \"10\",\"totalProfits1\" : \"72000\",\"totalProfits2\" : \"72000\",\"totalProfits3\" : \"84000\",\"sa1\" : \"100000\",\"sa2\" : \"100000\",\"sa3\" : \"100000\",\"totalBenefitsAge\" : \"43\",\"totalBenefitsAge1\" : \"160000\",\"totalBenefitsAge2\" : \"172000\",\"totalBenefitsAge3\" : \"184000\",\"stampFeeRenewal\" : \"381.6\",\"eFSAFeeRenewal\" : \"190.8\",\"renewalPremium\" : \"77122.08\",\"poOccupation\" : \"\\u0627\\u0633\\u062a\\u0627\\u0630 \\u062c\\u0627\\u0645\\u0639\\u0649\",\"liOccupation\" : \"\\u0645\\u062f\\u064a\\u0631\\u0639\\u0627\\u0645 \\u0628\\u062c\\u0647\\u0627\\u0632\\u0627\\u0644\\u0645\\u0631\\u0643\\u0632\\u064a \\u0644\\u0644\\u0645\\u062d\\u0627\\u0633\\u0628\\u0627\\u062a\",\"poGender\" : \"\\u0627\\u0646\\u062b\\u064a\",\"liGender\" : \"\\u0630\\u0643\\u0631\",\"liSmokingStatus\" : \"\\u0645\\u062f\\u062e\\u0646\",\"relationship\" : \"\\u0634\\u0631\\u064a\\u0643 \\u0639\\u0645\\u0644\",\"frequency\" : \"\\u0642\\u0633\\u0637 \\u0648\\u062d\\u064a\\u062f\",\"productName\" : \"\\u0648\\u062b\\u064a\\u0642\\u0629 \\u0645\\u0635\\u0631 - \\u0625\\u0633\\u062a\\u062b\\u0645\\u0627\\u0631\",\"billingCurrency\" : \"\\u062c\\u0646\\u064a\\u0647 \\u0645\\u0635\\u0631\\u0649\",\"biRiders\" : []}"
+    },
+    "documentRelation": {
+      "actionType": null,
+      "caseId": "a4dede13-da75-4719-99f0-40b05aac470c",
+      "refContact": {
+        "refDocName": "CMINV58737212",
+        "refId": "89bb2738-34ce-42b7-9e2f-7c3a6325a5bf",
+        "refVersion": 74132194,
+        "status": "VALID"
+      },
+      "refContactLifeInsured": [
+        {
+          "refDocName": "CMINV39799427",
+          "refId": "0cacea75-f58b-4494-8934-121a9d1fe0ba",
+          "refVersion": 22569734,
+          "status": "VALID",
+          "refIdOfLI": "BIINV16006492_0"
+        }
+      ]
+    },
+    "efsaFees": 190.8,
+    "efsaServiceFees": 76.32,
+    "financialInformation": {
+      "homeCurrency": "EGP"
+    },
+    "firstPremiumPayable": 76320.72,
+    "initialPremiumPayable": 76320.72,
+    "isAddLifeInsured": "1",
+    "isQuotationComputed": null,
+    "issuanceFees": 200,
+    "lifeInsured": [
+      {
+        "idLifeInsured": "BIINV16006492_0",
+        "invalidDate": null,
+        "isContactSelected": "Y",
+        "isPolicyOwner": null,
+        "natureOfBusiness": null,
+        "occupationModel": {
+          "industryCode": "13",
+          "occupationClass": "1",
+          "occupationCode": "CAGM",
+          "uuid": null
+        },
+        "person": {
+          "version": null,
+          "age": 31,
+          "annualEmployeeIncome": 100000,
+          "birthCountryCode": null,
+          "birthDate": "1989-10-10",
+          "bloodDiastolic": 80,
+          "bloodSystolic": 100,
+          "genderCode": "M",
+          "height": 165,
+          "idList": [
+            {
+              "code": "E",
+              "uuid": null,
+              "value": "28910102222210"
+            }
+          ],
+          "liMaturityAge": null,
+          "maritalStatusCode": null,
+          "name": {
+            "alias": null,
+            "first": "Tom",
+            "full": "Tom Banner",
+            "last": "Banner",
+            "middle": null,
+            "prefix": null,
+            "suffix": null,
+            "titleCode": "MR",
+            "uuid": null
+          },
+          "nationalityCode": null,
+          "outputBMI": 23.8751147842057,
+          "photo": null,
+          "question1": "N",
+          "question2": null,
+          "raceCode": null,
+          "referralTypeCode": null,
+          "referrerFullname": null,
+          "religionCode": null,
+          "smokerStatus": "S",
+          "uuid": null,
+          "weight": 65
+        },
+        "prospectIdOfCRM": null,
+        "relationship": "BP"
+      }
+    ],
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "DR",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-06T03:10:21+0000",
+      "docId": "71c04dd8-cff6-4905-a18e-96cd3ffab664",
+      "docName": "BIINV16006492",
+      "docType": "quotation",
+      "documentStatus": "VALID",
+      "entityNumber": null,
+      "entityType": null,
+      "language": "en",
+      "modifyDate": "2020-07-06T03:29:08+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "BI12416006492",
+      "productName": "inv",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "payableAmount": 77325.08,
+    "paymentAmount": 77096.12,
+    "policyHolderGuaranteedFund": 152.64,
+    "policyOwner": {
+      "invalidDate": null,
+      "natureOfBusiness": null,
+      "occupationModel": {
+        "agencyCode": null,
+        "industryCode": "12",
+        "occupationClass": "2",
+        "occupationCode": "UNIL",
+        "regionCode": null,
+        "subRegionCode": null,
+        "uuid": null
+      },
+      "opportunityID": null,
+      "person": {
+        "version": null,
+        "age": 32,
+        "annualEmployeeIncome": 50000,
+        "birthCountryCode": null,
+        "birthDate": "1988-10-10",
+        "bloodDiastolic": 80,
+        "bloodSystolic": 100,
+        "genderCode": "F",
+        "height": 165,
+        "idList": [
+          {
+            "code": "E",
+            "uuid": null,
+            "value": "28810102222221"
+          }
+        ],
+        "maritalStatusCode": null,
+        "name": {
+          "alias": null,
+          "first": "Marry",
+          "full": "Marry Cole",
+          "last": "Cole",
+          "middle": null,
+          "prefix": null,
+          "suffix": null,
+          "titleCode": "MISS",
+          "uuid": null
+        },
+        "nationalityCode": "ET",
+        "outputBMI": 23.8751147842057,
+        "photo": null,
+        "poMaturityAge": null,
+        "question1": null,
+        "question2": null,
+        "raceCode": null,
+        "referralTypeCode": null,
+        "referrerFullname": null,
+        "religionCode": null,
+        "smokerStatus": "S",
+        "uuid": null,
+        "weight": 65
+      },
+      "prospectIdOfCRM": null
+    },
+    "premiumPayable": 76320.72,
+    "quotationType": "QUO",
+    "renewalEFSAFees": 190.8,
+    "renewalEfsaServiceFees": 76.32,
+    "renewalPolicyHolderGuaranteedFund": 152.64,
+    "renewalPremium": 77122.08,
+    "renewalTax": 381.6,
+    "riders": [],
+    "stamp": 3,
+    "stampFees": 0,
+    "tax": 381.6,
+    "totalPremiumPayable": 77325.08,
+    "totalSumAssured": 100000,
+    "docName": "BIINV16006492"
+  },
+  "occupationValuePO": "استاذ جامعى",
+  "occupationValueLI": "مديرعام بجهازالمركزي للمحاسبات",
+  "benefitIllustrationTable": {
+    "benefitIllustration": {
+      "benefitIllustrationTable": [
+        {
+          "year": "0",
+          "age": "31",
+          "annualAmount": "76320.72",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "0",
+          "ratio1": "0",
+          "ratio2": "0",
+          "ratio3": "0",
+          "guaranteedProfits": "0",
+          "account": ""
+        },
+        {
+          "year": "1",
+          "age": "32",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "9",
+          "ratio1": "5000",
+          "ratio2": "6000",
+          "ratio3": "7000",
+          "guaranteedProfits": "4000",
+          "account": ""
+        },
+        {
+          "year": "2",
+          "age": "33",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "18",
+          "ratio1": "10000",
+          "ratio2": "12000",
+          "ratio3": "14000",
+          "guaranteedProfits": "8000",
+          "account": ""
+        },
+        {
+          "year": "3",
+          "age": "34",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "28",
+          "ratio1": "15000",
+          "ratio2": "18000",
+          "ratio3": "21000",
+          "guaranteedProfits": "12000",
+          "account": ""
+        },
+        {
+          "year": "4",
+          "age": "35",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "37",
+          "ratio1": "20000",
+          "ratio2": "24000",
+          "ratio3": "28000",
+          "guaranteedProfits": "16000",
+          "account": ""
+        },
+        {
+          "year": "5",
+          "age": "36",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "46",
+          "ratio1": "25000",
+          "ratio2": "30000",
+          "ratio3": "35000",
+          "guaranteedProfits": "20000",
+          "account": ""
+        },
+        {
+          "year": "6",
+          "age": "37",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "55",
+          "ratio1": "30000",
+          "ratio2": "36000",
+          "ratio3": "42000",
+          "guaranteedProfits": "24000",
+          "account": ""
+        },
+        {
+          "year": "7",
+          "age": "38",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "64",
+          "ratio1": "35000",
+          "ratio2": "42000",
+          "ratio3": "49000",
+          "guaranteedProfits": "28000",
+          "account": ""
+        },
+        {
+          "year": "8",
+          "age": "39",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "73",
+          "ratio1": "40000",
+          "ratio2": "48000",
+          "ratio3": "56000",
+          "guaranteedProfits": "32000",
+          "account": ""
+        },
+        {
+          "year": "9",
+          "age": "40",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "83",
+          "ratio1": "45000",
+          "ratio2": "54000",
+          "ratio3": "63000",
+          "guaranteedProfits": "36000",
+          "account": ""
+        },
+        {
+          "year": "10",
+          "age": "41",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "92",
+          "ratio1": "50000",
+          "ratio2": "60000",
+          "ratio3": "70000",
+          "guaranteedProfits": "40000",
+          "account": ""
+        },
+        {
+          "year": "11",
+          "age": "42",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "101",
+          "ratio1": "55000",
+          "ratio2": "66000",
+          "ratio3": "77000",
+          "guaranteedProfits": "44000",
+          "account": ""
+        },
+        {
+          "year": "12",
+          "age": "43",
+          "annualAmount": "0",
+          "totalPaidPremium": "76320.72",
+          "guaranteedDividend": "",
+          "ratio": "110",
+          "ratio1": "60000",
+          "ratio2": "72000",
+          "ratio3": "84000",
+          "guaranteedProfits": "48000",
+          "account": ""
+        }
+      ]
+    },
+    "totalDividend1": "60000",
+    "totalDividend2": "72000",
+    "totalDividend3": "84000",
+    "expectedDividend1": "5%",
+    "expectedDividend2": "6%",
+    "expectedDividend3": "7%",
+    "percentAnnualInstallments1": "11.5%",
+    "percentAnnualInstallments2": "12.4%",
+    "percentAnnualInstallments3": "13.25%",
+    "expectedDividendYears": "10",
+    "totalProfits1": "72000",
+    "totalProfits2": "72000",
+    "totalProfits3": "84000",
+    "sa1": "100000",
+    "sa2": "100000",
+    "sa3": "100000",
+    "totalBenefitsAge": "43",
+    "totalBenefitsAge1": "160000",
+    "totalBenefitsAge2": "172000",
+    "totalBenefitsAge3": "184000",
+    "stampFeeRenewal": "381.6",
+    "eFSAFeeRenewal": "190.8",
+    "renewalPremium": "77122.08",
+    "poOccupation": "استاذ جامعى",
+    "liOccupation": "مديرعام بجهازالمركزي للمحاسبات",
+    "poGender": "انثي",
+    "liGender": "ذكر",
+    "liSmokingStatus": "مدخن",
+    "relationship": "شريك عمل",
+    "frequency": "قسط وحيد",
+    "productName": "وثيقة مصر - إستثمار",
+    "billingCurrency": "جنيه مصرى",
+    "biRiders": []
+  },
+  "account": {
+    "addresses": [],
+    "agentStatus": "ACTIVE",
+    "approverIds": [],
+    "auditorIdRef": null,
+    "dateOfBirth": "1959-07-04",
+    "defaultLanguage": "en",
+    "email": "stockoptionplans@utc.com",
+    "firstName": null,
+    "fullName": "AG0002 Frederic Chapa",
+    "gender": "M",
+    "id": null,
+    "idNumber": "93004075991444",
+    "idType": null,
+    "isActive": "true",
+    "isAdminRole": null,
+    "lastName": null,
+    "loginAttempts": "-1",
+    "loginDuration": null,
+    "loginStatus": null,
+    "managerEmail": null,
+    "managerID": null,
+    "maritalStatus": null,
+    "mobility": {
+      "isAllowIPOSApp": "Y",
+      "loginTimeout": "8",
+      "loginTimeoutFrequency": "D",
+      "mobiId": "50a2267e-3343-4ad0-b778-a106b78c283a"
+    },
+    "nationality": "UAE",
+    "occupation": null,
+    "phoneNumber": "8607287000",
+    "phoneNumbers": [
+      "8607287000"
+    ],
+    "profile": {
+      "id": null,
+      "profileId": "5f333c8d-6b43-4475-9577-81a090a00bab",
+      "insurerProfiles": [
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "mnguyen203@dxc.com",
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "MR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "PR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "SA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "BHO",
+          "branchName": "MLI Head Office Banca",
+          "channel": "BA",
+          "clientID": "BT000001",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "45783475657",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "nchaudhary22@dxc.com",
+          "pasId": "BT000001",
+          "pasType": "LIFE",
+          "regionCode": "",
+          "regionName": "",
+          "role": "BA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "000",
+          "branchName": "MLI Zone 1",
+          "channel": "DS",
+          "clientID": "AG000002",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "755253890",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "stockoptionplans@utc.com",
+          "pasId": "AG000002",
+          "pasType": "LIFE",
+          "regionCode": "ML0002ZO",
+          "regionName": "MLI Zone 1",
+          "role": "AG",
+          "sumInsured": null,
+          "underwritingLevel": null
+        }
+      ],
+      "roles": [
+        "PR",
+        "AG",
+        "BA",
+        "MR",
+        "SA"
+      ]
+    },
+    "userName": "automationtest",
+    "userPassword": null
+  },
+  "caseData": {
+    "id": "a4dede13-da75-4719-99f0-40b05aac470c",
+    "version": 0,
+    "agentInfo": {
+      "agentBranch": "000",
+      "agentBranchName": "MLI Zone 1",
+      "agentEmail": "stockoptionplans@utc.com",
+      "agentId": "AG000002",
+      "agentName": "AG0002 Frederic Chapa",
+      "agentNumber": null,
+      "agentRegionCode": "ML0002ZO",
+      "agentRegionName": "MLI Zone 1"
+    },
+    "application": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": "life",
+      "refDocName": null,
+      "refId": null,
+      "refProductName": "inv",
+      "refType": "application",
+      "refVersion": null,
+      "status": null,
+      "beneficiaryDetailsCorporate": null,
+      "firstPaymentMethod": null,
+      "liFatcaQuestionnaire": {
+        "liFatcaQuestions": [
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          }
+        ]
+      },
+      "poFatcaQuestionnaire": {
+        "poFatcaQuestions": [
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          }
+        ]
+      },
+      "renewalPaymentMethod": null,
+      "laisTheSameWithPO": null
+    },
+    "attachments": [
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": null,
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": null,
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D001_IDF",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D001_IDB",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D002_SI",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D003_AP",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Quotation_.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "BI",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Application_.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "APPLICATION",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Agent Declaration_AG0002 Frederic Chapa.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "AD",
+        "uploadedBy": null
+      }
+    ],
+    "branch": "MLI Zone 1",
+    "draftNumber": "00000004",
+    "effectiveDateQuotation": null,
+    "fnaInside": {
+      "declaration": {
+        "client": {
+          "objectQ1": {
+            "declarationQuestion1s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ2": {
+            "declarationQuestion2s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ3": {
+            "declarationQuestion3s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              },
+              {
+                "key": "Q11",
+                "value": "Y"
+              }
+            ]
+          }
+        },
+        "joint": {
+          "objectQ1": {
+            "declarationQuestion1s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ2": {
+            "declarationQuestion2s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ3": {
+            "declarationQuestion3s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              },
+              {
+                "key": "Q11",
+                "value": "Y"
+              }
+            ]
+          }
+        }
+      },
+      "recommendation": {
+        "benefitPlan": null,
+        "limitationPlan": null,
+        "productName": null,
+        "reasonPlan": null
+      },
+      "refIdModel": {
+        "documentType": null,
+        "refBusinessStatus": null,
+        "refBusinessType": null,
+        "refDocName": null,
+        "refId": null,
+        "refProductName": null,
+        "refType": null,
+        "refVersion": null,
+        "status": null
+      },
+      "summary": {
+        "clientName": null,
+        "clientRiskProfile": null,
+        "jointName": null,
+        "jointRiskProfile": null
+      }
+    },
+    "frozenChoice": null,
+    "isCompletedAttachment": null,
+    "isESignatureDocuments": null,
+    "isLifeInsuredDifferent": "N",
+    "isStp": null,
+    "lifeInsured": "",
+    "managerreview": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null,
+      "accountManagerId": null,
+      "managerEmail": null,
+      "managerId": null,
+      "managerName": null
+    },
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "DR",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-06T03:10:04+0000",
+      "docId": "a4dede13-da75-4719-99f0-40b05aac470c",
+      "docName": "MCINV30580384",
+      "docType": "case",
+      "documentStatus": "INVALID",
+      "entityNumber": null,
+      "entityType": null,
+      "language": null,
+      "modifyDate": "2020-07-06T03:29:08+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "MC12330580384",
+      "productName": "inv",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "opportunityID": null,
+    "packageFeedback": {
+      "clientNumberBene": [
+        ""
+      ],
+      "clientNumberLi": null,
+      "clientNumberMailing": null,
+      "clientNumberPo": null,
+      "error": null,
+      "policyNumber": null,
+      "policyStatus": null,
+      "receiptNumbers": [
+        {
+          "paymentRefNumber": null,
+          "receiptNumber": null
+        }
+      ]
+    },
+    "payment": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null
+    },
+    "policyOwner": "Marry Cole",
+    "prospects": [
+      {
+        "documentType": null,
+        "refBusinessStatus": "DR",
+        "refBusinessType": null,
+        "refDocName": "CMINV58737212",
+        "refId": "89bb2738-34ce-42b7-9e2f-7c3a6325a5bf",
+        "refProductName": null,
+        "refType": "contact",
+        "refVersion": "74132194",
+        "status": "VALID",
+        "birthDate": "1988-10-10",
+        "idNumber": "28810102222221",
+        "prospectType": "PROPOSER",
+        "prospectsName": "Marry Cole"
+      }
+    ],
+    "quotationIndex": 0,
+    "quotations": [
+      {
+        "documentType": null,
+        "refBusinessStatus": "DR",
+        "refBusinessType": "life",
+        "refDocName": "BIINV16006492",
+        "refId": "71c04dd8-cff6-4905-a18e-96cd3ffab664",
+        "refProductName": "inv",
+        "refType": "quotation",
+        "refVersion": null,
+        "status": "VALID",
+        "annuityAmount": 0,
+        "annuityOption": null,
+        "bankBranch": null,
+        "bankBranchCode": null,
+        "currency": "EGP",
+        "isCaseExpired": "false",
+        "lifeAssured": [
+          "Tom Banner"
+        ],
+        "lumsumAmount": 0,
+        "payableAmount": 77325.08,
+        "policyOwner": "Marry Cole",
+        "sumAssured": 100000,
+        "totalPayableAmount": 0
+      }
+    ],
+    "submittedDate": null,
+    "underwriting": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null,
+      "countFindingCode": 0
+    },
+    "docName": "MCINV30580384"
+  },
+  "licenseFlag": "true",
+  "managerCode": "GL000002",
+  "managerEmail": "stockoptionplans@utc.com",
+  "managerName": "AG0002 Frederic Chapa",
+  "managerMobile": "8607287000",
+  "managerLicense": "755253890",
+  "currentRole": "AG"
+}

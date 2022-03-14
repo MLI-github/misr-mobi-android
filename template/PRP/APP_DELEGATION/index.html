@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="../../common/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../../common/css/pdf_delegation.css" rel="stylesheet">
+    <link href="../../common/css/custom.css" rel="stylesheet" type="text/css">
+    <script src="../../common/lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="../../common/lib/canvas/canvasjs.min.js" type="text/javascript"></script>
+    <script src="../../common/js/pdf_delegation.js" type="text/javascript"></script>
+    <script src="../../common/lib/angular/angular.js" type="text/javascript"></script>
+    <script src="../../common/lib/angular-translate/dist/angular-translate.js" type="text/javascript"></script>
+    <script src="../../common/lib/angular/angular-route.js" type="text/javascript"></script>
+    <script src="../../common/lib/filters/filters.js" type="text/javascript"></script>
+    <script src="../../common/lib/moment/moment.js" type="text/javascript"></script>
+    <script src="../../common/lib/loader-static-files/angular-translate-loader-static-files.js" type="text/javascript"></script>
+    <script src="../../common/lib/jquery/jquery-1.12.4.min.js"></script>
+</head>
+
+<body ng-app="mainApp" ng-controller="Ctrl" class="body-old">
+    <table >
+        <thead class="report-header">
+            <tr class="space-line">
+                <td style="text-align: right;padding-top: 2mm;">
+                    <div class="title-header">تفويض</div>
+                    <div class="title-header">Delegation</div>
+                    <div class="col-xs-12 col-sm-12 row">
+                        <div class="col-xs-6 col-sm-6 remove-padding">
+                            <div id="branch" class="span-header" style="width: 50%; text-align: right; padding-right: 30%;">
+                                <span>فرع</span><br>
+                                <span>Branch</span>
+                            </div>
+                            <div id="branch-info" class="col-xs-6 col-sm-6 remove-padding">
+                                <span ng-if="data.delegationInfo.branch != null">{{data.delegationInfo.branch}}</span>
+                                <span style="padding-top: 12px;" class="span-header" ng-if="data.delegationInfo.branch == null">N.A</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 remove-padding">
+                            <div id="bankManager" class="span-header">
+                                <span>السيد / مدير البنك</span><br>
+                                <span>Mr / Bank's manager</span>
+                            </div>
+                            <div id="bankManager-info" class="col-xs-6 col-sm-6 remove-padding">
+                                <span>{{data.delegationInfo.bankManager}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody class="report-container">
+            <tr>
+                <td>
+                    <!--Start Orther Bank-->
+                    <div dir="rtl" ng-if="data.paymentDetails.bankNameBranchCity != 602">
+                        <table class="delegation-form">
+                            <tbody>
+                                <tr class="report-container" dir="rtl">
+                                    <td colspan="4" style="width:100%;padding-bottom:0px;">
+                                        <div>
+                                            <span>تحية طيبة وبعد</span><br />
+                                            <span>Greetings</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span class="span-padding">بموجب هذا التفويض يكون لبنك</span>
+                                        <span ng-if="data.delegationInfo.bankName != null" class="span-padding">{{data.delegationInfo.bankName}}</span>
+                                        <span ng-if="data.delegationInfo.bankName == null" class="span-padding">N.A</span>
+                                        <span>الحق في خصم ما يستحق لشركة مصر لتأمينات الحياة من قيم الأقساط الدورية و
+                                            ذلك خصماً من
+                                            حسابي الجاري /
+                                            التوفير الدائن بالجنيه</span>
+                                        <span class="span-padding">المصري / الدولار الأمريكي لديكم رقم</span>
+                                        <span ng-if="data.delegationInfo.accountNo != null" class="span-padding">{{data.delegationInfo.accountNo}}</span>
+                                        <span ng-if="data.delegationInfo.accountNo == null" class="span-padding">N.A</span>
+                                        <span class="span-padding"> وذلك لسداد وثيقة</span>
+                                        <span ng-if="data.delegationInfo.policyName != null" class="span-padding">{{data.delegationInfo.policyName}}</span>
+                                        <span ng-if="data.delegationInfo.policyName == null" class="span-padding">N.A</span>
+                                        <span> وقيد القيمة لحساب الشركة المذكورة</span>.<br>
+                                        <span>واعفي البنك من أي مسئولية قد تنشأ عن الخصم سواء من حيث القيمة أو الاستحقاق
+                                            أو أية
+                                            ملاحظات فيما يتعلق
+                                            بموضوع تلك الوثيقة </span>.<br />
+                                        <span>ويكون الخصم بصفة دورية ولحين إخطار البنك من جانبي بإيقاف الخصم وذلك قبل
+                                            حلول ميعاد
+                                            الاستحقاق بشهر على
+                                            الاقل وبدون أدنى مسئولية أو التزام على البنك فيم تقرر الشركة اتخاذه
+                                            من</span>
+                                        <span>إجراءات حال عدم كفاية رصيد حساب خلال فترة السداد المحددة بواسطة
+                                            الشركة</span>.<br />
+                                        <span>هذا وللبنك الحق في خصم قيمة ما يستحق له من عمولات أو مصروفات نتيجة قيامه
+                                            بتحويل
+                                            مستحقات الشركة من
+                                            حسابي الجاري / التوفير الدائن لديه</span>.<br />
+                                        <span>وأتعهد بعدم الاعتراض على أية قيود يجريها البنك بحسابي المذكور طرفكم بقيمة
+                                            سداد هذه
+                                            المستحقات وأسقط
+                                            الحق في المنازعة فيها بأي وجه من وجوه المنازعة</span>.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span>و تفضلوا بقبول فائق الاحترام</span><br />
+                                        <span>Yours sincerely</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="5%">
+                                        <span>التاريخ :</span><br>
+                                        <span>Date</span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <div class="div-stamp"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>الاسم</span>&nbsp;:<br>
+                                        <span>Name</span>
+                                    </td>
+                                    <td>
+                                        <span>{{data.delegationInfo.proposerName}}</span>
+                                    </td>
+                                    <td class="center">
+                                        <span>التصديق على التوقيع ختم مطابق</span><br />
+                                        <span>Authentication of the signature stamp identical</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>التوقيع</span>&nbsp;:<br>
+                                        <span>Signature</span>
+                                    </td>
+                                    <td colspan="2">......................</td>
+                                    <td class="center">
+                                        <span>ختم مطابق</span><br />
+                                        <span>stamp identica</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span>إقرار</span><br>
+                                        <span>Declaration</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="delegation-form">
+                            <tbody>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="in-right">اقر انا<span>&nbsp;/</span></span>
+                                        <span
+                                            class="in-right">{{data.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="in-right"> بطاقة رقم قومي</span>
+                                        <span class="in-right">{{data.delegationInfo.idNumber}}</span>
+                                    </td>
+                                    <td><span>صادرة بتاريخ</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="in-right">المقيم في</span>
+                                        <span class="in-right"
+                                            dir="ltr">{{data.delegationInfo.proposerPrimaryAddress}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="span-padding">باننى قد تعاقدت مع شركة مصر لتأمينات الحياة ، وأنني
+                                            على دراية
+                                            كاملة بطبيعة وثيقة
+                                            التامين وشروطها واحكامها . وان بنك </span>
+                                        <span ng-if="data.delegationInfo.bankName != null" class="span-padding">{{data.delegationInfo.bankName}}</span>
+                                        <span ng-if="data.delegationInfo.bankName == null" class="span-padding">N.A</span>
+                                        <span> ما هو الا قناة للتسويق فقط وليس له علاقة أو</span>
+                                        <span>طرف في وثيقة التأمين كما أنه ليس مسئولاً عن شروط وأحكام وثيقة التأمين ولا
+                                            سداد أية
+                                            تعويضات قد تنتج
+                                            عنها وأن الشركة قامت بإصدارها لصالحي منفردة</span>
+                                        <span>.</span><br>
+                                        <span>وهذا اقرار مني بذلك</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="in-right">
+                                            <span>الاسم</span>&nbsp;:<br>
+                                            <span>Name</span>
+                                        </span>
+                                        <span class="in-right">{{data.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="in-right">
+                                            <span>التوقيع</span>&nbsp;:<br>
+                                            <span>Signature</span>
+                                        </span>
+                                        <span>.......................</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="in-right">
+                                            <span>التاريخ</span>&nbsp;:<br>
+                                            <span>Date</span>
+                                        </span>
+                                        <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--End Other Bank-->
+
+                    <!--For EG Bank-->
+                    <div dir="rtl" ng-if="data.paymentDetails.bankNameBranchCity == 602" style="border-top: 1px solid black;">
+                        <table class="account" style="border-top: unset;">
+                            <tbody>
+                                <tr class="report-container" dir="rtl">
+                                    <td colspan="2" style="width:100%;padding-bottom:0px;">
+                                        <div>
+                                            <span>تحية طيبة وبعد</span><br />
+                                            <span>Greetings</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%">
+                                        <span class="in-right">
+                                            <span>افوض انا /</span> <br>
+                                            <span>I delegate</span>
+                                        </span>
+                                        <span>{{data.delegationInfo.proposerName}}</span>
+                                    </td>
+                                    <td>
+                                        <span class="in-right">
+                                            <span>بطاقة رقم قومى</span> <br>
+                                            <span>ID</span>
+                                        </span>
+                                        <span>{{data.delegationInfo.idNumber}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="in-right">
+                                            <span>البنك :</span><br>
+                                            <span>Bank</span>
+                                        </span>
+                                        <span>{{data.delegationInfo.bankName}}</span>
+                                    </td>
+                                    <td width="50%">
+                                        <span>في خصم ما يستحق لشركة لتامينات الحياة من قيمة الاقساط الدورية وذلك خصما من
+                                            حسابى
+                                            .</span><br>
+                                        <span>for deduction renewable premiums payable to Misr life insurance company from my account</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="line-padding-bottom" style="padding-top:10px;">
+                                        <span class="in-right">
+                                            <span>رقم الحساب </span><br>
+                                            <span>.Account No</span>
+                                        </span>
+                                        <span style="margin-right: 10%">
+                                            <span class="number-account">{{data.number13}}</span>
+                                            <span class="number-account">{{data.number12}}</span>
+                                            <span class="number-account">{{data.number11}}</span>
+                                            <span class="number-account" style="margin-right: 90px;">{{data.number10}}</span>
+                                            <span class="number-account">{{data.number9}}</span>
+                                            <span class="number-account">{{data.number8}}</span>
+                                            <span class="number-account">{{data.number7}}</span>
+                                            <span class="number-account">{{data.number6}}</span>
+                                            <span class="number-account">{{data.number5}}</span>
+                                            <span class="number-account" style="margin-right: 5%;">{{data.number4}}</span>
+                                            <span class="number-account">{{data.number3}}</span>
+                                            <span class="number-account">{{data.number2}}</span>
+                                            <span class="number-account">{{data.number1}}</span>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="delegation-form border-top">
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="span-padding padding-top-10">
+                                        <span> وذلك لسداد وثيقة <span ng-if="data.delegationInfo.policyName != null">{{data.delegationInfo.policyName}}</span>
+                                            <span
+                                                ng-if="data.delegationInfo.policyName === null">N.A</span> وقيد القيمة
+                                            لحساب
+                                            الشركة المذكورة
+                                            وأعفى البنك من أي مسئولية قد تنشا عن الخصم سواء من حيث القيمة او الاستحقاق
+                                            او اية
+                                            ملاحظات فيما يتعلق
+                                            بموضوع تلك الوثيقة.</span> <br />
+                                        <span>ويكون الخصم بصفة دورية ولحين اخطار البنك من جانبي بايقاف الخصم وذلك قبل
+                                            حلول ميعاد
+                                            الاستحقاق بشهر على
+                                            الاقل وبدون أدنى مسئوليه او التزام
+                                            على البنك فيما تقرر الشركة اتخاذه مناجراءات حال عدم كفاية رصيد حسابي خلال
+                                            فترة
+                                            السداد المحددة بواسطة
+                                            الشركة.</span> <br />
+                                        <span>هذا وللبنك الحق فى خصم قيمة ما يستحق له من عمولات او مصرفات نتيجة قيامه
+                                            بتحويل
+                                            مستحقات الشركة من
+                                            حسابي الدائن لديه.</span> <br />
+                                        <span>واتعهد بعدم الاعتراض على اية قيود يجريها البنك بحسابى المذكور طرفكم بقيمة
+                                            سداد هذه
+                                            المستحقات وأسقط
+                                            الحق في المنازعة فيها باى وجه من وجوه
+                                            المنازعة.
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" dir="ltr" class="border-bottom span-padding"
+                                        style="padding-bottom: 5px">
+                                        <span>For payment
+                                            <span ng-if="data.delegationInfo.policyName != null">{{data.delegationInfo.policyName}}</span>
+                                            <span ng-if="data.delegationInfo.policyName === null">N.A</span>
+                                            policy and add it to the account of the mention company and I declare that
+                                            the bank not have any responsibility may be arising from deduction regarding
+                                            the amount of the premium and the the premuim due or any other observation
+                                            regarding the policy.
+                                        </span> <br />
+                                        <span>Also the deduction continue frequency until I notify the bank to stop the
+                                            deduction
+                                            at least be fore month from the date of The maturity of premium without any
+                                            responsibility from the
+                                            bank when the company decides to take any action in the case of the balance
+                                            of my account is not
+                                            enough to pay the premium during the payment period.</span>
+                                        <br />
+                                        <span>Also the bank has the right to deduction any commission or any expenses
+                                            arising from
+                                            transferring Company dues from my account to the account of company. <br />
+                                            Pledge not to object to any restrictions made by the bank on my account and
+                                            i do not have the right for any disputing
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <span>و تفضلوا بقبول فائق الاحترام</span><br />
+                                        <span>Yours sincerely</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="5%">
+                                        <span>التاريخ :</span><br>
+                                        <span>Date</span>
+                                    </td>
+                                    <td colspan="2">
+                                        <span>{{data.currentDate | date:'dd/MM/yyyy'}}</span>
+                                    </td>
+                                    <td rowspan="2">
+                                        <div class="div-stamp"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>الاسم</span>&nbsp;:<br>
+                                        <span>Name</span>
+                                    </td>
+                                    <td>
+                                        <span>{{data.delegationInfo.proposerName}}</span>
+                                    </td>
+                                    <td class="center">
+                                        <span>التصديق على التوقيع ختم مطابق</span><br />
+                                        <span>Authentication of the signature stamp identical</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>التوقيع</span>&nbsp;:<br>
+                                        <span>Signature</span>
+                                    </td>
+                                    <td colspan="2">......................</td>
+                                    <td class="center">
+                                        <span>ختم مطابق</span><br />
+                                        <span>stamp identica</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="border-bottom">
+                                        <span>إقرار</span><br>
+                                        <span>Declaration</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="span-right">
+                                        <span>اقر انا / --------- باننى على دراية كاملة بطبيعة وثيقة التامين وشروطها
+                                            واحكامها . وان المنتج التامينى الذى قمت بالتقدم بطلب تامين رقم /------ يخص
+                                            شركة مصر لتامينات الحياة دون ادنى مسئوليه من
+                                            البنك وذلك طبقا لضوابط البنك المركزى والهيئة العامة للرقابه المالية المتعلة
+                                            بممارسة اعمال التامين المصرفى.</span>
+                                        <br>
+                                        <span>وهذا اقرار مني بذلك</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="span-padding" dir="ltr">
+                                        <span>I declare / ------- that I am fully aware of the nature of the insurance
+                                            policy and its terms and conditions. This product that you have submitted
+                                            application number / ------ belongs to Misr Life Insurance Company without
+                                            any responsibility of the bank according to the controls of the Central
+                                            Bank and the General Authority for Financial Control, which is practicing
+                                            banking insurance.</span><br />
+                                        <span>This is my declaration</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table dir="rtl" class="main-ele">
+                            <tbody>
+                                <tr class="border-top span-padding">
+                                    <td style="width: 6%;padding-right: 5px;">
+                                        <span>الاسم</span>&nbsp;:<br>
+                                        <span>Name</span>
+                                    </td>
+                                    <td colspan="3">{{data.policyOwnerDetails.proporserInformation.person.basic.name.full}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 5px;">
+                                        <span>التوقيع</span>&nbsp;:<br>
+                                        <span>Signature</span>
+                                    </td>
+                                    <td colspan="3">.......................</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right: 5px;">
+                                        <span>التاريخ</span>&nbsp;:<br>
+                                        <span>Date</span>
+                                    </td>
+                                    <td colspan="3">{{data.currentDate | date:'dd/MM/yyyy'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--End EG Bank-->
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="center footer-old" style="padding-bottom:10px;">
+                    <footer style="margin-top:0mm !important;">
+                        <div dir="rtl">
+                            <span>15</span>
+                            <span style="padding-left: 3em">شارع قصر النيل – وسط البلد - القاهرة</span>
+                            <span style="padding-right: 3em">الخط الساخن: 19446</span>
+                        </div>
+                        <div>www.misrlife.com</div>
+                    </footer>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

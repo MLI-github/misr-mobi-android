@@ -1,0 +1,190 @@
+.body-new {
+    font-family: 'Segoe UI', sans-serif !important;
+    padding-left: 12.7mm !important;
+    padding-right: 12.7mm !important;
+    width: 210mm !important;
+}
+.page,
+.last-page {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+@page {
+    size: A4;
+    margin: 0;
+}
+
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        -print-color-adjust: exact;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    ul,
+    img,
+    .avoid-break-inside {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+
+    .page {
+        overflow: auto;
+        page-break-after: always;
+    }
+
+    .page:last-child {
+        page-break-after: auto;
+    }
+
+    .header {
+        width: 100%;
+        top: 0;
+    }
+
+    .foot {
+        bottom: 0;
+        position: fixed;
+    }
+
+    footer {
+        margin-top:29mm !important;
+    }
+}
+
+table {
+    width: 100%;
+    font-size: 10pt;
+}
+
+.table-header-black {
+    font-weight: 600;
+    font-size: 10pt;
+    background-color:  #58585b !important;
+}
+
+.table-header-black td {
+    padding: 5px 5px;
+}
+
+.header-space:after {
+    content: "";
+    display: block;
+    height: 15px;
+    width: 100%;
+    background: white;
+}
+
+.white-text-color {
+    color: rgba(255, 255, 255) !important;
+}
+
+.white-text-color td {
+     color: rgba(255, 255, 255) !important;
+ }
+.white-text-color td span{
+    color: rgba(255, 255, 255) !important;
+}
+.white-text-color td p {
+    color: rgba(255, 255, 255) !important;
+}
+
+.table-header-green {
+    font-weight: 600;
+    font-size: 10pt;
+    background-color: #0fb273 !important;
+    border-left: #0fb273 !important;
+    border-right: #0fb273 !important;
+}
+
+.table-header-green td {
+    padding: 5px 5px;
+}
+
+
+.table-content {
+    font-weight: 400;
+    font-size: 10pt;
+    background-color: white;
+    font-color: #58585b;
+}
+
+.table-content td {
+    padding: 3px 5px;
+    border: 2px solid black;
+
+}
+
+.table-content ol {
+    padding-right: 25px;
+    margin: 0;
+}
+
+.table-content ol li{
+    padding-right: 10px;
+}
+
+.none-border-top{
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.font-size-new {
+    font-size: 10pt;
+}
+.title {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.email-break {
+    width: 200px;
+    word-break: break-all;
+}
+.padding-text {
+    padding: 0px 3px;
+    line-height: 180%;
+}
+
+.margin-left-30 {
+    margin-left: 30px;
+}
+
+.text-in-right{
+    text-align: right;
+}
+.head-new {
+   text-align: right;
+   height: 38mm !important;
+   margin-bottom: 5mm;
+}
+
+.header-img {
+    margin-top: 12.7mm;
+    height: 25.3mm;
+    width: auto;
+}
+
+footer {
+    text-align: center;
+    padding-top: 1em;
+}
+
+.foot {
+    text-align: left;
+    height: 29mm !important;
+}
+
+.foot-img {
+    margin-bottom: 12.7mm;
+    height: 16mm;
+    width: auto;
+}

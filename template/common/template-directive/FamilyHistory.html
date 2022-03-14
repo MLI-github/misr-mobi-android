@@ -1,0 +1,49 @@
+<!-- Start Section 6 Family History -->
+<table class="table-border">
+    <tbody style="text-align: center;">
+        <tr class="bg-title">
+            <td colspan="6" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">6.Family History</span>
+                <span dir="rtl" style="float:right">6.التاريخ الصحى</span>
+            </td>
+        </tr>
+        <tr class="bg-title">
+            <td colspan="3"><span>الوفيات</span><br><span>Deaths</span></td>
+            <td colspan="2"><span>الاحياء</span><br><span>Survival</span></td>
+            <td rowspan="1" style="border-bottom-color: #0f9d58;"><span> الاقارب</span><br><span>Relatives</span></td>
+        </tr>
+        <tr class="bg-title">
+            <td><span>سبب الوفاة</span><br><span>Cause of death</span></td>
+            <td><span>تاريخ الوفاة</span><br><span>Date of Death</span></td>
+            <td><span>السن عند الوفاة</span><br><span> Age at death</span></td>
+            <td><span>الحالة الصحية الحالية</span><br><span>Current health</span></td>
+            <td><span>السن</span><br><span>Age</span></td>
+            <td class="non-border-top col-invisible"></td>
+        </tr>
+        <tr ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+            ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.insuredFamilyInformationItem">
+            <td>{{item.deathCauseOfDeath}}</td>
+            <td>{{item.deathDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.deathAge}}</td>
+            <td>{{item.aliveHealthCondition}}</td>
+            <td>{{item.aliveAge}}</td>
+            <td>
+                {{'ipos.familyHistory.ar.' + item.familyQKey | translate}} <br>
+                {{'ipos.familyHistory.' + item.familyQKey | translate}}
+            </td>
+        </tr>
+        <tr ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+            ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.insuredFamilyInformationItem">
+            <td>{{item.deathCauseOfDeath}}</td>
+            <td>{{item.deathDate | date:'dd/MM/yyyy'}}</td>
+            <td>{{item.deathAge}}</td>
+            <td>{{item.aliveHealthCondition}}</td>
+            <td>{{item.aliveAge}}</td>
+            <td>
+                {{'ipos.familyHistory.ar.' + item.familyQKey | translate}} <br>
+                {{'ipos.familyHistory.' + item.familyQKey | translate}}
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 6 Family History -->

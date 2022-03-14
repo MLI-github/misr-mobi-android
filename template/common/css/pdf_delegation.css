@@ -1,0 +1,289 @@
+@media print{
+    * {
+        -webkit-print-color-adjust: exact;
+        -print-color-adjust: exact;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    ul,
+    img,
+    .avoid-break-inside {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+
+    .page {
+        overflow: auto;
+        page-break-after: always;
+    }
+
+    .page:last-child {
+        page-break-after: auto;
+    }
+
+    header {
+        width: 100%;
+        top: 0;
+    }
+
+    .foot {
+        bottom: 0;
+        position: fixed;
+    }
+
+    footer {
+        margin-top:29mm !important;
+    }
+}
+.page {
+     position: relative;
+     width: 100%;
+ }
+ @page {
+     size: A4;
+     margin: 0;
+ }
+
+body {
+    font-size: 10pt;
+}
+
+table {
+    width: 100%;
+    font-size: 10pt;
+}
+
+.body-new {
+   font-family: 'Segoe UI', sans-serif !important;
+      padding-left: 12.7mm !important;
+      padding-right: 12.7mm !important;
+      width: 210mm !important;
+}
+
+.head-new {
+    text-align: right;
+    height: 38mm !important;
+    margin-bottom: 5mm;
+}
+.header-img {
+    margin-top: 12.7mm;
+    height: 25.3mm;
+    width: auto;
+}
+
+.foot {
+    text-align: left;
+    height: 29mm !important;
+}
+
+.foot-img {
+    margin-bottom: 12.7mm;
+    height: 16.3mm;
+    width: auto;
+}
+
+.body-old {
+    padding-left: 3mm !important;
+    padding-right: 3mm !important;
+    width: 210mm !important;
+}
+
+.body-old table {
+    border-collapse: separate !important;
+}
+
+.footer-old {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.space-line {
+    line-height: 1.5em;
+}
+
+thead.report-header {
+    display: table-header-group;
+}
+
+tfoot.report-footer {
+    display: table-footer-group;
+}
+
+.delegation-form,
+.account {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+
+table.delegation-form td {
+    padding-right: 5px;
+}
+
+table.account td {
+    padding: 3px;
+}
+
+.remove-padding {
+    padding-left: unset;
+    padding-right: unset;
+}
+
+.title-header {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.span-header {
+    float: right;
+    padding-left: 2em;
+}
+
+.border-greeting {
+    border-top: 1px solid #000;
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+}
+
+.main-ele {
+    border-right: 1px solid #000000;
+    border-left: 1px solid #000000;
+}
+
+.in-right {
+    float: right;
+    padding-left: 0.5em;
+}
+.float-right {
+    float: right;
+    margin-left: 0.5em;
+}
+
+.span-padding {
+    padding-left: 5px;
+}
+
+.none-padding-right {
+    padding-right: unset;
+}
+
+.div-signature {
+    min-height: 30px;
+    width: 100%;
+}
+
+.center {
+    text-align: center;
+}
+
+.border-top {
+    border-top: 1px solid #000000;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #000000;
+}
+.number-account {
+    padding: 0.5em;
+    border: 3px solid #000000;
+    font-weight: bold;
+}
+
+.div-stamp {
+    margin: 0 auto;
+    width: 110px;
+    height: 80px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.padding-top-10 {
+    padding-top: 5px;
+}
+
+.dialog-padding-right {
+    padding-right: 1em;
+}
+
+.line-padding-bottom {
+    padding-bottom: 1.5em;
+}
+
+/* For Pure with Interest */
+.main-section-header {
+    text-align: center;
+    font-size: 12pt;
+    font-weight: bold;
+    background-color: #0fb273 !important;
+    color:#FFF !important;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    display: flex;
+}
+
+.sub-section-header {
+    font-size: 10pt;
+    background-color: #0fb273 !important;
+    color:black !important;
+    align-items: center;
+    text-align: right !important;
+    height: 35px;
+    display: flex;
+    padding-right:5px;
+}
+
+.padding-top-15{
+    padding-top:15px;
+}
+
+.padding-right-5{
+    padding-right:5px;
+}
+
+.padding-right-10{
+    padding-right:10px;
+}
+
+.padding-right-20{
+    padding-right:20px;
+}
+
+.padding-bottom-20{
+    padding-bottom:20px;
+}
+
+.padding-bottom-50{
+    padding-bottom:50px !important;
+}
+
+.padding-bottom-10{
+    padding-bottom:10px;
+}
+
+.padding-5{
+    padding:5px;
+}
+
+.margin-top-15{
+    margin-top:150px;
+}
+
+#report-content{
+    border:2px solid #0fb273;
+    margin-bottom:2px;
+}
+
+table.report-container {
+    page-break-after: always;
+}

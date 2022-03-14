@@ -1,0 +1,87 @@
+<!-- For Banca role-->
+<table ng-if="data.isActiveRole == 'BA'" class="center table-none-border">
+    <tbody>
+        <tr class="bg-title">
+            <td  width="50%" colspan="2" style="border-right: 1px solid black;">
+                <span>المتعاقد</span><br><span>Policy holder</span>
+            </td>
+            <td  width="50%" colspan="3">
+                <span>المؤمن عليه</span><br><span>Insured</span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="border-right-1" style="border-bottom: 1px solid white;">
+                <span>الاسم</span><br><span>Policy holder name</span>
+                <p class="margin-top-15">
+                    {{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</p>
+            </td>
+            <td colspan="3" style="border-bottom: 1px solid white;">
+                <span>الاسم</span><br>
+                <span>Insured name</span>
+                <p class="margin-top-15" ng-if="data.application.laisTheSameWithPO==1">
+                    {{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}
+                </p>
+                <p class="margin-top-15" ng-if="data.application.laisTheSameWithPO==0">
+                    {{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</p>
+            </td>
+        </tr>
+        <tr class="border-right-1 signature-BA">
+            <td>
+                <div class="div-stamp"></div>
+                <span>ختم مطابق</span><br>
+                <span>stamp identica</span>
+            </td>
+            <td>
+                <span>التوقيع</span><br>
+                <span>Signature</span>
+                <p class="margin-top-15" style="margin-bottom: 0px">.....................................................</p>
+            </td>
+            <td class="border-left-1">
+                <div class="div-stamp"></div>
+                <span>ختم مطابق</span><br>
+                <span>stamp identica</span>
+            </td>
+            <td colspan="2">
+                <span>التوقيع</span><br>
+                <span>Signature</span>
+                <p class="margin-top-15" style="margin-bottom: 0px">.....................................................</p>
+            </td>
+        </tr>
+        <tr class="border-top-1 signature-BA" style="border-bottom: 1px solid white;">
+            <td>
+                <span>........................................</span>
+            </td>
+            <td class="text-align-right">
+                <span>التوقيع</span><br>
+                <span>Signature</span>
+            </td>
+            <td class="border-left-1">
+                <span>........................................</span>
+            </td>
+            <td width="10%">
+                <span>HR ID</span><br>
+            </td>
+            <td width="16%" class="text-align-right">
+                <span>اسم مرشح العميل</span>
+            </td>
+        </tr>
+        <tr class="border-top-1 signature-BA">
+            <td>
+                <span>........................................</span>
+            </td>
+            <td class="text-align-right">
+                <span>التوقيع</span><br>
+                <span>Signature</span>
+            </td>
+            <td class="border-left-1">
+                <span>........................................</span>
+            </td>
+            <td width="10%">
+                <span>EFSA R.N</span><br>
+            </td>
+            <td width="16%" class="text-align-right">
+                <span>اسم خبير التأمين</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

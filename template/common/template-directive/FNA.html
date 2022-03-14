@@ -1,0 +1,252 @@
+<div>
+    <table style="border: none !important;" class="format-table-all-new none-border arabic-style">
+        <tr>
+            <td></td>
+            <td></td>
+            <td dir="rtl" style="width:60%; font-weight:bold; font-size:12pt;">ملخص تحليل الإحتياجات المالية (التأمينية)</td>
+        </tr>
+        <tr>
+            <td style="text-align: right" width="20%">
+                <span>{{data.fna.docName}}</span><span>&nbsp;:&nbsp;</span>
+            </td>
+            <td dir="rtl" style="text-align: right" width="20%">تحليل مالي (تأميني)</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td style="text-align: right">
+                <span>{{getCurrentDate() | date:'dd/MM/yyyy'}}</span><span>&nbsp;:&nbsp;</span>
+            </td>
+            <td style="text-align: right" width="20%">تحريراً في</td>
+            <td></td>
+        </tr>
+    </table>
+    <hr class="hr-new">
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="4" style="text-align: right; width:50%;">البيانات الشخصية للمتعاقد</td>
+        </tr>
+        <tr class="table-content non-top-border">
+            <td style="width:35%;direction:rtl;">
+                <span>{{data.fna.client.refContact.personInformation.person.basic.age}}</span>
+                <span>سنة</span>
+            </td>
+            <td style="width:15%;">السن</td>
+            <td style="width:25%;">{{data.fna.client.refContact.personInformation.person.basic.name.full}}</td>
+            <td style="width:25%;">الإسم</td>
+        </tr>
+        <tr class="table-content">
+            <td>{{data.inputPdf.client.gender.arabic}}</td>
+            <td>النوع</td>
+            <td>{{data.fna.client.refContact.personInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</td>
+            <td>تاريخ الميلاد</td>
+        </tr>
+        <tr class="table-content">
+            <td colspan="2">{{data.fna.client.refContact.personInformation.person.basic.idList[0].value}}</td>
+            <td>
+                <span>جواز السفر</span>
+                <span>
+                    <input type="radio" style="transform: scale(1.4);"
+                           ng-checked="data.fna.client.refContact.personInformation.person.basic.idList[0].code == 'E'"/>
+               </span>
+            </td>
+            <td>
+                <span>بطاقة الرقم القومي</span>
+                <span>
+                    <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.fna.client.refContact.personInformation.person.basic.idList[0].code == 'P'"/>
+               </span>
+            </td>
+        </tr>
+        <tr class="table-content">
+            <td>{{data.inputPdf.client.occupation.arabic}}</td>
+            <td>:المهنة</td>
+            <td>{{data.fna.client.refContact.personInformation.otherInformation.placeOfBirth}}</td>
+            <td>محل الميلاد</td>
+        </tr>
+        <tr class="table-content">
+            <td>{{data.inputPdf.client.numberOfChildren}}</td>
+            <td>:عدد الأولاد</td>
+            <td>{{data.fna.client.refContact.personInformation.person.contacts.mobilePhone}}</td>
+            <td>تليفون المحمول</td>
+        </tr>
+        <tr class="table-content">
+            <td colspan="3">{{data.fna.client.refContact.personInformation.person.contacts.email}}</td>
+            <td>البريد الإليكتروني</td>
+        </tr>
+    </table>
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="10" style="text-align: right;">تحديد الإحتياجات التأمينية</td>
+        </tr>
+        <tr class="table-header-gray table-content">
+            <td width="10%" colspan="1" class="center non-border-top">
+                <span>معدل</span>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <span>لا</span>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <span>نعم</span>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">إذا كانت الإجابة "بنعم"رجاء الإطلاع علي معدل احتياجك</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[0].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[0].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[0].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[0].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">1- هل لديك وثيقة للتقاعد أو المعاش؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[4].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[4].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[4].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[4].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">2- هل لديك مبلغ للطوارئ لتغطية الالتزامات المالية لفترة تتراوح من 3 الى 5 سنوات؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[5].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[5].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[5].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[5].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">3- هل لديك خطة ادخارية لتمويل مشارعيك / أهدافك المالية على المدي القصير أو المتوسط؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[7].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[7].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[7].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[7].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">4- هل لديك وثيقة تأمين طبي؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[8].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[8].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[8].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[8].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">5-هل لديك وثيقة تأمين طبي للأسرة؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[9].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[9].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[9].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[9].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">6- هل تفضل ان تحصل علي وثيقة مشتركة للتامين علي الحياة مع شريك في الحياة او العمل؟</span>
+            </td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[6].value != null" class="table-header-gray-1 white-text-color text-align-center">
+            <td colspan="10" style="text-align: right;">في حالة وجود أطفال</td>
+        </tr>
+        <tr ng-if="data.fna.client.miniNeedIdentification.miniNeedQuests[6].value != null" class="table-content">
+            <td width="10%" colspan="1" style="text-align: center;" class="non-border-top">{{data.fna.client.miniNeedIdentification.miniNeedQuests[6].rateSufficiency}}</td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[6].value == 'N'"/>
+            </td>
+            <td width="10%" colspan="1" class="center non-border-top">
+                <input type="radio" ng-checked="data.fna.client.miniNeedIdentification.miniNeedQuests[6].value == 'Y'"/>
+            </td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">7- هل لديك خطة مالية لتعليم / أو زواج الأولاد؟</span>
+            </td>
+        </tr>
+    </table>
+
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="8" dir="rtl" style="text-align: right;">بيانات الدخل السنوي (جنيه مصري)</td>
+        </tr>
+        <tr class="table-content">
+            <td colspan="1" style="text-align: center; width: 30%;" class="non-border-top">{{data.fna.client.needPrioritization.annualIncome == null ? 0 : data.fna.client.needPrioritization.annualIncome | number: 2}}</td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">أجمالي الدخل السنوي (جنيه مصري)</span>
+            </td>
+        </tr>
+        <tr class="table-content">
+            <td style="text-align: center;" class="non-border-top">{{data.fna.client.needPrioritization.recommendedSaving | number: 2}}</td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">مبلغ الإدخار المقترح (جنيه مصري)</span>
+            </td>
+        </tr>
+    </table>
+
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="8" dir="rtl" style="text-align: right;">ترتيب أولوية الاحتياجات التأمينية (طبقا لاختيار العميل)</td>
+        </tr>
+        <tr ng-repeat="item in data.inputPdf.client.priorities" class="table-content">
+            <td colspan="1" style="text-align: center; width: 25%;" class="non-border-top">{{item.rank}}</td>
+            <td colspan="7" class="non-border-top">
+                <span dir="rtl" style="margin-right: 10px;">{{item.needValue.arabic}}</span>
+            </td>
+        </tr>
+    </table>
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="2" dir="rtl" style="text-align: right;">مبلغ التأمين المقترح (جنيه مصري)</td>
+        </tr>
+        <tr>
+            <td class="non-border-top" style="border: 2px solid; text-align: center; line-height: 3em;">
+                {{data.inputPdf.client.gapInsuranceAmount | number: 2}}
+            </td>
+            <td style="width: 60%;"></td>
+        </tr>
+    </table>
+
+    <table class="format-table-all-new format-table-all-new-inv arabic-style">
+        <tr class="table-header-green white-text-color text-align-center">
+            <td colspan="4" style="text-align: right; width:50%;">بيانات مسوق التأمين</td>
+        </tr>
+        <tr class="table-content non-top-border">
+            <td style="width:35%;" ng-if="data.licenseFlag == 'true'">{{data.account.email}}</td>
+            <td style="width:35%;" ng-if="data.licenseFlag != 'true'">{{data.managerEmail}}</td>
+            <td style="width:15%;">الايميل</td>
+            <td style="width:30%;" ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</td>
+            <td style="width:30%;" ng-if="data.licenseFlag != 'true'">{{data.managerName}}</td>
+            <td style="width:20%;">الاسم</td>
+        </tr>
+        <tr class="table-content">
+            <td ng-if="data.licenseFlag == 'true'">{{data.account.phoneNumber}}</td>
+            <td ng-if="data.licenseFlag != 'true'">{{data.managerMobile}}</td>
+            <td style="width:15%;">الموبايل</td>
+            <td ng-if="data.licenseFlag == 'true'">
+                                        <span ng-repeat="item in data.account.profile.insurerProfiles"
+                                              ng-if="item.role === data.fna.metaData.businessProfile">{{item.licenseNumber != "" ? item.licenseNumber : "N/A"}}</span>
+            </td>
+            <td ng-if="data.licenseFlag != 'true'">{{data.managerLicense != "" ? data.managerLicense : "N/A"}}</td>
+            <td>كود الهيئة</td>
+        </tr>
+    </table>
+    <div>
+        <span style="padding-left: 3rem; padding-top: 3rem; font-weight: bold;">شركة مصر لتأمينات الحياة</span>
+    </div>
+</div>

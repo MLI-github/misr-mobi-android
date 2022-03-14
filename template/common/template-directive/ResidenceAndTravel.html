@@ -1,0 +1,58 @@
+<!-- Start Section 7 Residence and travel -->
+<table class="table-none-border">
+    <tbody dir="rtl">
+        <tr class="bg-title">
+            <td colspan="3" class="title-app-pdf non-border-top td-title-float">
+                <span dir="ltr">7.Residence and travel</span>
+                <span dir="rtl">7.الاقامة والسفر</span>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;" type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                           ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'N'" />
+                    <input style="margin-top: 1em; margin-left: 1rem;float: left;"  type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                       ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'N'" />
+                </span>
+                <span class="no-padding">
+                     <div>لا</div>
+                     <div>NO</div>
+                </span>
+            </td>
+            <td style="text-align:center">
+                <span class="no-padding">
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;" type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship != null" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'Y'" />
+                    <input style="margin-top: 1em; margin-left: 1rem; float: left;" type="radio" ng-if="data.application.lifeAssuredDetails[0].larelationship == null" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'Y'" />
+                </span>
+                <span class="no-padding">
+                    <div>نعم</div>
+                    <div>YES</div>
+                </span>
+            </td>
+            <td width="75%">
+                <span>هل تعيش بالخارج او تنوى السفر للخارج باستثناء قضاء الاجازات او رحلات العمل القصيرة
+                    ( لاقل
+                    من
+                    شهر )؟</span><br>
+                <span>اذا كانت الاجابة بنعم برجاء ذكر اسم الدولة</span><span>&nbsp; :</span>
+                <span ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+                    <span
+                        ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail != null">{{'ipos.travelAbroad.' + data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail | translate}}</span>
+                    <span
+                        ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail == null">.................</span>
+                </span>
+                <span ng-if="data.application.lifeAssuredDetails[0].larelationship == null">
+                    <span
+                        ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail != null">{{'ipos.travelAbroad.' + data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail | translate}}</span>
+                    <span
+                        ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail == null">..................</span>
+                </span>
+                <br>
+                <span dir="ltr" style="text-align: right;">Do you live abroad or want to travel abroad
+                    Except for vacations or business trips (less than a month)?</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!-- End Section 7 Residence and travel -->

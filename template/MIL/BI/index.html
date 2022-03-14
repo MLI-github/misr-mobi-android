@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=print, initial-scale=1.0"/>
+        <script src="../../common/lib/canvas/canvasjs.min.js" type="text/javascript"></script>
+        <!-- Common library for mobile-->
+        <link href="../../common/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
+              type="text/css"/>
+        <script src="../../common/lib/angular/angular.js" type="text/javascript"></script>
+        <script src="../../common/lib/angular-translate/dist/angular-translate.js"
+                type="text/javascript"></script>
+        <script src="../../common/lib/angular-translate-loader-partial/angular-translate-loader-partial.min.js"
+                type="text/javascript"></script>
+        <!-- Common JS and CSS mobile-->
+        <script src="../../common/js/common-angular-app.js" type="text/javascript"></script>
+        <script src="../../common/i18n/en.translation.js" type="text/javascript"></script>
+        <script src="../../common/js/pdf_quotation.js" type="text/javascript"></script>
+        <script src="../../common/lib/loader-static-files/angular-translate-loader-static-files.js"
+                type="text/javascript"></script>
+        <script src="../../common/lib/moment/moment.js" type="text/javascript"></script>
+        <link href="../../common/css/segoeui-font.css" rel="stylesheet" type="text/css">
+        <link href="../../common/css/custom.css" rel="stylesheet" type="text/css">
+        <link href="../../common/css/pdf_quotation.css" rel="stylesheet" type="text/css">
+    </head>
+    <body ng-app="mainApp" ng-controller="Ctrl" class="body-new">
+        <table width="100%">
+            <thead class="header-space">
+                <tr>
+                    <td>
+                        <header>
+                            <div class="head-new">
+                                <img class="header-img" src="../../common/images/misr-logo-3.png" alt=""/>
+                            </div>
+                        </header>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="page none-border">
+                            <!--start summary information-->
+                            <table class="format-table-all-new none-border arabic-style">
+                                <tr>
+                                    <td style="width:21%;font-size:10pt;">{{data.productCurrencyCase}}</td>
+                                    <td style="width:18%;font-size:10pt;"> : طلب التأمين رقم</td>
+                                    <td style="width:38%;font-size:12pt;">{{data.benefitIllustrationTable.productName}}
+                                    </td>
+                                    <td style="width:21%;font-weight:bold;font-size:12pt;">عرض اسعار وثيقة</td>
+                                </tr>
+                                <tr style="font-size:10pt;">
+                                    <td>
+                                        <span dir="{{data.quotation.metaData.language == 'en' ? 'ltr' : 'rtl'}}" ng-if="data.currentRole == 'AG'">{{data.caseData.agentInfo.agentBranchName != null ? data.caseData.agentInfo.agentBranchName : "N/A"}}</span>
+                                        <span dir="{{data.quotation.metaData.language == 'en' ? 'ltr' : 'rtl'}}" ng-if="data.currentRole == 'BA'">{{data.quotation.basicPlan.information.bankBranchName}}</span>
+                                    </td>
+                                    <td> : الفرع</td>
+                                </tr>
+                                <tr style="font-size:10pt;">
+                                    <td ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.quotation.metaData.businessProfile">{{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}</td>
+                                    <td> : المنطقة</td>
+                                </tr>
+                                <tr style="font-size:10pt;">
+                                    <td>{{getCurrentDate() | date:'dd/MM/yyyy'}}</td>
+                                    <td> : تحريراً في</td>
+                                </tr>
+                            </table>
+                            <!--end summary information-->
+
+                            <hr class="hr-new">
+
+                            <!--start agent information-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style">
+                                <tr class="table-header-green white-text-color text-align-center">
+                                    <td colspan="4" style="width:100%;">بيانات مسوق التأمين</td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td class="email-format" ng-if="data.licenseFlag == 'true'">{{data.account.email}}</td>
+                                    <td class="email-format" style="width:35%;" ng-if="data.licenseFlag != 'true'">{{data.managerEmail}}</td>
+                                    <td style="width:15%;">الايميل</td>
+                                    <td style="width:35%;" ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</td>
+                                    <td style="width:35%;" ng-if="data.licenseFlag != 'true'">{{data.managerName}}</td>
+                                    <td style="width:15%;">الاسم</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td ng-if="data.licenseFlag == 'true'">{{data.account.phoneNumber}}</td>
+                                    <td ng-if="data.licenseFlag != 'true'">{{data.managerMobile}}</td>
+                                    <td>الموبايل</td>
+                                    <td ng-if="data.licenseFlag == 'true'">
+                                        <span ng-repeat="item in data.account.profile.insurerProfiles"
+                                              ng-if="item.role === data.quotation.metaData.businessProfile">{{item.licenseNumber != "" ? item.licenseNumber : "N/A"}}</span>
+                                    </td>
+                                    <td ng-if="data.licenseFlag != 'true'">{{data.managerLicense != "" ? data.managerLicense : "N/A"}}</td>
+                                    <td>كود الهيئة</td>
+                                </tr>
+                            </table>
+                            <!--end agent information-->
+
+                            <!--start policy owner information-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style">
+                                <tr class="table-header-green white-text-color text-align-center">
+                                    <td colspan="4" style="width:100%;">بيانات المتعاقد</td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td style="width:35%;direction:rtl;">
+                                        <span>{{data.quotation.policyOwner.person.age}}</span>
+                                        <span>سنة</span>
+                                    </td>
+                                    <td style="width:15%;">السن</td>
+                                    <td style="width:35%;">{{data.quotation.policyOwner.person.name.full}}</td>
+                                    <td style="width:15%;">الاسم</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td>{{data.benefitIllustrationTable.poGender}}
+                                    </td>
+                                    <td>النوع</td>
+                                    <td>{{data.quotation.policyOwner.person.birthDate | date:'dd/MM/yyyy'}}</td>
+                                    <td>تاريخ الميلاد</td>
+                                </tr>
+                            </table>
+                            <!--end policy owner information-->
+
+                            <!--start life insured information-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style">
+                                <tr class="table-header-green white-text-color text-align-center">
+                                    <td colspan="4" style="width:100%;">بيانات المؤمن عليه</td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td style="width:35%;direction:rtl;">
+                                        <span>{{data.quotation.lifeInsured[0].person.age}}</span>
+                                        <span>سنة</span>
+                                    </td>
+                                    <td style="width:15%;">السن</td>
+                                    <td style="width:35%;">{{data.quotation.lifeInsured[0].person.name.full}}
+                                    </td>
+                                    <td style="width:15%;">الاسم</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td>{{data.benefitIllustrationTable.liGender}}
+                                    </td>
+                                    <td>النوع</td>
+                                    <td>{{data.quotation.lifeInsured[0].person.birthDate | date:'dd/MM/yyyy'}}
+                                    </td>
+                                    <td>تاريخ الميلاد</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td dir="rtl">{{data.occupationValueLI}}</td>
+                                    <td>المهنة</td>
+                                    <td>{{data.benefitIllustrationTable.liSmokingStatus}}
+                                    </td>
+                                    <td>حالة التدخين</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td colspan="2">{{data.benefitIllustrationTable.relationship}}
+                                    </td>
+                                    <td colspan="2">علاقة المؤمن عليه بالمتعاقد</td>
+                                </tr>
+                            </table>
+                            <!--end life insured information-->
+
+                            <!-- start Your Plan Details-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style">
+                                <tr class="table-header-black white-text-color text-align-right">
+                                    <td colspan="6" style="width:100%;">بيانات عرض الاسعار</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center">
+                                    <td class="table-border-white" width="17%">دورية السداد</td>
+                                    <td class="table-border-white" width="12%">مدة سداد الاقساط</td>
+                                    <td class="table-border-white" width="12%">مدة التأمين</td>
+                                    <td class="table-border-white" width="17%">بدء التأمين</td>
+                                    <td class="table-border-white" style="width:17%; direction:rtl;">
+                                        <span>مبلغ التأمين</span><br>
+                                        <span>({{data.benefitIllustrationTable.billingCurrency}})</span>
+                                    </td>
+                                    <td width="20%">اسم الوثيقة</td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>{{data.benefitIllustrationTable.frequency}}</td>
+                                    <td>{{data.quotation.basicPlan.information.premiumTerm}}</td>
+                                   <td>{{data.quotation.basicPlan.information.policyTerm}}</td>
+                                    <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}</td>
+                                    <td style="word-break: break-all;">{{data.quotation.basicPlan.information.sumAssured | number: 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.productName}}</td>
+                                </tr>
+                            </table>
+                            <!-- end Your Plan Details-->
+
+<!--                            <table class="format-table-all-new format-table-all-new-inv arabic-style avoid-break-inside" ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">
+                                <tr class="non-bottom-border table-header-green white-text-color text-align-center">
+                                    <td class="table-border-white">القسط خلال السنوات الخمس الاولى</td>
+                                    <td>اسم الوثيقة</td>
+                                </tr>
+                                <tr class="table-content text-align-center">
+                                    <td>{{data.benefitIllustrationTable.frequency}}</td>
+                                    <td rowspan="5">{{data.benefitIllustrationTable.productName}}</td>
+                                </tr>
+                                <tr class="table-content text-align-center">
+                                    <td>{{ data.benefitIllustrationTable.premiumFirstFive | number : 2 }}</td>
+                                </tr>
+                                <tr class="table-content text-align-center table-header-green white-text-color">
+                                    <td>القسط بعد السنوات الخمس الاولى</td>
+                                </tr>
+                                <tr class="table-content text-align-center">
+                                    <td>{{data.benefitIllustrationTable.frequency}}</td>
+                                </tr>
+                                <tr class="table-content text-align-center">
+                                    <td>{{ data.benefitIllustrationTable.premiumAfterFirstFive | number : 2 }}</td>
+                                </tr>
+                            </table>
+
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style avoid-break-inside" ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">
+                                <tbody>
+                                <tr class="non-bottom-border table-header-green white-text-color text-align-center">
+                                    <td class="table-border-white" style="width: 61%;">القسط الوحيد</td>
+                                    <td>اسم الوثيقة</td>
+                                </tr>
+                                <tr class="table-content text-align-center">
+                                    <td>{{ data.benefitIllustrationTable.premiumFirstFive | number : 2 }}</td>
+                                    <td>{{data.benefitIllustrationTable.productName}}</td>
+                                </tr>
+                                </tbody>
+                            </table>-->
+                            <!--start summary premium information-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style avoid-break-inside format-table-layout-fixed">
+                                <tr class="table-header-black white-text-color text-align-center">
+                                    <td colspan="8" style="width:100%;  ">بيانات القسط الاول</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                                    <td class="table-border-white" width="15%">
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">اجمالى القسط الوحيد</span>
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">اجمالي القسط الاول</span>
+                                    </td>
+                                    <td class="table-border-white" width="10%">مصاريف الاصدار</td>
+                                    <td class="table-border-white" width="10%">الدمغة النوعية</td>
+                                    <td class="table-border-white" width="15%">صندوق ضمان حملة الوثائق</td>
+                                    <td class="table-border-white" width="13%">خدمات اعتماد وتعديل وثائق</td>
+                                    <td class="table-border-white" width="13%">رسوم الاشراف والرقابة</td>
+                                    <td class="table-border-white" width="10%">الدمغة  النسبية</td>
+                                    <td class="table-border-white" style="border-right: 2px solid #0fb273 !important;">
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">القسط الوحيد</span>
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">القسط</span>
+                                    </td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>{{data.quotation.payableAmount | number : 2}}</td>
+                                    <td>{{data.quotation.issuanceFees | number : 2}}</td>
+                                    <td>{{data.quotation.stamp | number : 2}}</td>
+                                    <td>{{data.quotation.policyHolderGuaranteedFund | number : 2}}</td>
+                                    <td>{{data.quotation.efsaServiceFees | number : 2}}</td>
+                                    <td>{{data.quotation.efsaFees | number : 2}}</td>
+                                    <td>{{data.quotation.tax | number : 2}}</td>
+                                    <td>{{data.quotation.firstPremiumPayable | number : 2}}</td>
+                                </tr>
+                            </table>
+
+                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside" ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">
+                                <tr class="table-header-black white-text-color text-align-center">
+                                    <td colspan="6" style="width:100%;">بيانات القسط الدوري خلال السنوات الخمس الاولى</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                                    <td class="table-border-white">اجمالي القسط الدوري</td>
+                                    <td class="table-border-white">صندوق ضمان حملة الوثائق</td>
+                                    <td class="table-border-white">خدمات اعتماد وتعديل وثائق</td>
+                                    <td class="table-border-white">رسوم الاشراف والرقابة</td>
+                                    <td class="table-border-white">الدمغة  النسبية</td>
+                                    <td class="table-border-white" style="border-right: 2px solid #0fb273 !important;">القسط</td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>{{data.benefitIllustrationTable.renewalPremium | number : 2}}</td>
+                                    <td>{{data.quotation.renewalPolicyHolderGuaranteedFund | number : 2}}</td>
+                                    <td>{{data.quotation.renewalEfsaServiceFees | number : 2}}</td>
+                                    <td>{{data.quotation.renewalEFSAFees | number : 2}}</td>
+                                    <td>{{data.quotation.renewalTax | number : 2}}</td>
+                                    <td>{{data.quotation.initialPremiumPayable | number : 2}}</td>
+                                </tr>
+                            </table>
+
+                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside" ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">
+                                <tr class="table-header-black white-text-color text-align-center">
+                                    <td colspan="6" style="width:100%;">بيانات القسط الدوري بعد السنوات الخمس الاولى</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color non-top-border text-align-center">
+                                    <td class="table-border-white">اجمالي القسط الدوري</td>
+                                    <td class="table-border-white">صندوق ضمان حملة الوثائق</td>
+                                    <td class="table-border-white">خدمات اعتماد وتعديل وثائق</td>
+                                    <td class="table-border-white">رسوم الاشراف والرقابة</td>
+                                    <td class="table-border-white">الدمغة  النسبية</td>
+                                    <td class="table-border-white" style="border-right: 2px solid #0fb273 !important;">القسط</td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>{{data.benefitIllustrationTable.renewalAfterFirstFive | number : 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.sixthYearPHGF | number : 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.sixthYearEFSAServiceFees | number : 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.sixthYearEFSAFee | number : 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.sixthYearStampFee | number : 2}}</td>
+                                    <td>{{data.benefitIllustrationTable.premiumAfterFirstFive | number : 2}}</td>
+                                </tr>
+                            </table>
+
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style format-table-layout-fixed avoid-break-inside">
+                                <tr class="table-header-black white-text-color text-align-right non-top-border non-bottom-border">
+                                    <td colspan="9" style="width:100%;">القيم المتوقعة للوثيقة</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center">
+                                    <td rowspan="2" class="non-bottom-border table-border-white">نسبة الأرباح المضمونة والمتوقعة<br>(2+3)/1* 100</td>
+                                    <td colspan="3" class="table-border-white" style="border-bottom: 2px solid white;">الارباح المتوقعة كنسبة من مبلغ التأمين</td>
+                                    <td class="table-border-white" style="border-bottom: 2px solid white;">(2)<br>الارباح المضمونة</td>
+                                    <td rowspan="2" class="non-bottom-border table-border-white">(1)<br>إجمالي الأقساط المدفوعة</td>
+                                    <td rowspan="2" class="non-bottom-border table-border-white">
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">القسط السنوي</span>
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">لقسط الوحيد</span>
+                                    </td>
+                                    <td rowspan="2" class="non-bottom-border table-border-white">السن</td>
+                                    <td rowspan="2" class="non-bottom-border">السنة</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                                    <td class="table-border-white">{{data.benefitIllustrationTable.expectedDividend3}} (3)</td>
+                                    <td class="table-border-white">{{data.benefitIllustrationTable.expectedDividend2}}</td>
+                                    <td class="table-border-white">{{data.benefitIllustrationTable.expectedDividend1}}</td>
+                                    <td class="table-border-white">2%</td>
+                                </tr>
+                            </table>
+                            <table style="margin-top: -8px !important;" class="non-top-border-first-child format-table-all-new format-table-all-new-inv arabic-style format-table-layout-fixed">
+                                <tr class="table-content text-align-center" ng-repeat="item in data.benefitIllustrationTable.benefitIllustration.benefitIllustrationTable">
+                                    <td>{{item.guaranteedProfits}}%</td>
+                                    <td>{{item.ratio3 | number : 2}}</td>
+                                    <td>{{item.ratio2 | number : 2 }}</td>
+                                    <td>{{item.ratio1 | number : 2 }}</td>
+                                    <td>{{item.guaranteedDividend | number : 2 }}</td>
+                                    <td>{{item.totalPaidPremium | number : 2 }}</td>
+                                    <td>{{item.annualAmount | number : 2 }}</td>
+                                    <td>{{item.age}}</td>
+                                    <td>{{item.year}}</td>
+                                </tr>
+                            </table>
+
+                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside">
+                                <tr class="table-header-black white-text-color text-align-right">
+                                    <td colspan="4" style="width:100%;">{{data.quotation.basicPlan.information.maturityDate | date:'dd/MM/yyyy' }} المزايا التأمينية في حالة الاستحقاق</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                                    <td class="table-border-white" style="width:25%">{{data.benefitIllustrationTable.expectedGrantedDividend3}}</td>
+                                    <td class="table-border-white" style="width:25%">{{data.benefitIllustrationTable.expectedGrantedDividend2}}</td>
+                                    <td class="table-border-white" style="width:25%">{{data.benefitIllustrationTable.expectedGrantedDividend1}}</td>
+                                    <td style="width:25%">معدلات الارباح المتوقعة كنسبة من مبلغ التأمين</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalDividend3 | number : 2}}</td>
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalDividend2 | number : 2}}</td>
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalDividend1 | number : 2}}</td>
+                                    <td style="direction:rtl;">الارباح المتوقعة</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td class="text-align-center">{{data.quotation.basicPlan.information.sumAssured | number : 2}}</td>
+                                    <td class="text-align-center">{{data.quotation.basicPlan.information.sumAssured | number : 2}}</td>
+                                    <td class="text-align-center">{{data.quotation.basicPlan.information.sumAssured | number : 2}}</td>
+                                    <td style="direction:rtl;">مبلغ التأمين</td>
+                                </tr>
+                                <tr class="table-content">
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalBenefitsAge3 | number : 2}}</td>
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalBenefitsAge2 | number : 2}}</td>
+                                    <td class="text-align-center">{{data.benefitIllustrationTable.totalBenefitsAge1 | number : 2}}</td>
+                                    <td style="direction:rtl;">اجمالي المبالغ المستحقة</td>
+                                </tr>
+                            </table>
+
+                            <!--start product summary-->
+                            <table class="format-table-all-new format-table-all-new-inv arabic-style avoid-break-inside">
+                                <tr class="table-header-black white-text-color text-align-right">
+                                    <td style="width:100%;">ملخص للشروط العامة ومزايا الوثيقة</td>
+                                </tr>
+                                <tr class="table-header-green white-text-color">
+                                    <td>المزايا التأمينية</td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td dir="rtl">تتعهد شركة مصر لتأمينات الحياة بما يلي :</td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td style="padding-right: 2em" dir="rtl">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">1.</td>
+                                                <td style="padding-right: 1em; border: none!important">حالة البقاء على قيد الحياة حتى نهاية مدة التأمين :</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td style="padding-right: 7em" dir="rtl">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">صرف مبلغ التأمين المحدد بالوثيقة.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">صرف ارباح سنوية مضمونة بواقع 40 جنيه لكل مبلغ تامين قدره 2000 جنيه.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">صرف ارباح اضافية من فائض الارباح الذى تحققه الشركة من هذا النوع.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td style="padding-right: 2em" dir="rtl">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">2.</td>
+                                                <td style="padding-right: 1em; border: none!important">حالة الوفاة (لاقدر الله) خلال مدة التامين:</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td style="padding-right: 7em" dir="rtl">
+                                        <table>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">صرف مبلغ التامين بالكامل فور الوفاة.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">صرف ارباح سنوية مضمونة بواقع 40 جنيه لكل مبلغ تامين 2000 جنيه عن كل سنة تامينية كاملة بالاضافة الى الارباح الاضافية من فائض الارباح الذى تحققة الشركة حتى تاريخ الوفاة.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align: top; border: none!important">•</td>
+                                                <td style="padding-right: 1em; border: none!important">يتم صرف مبلغ تامين اضافى فى تاريخ الاستحقاق يعادل مبلغ التامين الاصلى.</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td dir="rtl">معدل الارباح يخضع للنتائج الفعليه لاستثمارات الشركة والمعدل المعتمد من مجلس ادارة الشركة سنوياً، واخر معدل توزيع ارباح بالنسبة لهذه الوثيقة بمدة
+                                        <span>{{data.benefitIllustrationTable.expectedDividendYears}}</span>
+                                        سنوات فأكثر
+                                        <span>{{data.benefitIllustrationTable.expectedDividend1}}</span>
+                                        من مبلغ التأمين سنوياً بما يعادل
+                                        <span>{{data.benefitIllustrationTable.percentAnnualInstallments1}}</span>
+                                        من قيمة القسط السنوي تقريباً.</td>
+                                </tr>
+                                <tr class="table-content non-top-border non-bottom-border table-content-note">
+                                    <td dir="rtl">معدل الارباح المتوقع بهذا العرض خلال مدة التأمين لهذه الوثيقة بمدة تأمين
+                                        <span>{{data.benefitIllustrationTable.expectedDividendYears}}</span>
+                                        سنوات فأكثر
+                                        <span>{{data.benefitIllustrationTable.expectedDividend2}}</span>
+                                        من مبلغ التأمين سنوياً بما يعادل
+                                        <span>{{data.benefitIllustrationTable.percentAnnualInstallments2}}</span>
+                                        من قيمة القسط السنوي تقريباً أو
+                                        <span>{{data.benefitIllustrationTable.expectedDividend3}}</span>
+                                        من مبلغ التأمين سنوياً بما يعادل
+                                        <span>{{data.benefitIllustrationTable.percentAnnualInstallments3}}</span>
+                                        من القسط السنوي تقريبا.</td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td dir="rtl" style="padding-top:0px; padding-bottom:15px;">هذا العرض مجرد دليل ويجب قراءاته بالاضافة الي وثيقة التأمين والتي تشمل توضيح لشروط وأحكام المزايا الملحقة بالوثيقة. </td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td style="padding-top:5px;direction: rtl;margin-right: 2px;">
+                                        <ul style="list-style-type: none; padding-left:5px; padding-right:2px">
+                                            <li>لايمثل هذا العرض قبولا من شركة مصر لتأمينات الحياة ويسرى القبول فقط بعد سداد القسط بالكامل واتمام الاكتتاب بما يتوافق مع سياسة الشركة.</li>
+                                            <li>طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد فسخ التعاقد خلال فترة السماح 10 ايام عمل من تاريخ اصدار الوثيقة واسترداد قيمة الاقساط المدفوعة بعد خصم مصاريف الاصدار  والاجراءات الطبية ان وجدت.</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table style="margin-top:-10px !important;" class="format-table-all-new  arabic-style avoid-break-inside">
+                                <tr class="table-header-green white-text-color">
+                                    <td>ملخص الشروط العامة</td>
+                                </tr>
+                                <tr class="table-content non-top-border">
+                                    <td></br></br></br></br></td>
+                                </tr>
+                            </table>
+                            <!--end product summary-->
+
+                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside" style="margin-top: 15px !important;">
+                                <tr class="table-header-black white-text-color text-align-right">
+                                    <td style="width:100%;">الاجراءات الطبية</td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>.الاجراءات الطبية وفقا للسياسة الاكتتابية للشركة</td>
+                                </tr>
+                            </table>
+
+                            <!--start signature-->
+                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside">
+                                <tr class="table-header-black white-text-color text-align-center">
+                                    <td style="border-right: 2px solid white !important;">مسوق التأمين</td>
+                                    <td style="border-right: 2px solid white !important;">المؤمن عليه</td>
+                                    <td>المتعاقد</td>
+                                </tr>
+                                <tr class="table-content non-top-border text-align-center">
+                                    <td>
+                                        <span ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</span>
+                                        <span ng-if="data.licenseFlag != 'true'">{{data.managerName}}</span>
+                                    </td>
+                                    <td>{{data.quotation.lifeInsured[0].person.name.full}}</td>
+                                    <td>{{data.quotation.policyOwner.person.name.full}}</td>
+                                </tr>
+                                <tr style="height:90px;" class="table-content text-align-center">
+                                    <td></br></td>
+                                    <td></br></td>
+                                    <td></br></td>
+                                </tr>
+                            </table>
+                            <!--end signature-->
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <footer>
+                            <div class="foot">
+                                <img class="foot-img" src="../../common/images/misr-footer1.png" alt=""/>
+                            </div>
+                        </footer>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <meta name="apple-mobile-web-app-capable" content="yes"/>
+   <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+   <link href="../../common/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"
+         type="text/css"/>
+   <link href="../../common/css/pdf_application.css" rel="stylesheet">
+   <link href="../../common/css/segoeui-font.css" rel="stylesheet" type="text/css">
+   <script src="../../common/lib/angular/angular.min.js" type="text/javascript"></script>
+   <script src="../../common/js/directive/application_directive.js"
+           type="text/javascript"></script>
+   <script src="../../common/js/pdf_application.js" type="text/javascript"></script>
+
+   <script src="../../common/lib/angular/angular.js" type="text/javascript"></script>
+   <script src="../../common/lib/angular-translate/dist/angular-translate.js"
+           type="text/javascript"></script>
+   <script src="../../common/lib/loader-static-files/angular-translate-loader-static-files.js"
+           type="text/javascript"></script>
+</head>
+
+<body class="body-new" ng-app="mainApp" ng-controller="Ctrl">
+<table>
+   <thead class="header-space">
+   <tr>
+      <td>
+         <header>
+            <div class="head-new">
+               <img class="header-img" src="../../common/images/misr-logo-3.png" alt=""/>
+            </div>
+         </header>
+      </td>
+   </tr>
+   </thead>
+
+   <tbody>
+   <tr>
+      <td>
+         <div class="page none-border">
+            <!--start summary information-->
+            <table class="format-table-all-new-pns none-border arabic-style">
+               <tr>
+                  <td style="width:21%;font-size:10pt;">
+                     {{data.application.documentRelation.productCurrencyCase}}
+                  </td>
+                  <td style="width:18%;font-size:12pt;"> : طلب التأمين رقم</td>
+                  <td style="width:38%;font-size:12pt;">{{data.inputPdf.productName}}
+                  </td>
+                  <td style="width:21%;font-weight:bold;font-size:12pt;">طلب تأمين وثيقة</td>
+               </tr>
+               <tr>
+                  <td style="font-size:10pt;">
+                     <span ng-if="data.isActiveRole == 'AG'" style="padding-right: 0px;">{{data.branchName}}</span>
+                     <span ng-if="data.isActiveRole == 'BA'" style="padding-right: 0px;">{{data.branchName}}</span>
+                  </td>
+                  <td style="font-size:12pt;"> : الفرع</td>
+               </tr>
+               <tr>
+                  <td style="font-size:10pt;" ng-if="data.currentRole === data.quotation.metaData.businessProfile">{{data.currentRole == "BA" ? "MLI / HO" : data.regionName}}</td>
+                  <td style="font-size:12pt;"> : المنطقة</td>
+               </tr>
+               <tr>
+                  <td style="font-size:10pt;">
+                     {{data.quotation.basicPlan.information.effectiveDate |
+                     date:'dd/MM/yyyy'}}
+                  </td>
+                  <td style="font-size:12pt;"> : تحريراً في</td>
+               </tr>
+            </table>
+            <!--end summary information-->
+            <hr class="hr-new">
+            <!--start agent information-->
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-green white-text-color text-align-center">
+                  <td colspan="4" style="width:100%;">بيانات مسوق التأمين</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td style="width:35%;" ng-if="data.licenseFlag == 'true'">
+                     {{data.account.email}}
+                  </td>
+                  <td style="width:30%;" ng-if="data.licenseFlag != 'true'">
+                     {{data.managerEmail}}
+                  </td>
+                  <td style="width:10%;">الايميل</td>
+                  <td style="width:30%;" ng-if="data.licenseFlag == 'true'">
+                     {{data.account.fullName}}
+                  </td>
+                  <td style="width:30%;" ng-if="data.licenseFlag != 'true'">
+                     {{data.managerName}}
+                  </td>
+                  <td style="width:15%;">الاسم</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td ng-if="data.licenseFlag == 'true'">{{data.account.phoneNumber}}</td>
+                  <td ng-if="data.licenseFlag != 'true'">{{data.managerMobile}}</td>
+                  <td>الموبايل</td>
+                  <td ng-if="data.licenseFlag == 'true'">
+                                        <span ng-repeat="item in data.account.profile.insurerProfiles"
+                                              ng-if="item.role === data.quotation.metaData.businessProfile">{{item.licenseNumber != "" ? item.licenseNumber : "N/A"}}</span>
+                  </td>
+                  <td ng-if="data.licenseFlag != 'true'">{{data.managerLicense != "" ? data.managerLicense : "N/A"}}</td>
+                  <td>كود الهيئة</td>
+               </tr>
+            </table>
+            <!--end agent information-->
+
+            <!--Start policy Owner information-->
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-green white-text-color text-align-center">
+                  <td colspan="4" style="width:100%;">بيانات المتعاقد</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td style="width:25%;direction:rtl;">
+                     <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.age}}</span>
+                     <span>سنة</span>
+                  </td>
+                  <td style="width:18%;">السن</td>
+                  <td style="width:30%;">
+                     <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                  </td>
+                  <td style="width:30%;">الاسم</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.inputPdf.policyOwner.gender}}
+                  </td>
+                  <td>النوع</td>
+                  <td>
+                     {{data.application.policyOwnerDetails.proporserInformation.person.basic.birthDate
+                     | date:'dd/MM/yyyy'}}
+                  </td>
+                  <td>تاريخ الميلاد</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td colspan="2">
+                           <span>
+                               {{data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].value}}
+                           </span>
+                  </td>
+                  <td class="non-left-border">
+                     <span>جواز السفر</span>
+                     <span>
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'P'"/>
+                           </span>
+                  </td>
+                  <td>
+                     <span>بطاقة الرقم القومي </span>
+                     <span>
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'E'"/>
+                           </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     {{data.application.policyOwnerDetails.proporserInformation.otherInformation.placeOfBirth}}
+                  </td>
+                  <td>محل الميلاد</td>
+                  <td dir="rtl"> {{data.inputPdf.policyOwner.nationality}}</td>
+                  <td>الجنسية</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td> {{data.inputPdf.policyOwner.maritalStatus}}
+                  </td>
+                  <td>الحالة الاجتماعية</td>
+                  <td>
+                     <span ng-if="data.application.laisTheSameWithPO =='1'">&nbsp;</span>
+                     <span ng-if="data.application.laisTheSameWithPO !='1'">{{data.inputPdf.policyOwner.relationship}}</span>
+                  </td>
+                  <td>درجة قرابته من المؤمن عليه</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.inputPdf.policyOwner.industry}}</td>
+                  <td>طبيعة العمل</td>
+                  <td>{{data.occupationValuePO}}</td>
+                  <td dir="rtl">المهنة :</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     {{data.application.policyOwnerDetails.proporserInformation.person.contacts.mobilePhone}}
+                  </td>
+                  <td>تليفون المحمول</td>
+                  <td class="email-format">
+                     {{data.application.policyOwnerDetails.proporserInformation.person.contacts.email}}
+                  </td>
+                  <td>البريد الاليكتروني</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone}}</span>
+                     <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone === null">N.A</span>
+                  </td>
+                  <td>تليفون العمل</td>
+                  <td>
+                     <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone}}</span>
+                     <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone === null">N.A</span>
+                  </td>
+                  <td>تليفون المنزل</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td dir="rtl" style="padding: 0px;" colspan="3">
+                     <span>{{data.inputPdf.policyOwner.address[0].fullAddress}}</span>
+                  </td>
+                  <td>العنوان الدائم</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td dir="rtl" style="padding: 0px;" colspan="3" ng-if="data.application.mailingAddress.differentMailingAddress != 'Y'">
+                     <span>{{data.inputPdf.policyOwner.address[0].fullAddress}}</span>
+                  </td>
+                  <td dir="rtl" style="padding: 0px;" colspan="3" ng-if="data.application.mailingAddress.differentMailingAddress == 'Y'">
+                     <span>{{data.inputPdf.policyOwner.address[1].fullAddress}}</span>
+                  </td>
+                  <td dir="rtl">عنوان المراسلات*</td>
+               </tr>
+            </table>
+            <!--end policy Owner information-->
+            <p dir="rtl" style="color: red !important;font-weight: bold;">* يجب على المتعاقد
+               افادة الشركة بكل تغيير فى العنوان والا تحمل وحده نتائج عدم استلام مراسلات الشركة
+               له. </p>
+
+            <!--Start Insured details information-->
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-green white-text-color text-align-center">
+                  <td colspan="4" style="width:100%;">بيانات المؤمن عليه</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td style="width:25%;direction:rtl;">
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.age}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.age}}</span>
+                     <span>سنة</span>
+                  </td>
+                  <td style="width:18%;">السن</td>
+                  <td style="width:30%;">
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</span>
+                  </td>
+                  <td style="width:30%;">الاسم</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.inputPdf.policyOwner.gender}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.inputPdf.lifeInsured[0].gender}}</span>
+                  </td>
+                  <td>النوع</td>
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</span>
+                  </td>
+                  <td>تاريخ الميلاد</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td colspan="2">
+                            <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">
+                                {{data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].value}}
+                            </span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">
+                               {{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value}}
+                           </span>
+                  </td>
+                  <td class="non-left-border">
+                     <span>جواز السفر</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'P'" />
+                           </span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'P'" />
+                           </span>
+                  </td>
+                  <td>
+                     <span>بطاقة الرقم القومي </span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'E'" />
+                           </span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">
+                              <input type="radio" style="transform: scale(1.4);"
+                                     ng-checked="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'E'" />
+                           </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.otherInformation.placeOfBirth}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth}}</span>
+                  </td>
+                  <td>محل الميلاد</td>
+                  <td>
+                     <span dir="rtl" class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.inputPdf.policyOwner.nationality}}</span>
+                     <span dir="rtl" class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">
+                              {{data.inputPdf.lifeInsured[0].nationality}}
+                           </span>
+                  </td>
+                  <td>الجنسية</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.inputPdf.policyOwner.maritalStatus}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.inputPdf.lifeInsured[0].maritalStatus}}</span>
+                  </td>
+                  <td>الحالة الاجتماعية</td>
+                  <td>
+                     <span class="no-padding">{{data.inputPdf.lifeInsured[0].relationship}}</span>
+                  </td>
+                  <td>درجة قرابته من المتعاقد</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.inputPdf.policyOwner.industry}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">
+                              {{data.inputPdf.lifeInsured[0].industry}}
+                           </span>
+                  </td>
+                  <td>طبيعة العمل</td>
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.occupationValuePO}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.occupationValueLI}}</span>
+                  </td>
+                  <td dir="rtl">المهنة :</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.mobilePhone}}</span>
+                     <span class="no-padding" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone}}</span>
+                  </td>
+                  <td>تليفون المحمول</td>
+                  <td>
+                     <span class="no-padding email-format" ng-if="data.application.laisTheSameWithPO =='0'">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.email}}</span>
+                     <span class="no-padding email-format" ng-if="data.application.laisTheSameWithPO =='1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email}}</span>
+                  </td>
+                  <td>البريد الاليكتروني</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td ng-if="data.application.laisTheSameWithPO =='0'">
+                     <span class="no-padding" ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone}}</span>
+                     <span class="no-padding" ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.officePhone === null">N.A</span>
+                  </td>
+                  <td ng-if="data.application.laisTheSameWithPO =='1'">
+                     <span class="no-padding" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone}}</span>
+                     <span class="no-padding" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.officePhone === null">N.A</span>
+                  </td>
+                  <td>تليفون العمل</td>
+                  <td ng-if="data.application.laisTheSameWithPO =='0'">
+                     <span class="no-padding" ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone != null">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone}}</span>
+                     <span class="no-padding" ng-if="data.application.policyOwnerDetails.proporserInformation.person.contacts.homePhone === null">N.A</span>
+                  </td>
+                  <td ng-if="data.application.laisTheSameWithPO =='1'">
+                     <span class="no-padding" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone != null">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone}}</span>
+                     <span class="no-padding" ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.homePhone === null">N.A</span>
+                  </td>
+                  <td>تليفون المنزل</td>
+               </tr>
+            </table>
+            <!--end Insured details information-->
+            <p dir="rtl" style="color: red !important;font-weight: bold;">* يجب على المؤمن عليه
+               اخطار الشركة فى حالة تغيير المهنة . </p>
+
+            <table style="border: hidden;margin-top: -10px !important;"
+                   class="format-table-all-new-pns arabic-style">
+               <tr class="table-content-pns" ng-if="data.application.laisTheSameWithPO =='0'">
+                  <td>
+                     <span style="font-weight:bold;">لا</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'N'"/>
+                           </span>
+                  </td>
+                  <td style="border: hidden;">
+                     <span style="font-weight:bold;">نعم</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y'"/>
+                           </span>
+                  </td>
+                  <td dir="rtl" style="font-weight:bold;">
+                     <span>هل سبق للمطلوب التامين على حياته او تقدم بطلب تامين لدى شركتنا او لدى الشركات الاخرى ؟   </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns" ng-if="data.application.laisTheSameWithPO =='1'">
+                  <td>
+                     <span style="font-weight:bold;">لا</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'N'"/>
+                           </span>
+                  </td>
+                  <td style="border: hidden;">
+                     <span style="font-weight:bold;">نعم</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y'"/>
+                           </span>
+                  </td>
+                  <td dir="rtl" style="font-weight:bold;">
+                     <span>هل سبق للمطلوب التامين على حياته او تقدم بطلب تامين لدى شركتنا او لدى الشركات الاخرى ؟   </span>
+                  </td>
+               </tr>
+            </table>
+
+            <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style"
+                   ng-if="(data.application.laisTheSameWithPO =='0' && data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y') ||
+                         (data.application.laisTheSameWithPO =='1' && data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[3].questionValue == 'Y')">
+               <tr class="table-header-black-new white-text-color text-align-right">
+                  <td colspan="5" dir="rtl">اذا كانت الاجابة بنعم رجاء اذكر الوثائق/ طلبات
+                     التأمين الخاصة بشركتنا او الشركات الأخرى.
+                  </td>
+               </tr>
+               <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                  <td class="table-border-white" style="width:20%">السبب</td>
+                  <td class="table-border-white" style="width:20%">القرار</td>
+                  <td class="table-border-white" style="width:20%">مبلغ التامين</td>
+                  <td class="table-border-white" style="width:20%">رقم الوثيقة/ رقم الطلب</td>
+                  <td style="width:20%">اسم الشركة</td>
+               </tr>
+               <tr class="table-content-pns text-align-center"
+                   ng-if="data.application.laisTheSameWithPO =='1'"
+                   ng-repeat="item in data.inputPdf.lifeInsured[0].lifestyleQuestionnaire.lifestylePoliciesItems">
+                  <td>{{item.lifestylePolicyReason}}</td>
+                  <td>{{item.lifestylePolicyDecisionValue}}</td>
+                  <td>{{item.lifestyleInsuranceAmount}}</td>
+                  <td>{{item.lifestyleDocumentNumber}}</td>
+                  <td>{{item.lifestyleCompanyName}}</td>
+               </tr>
+               <tr class="table-content-pns text-align-center"
+                   ng-if="data.application.laisTheSameWithPO =='0'"
+                   ng-repeat="item in data.inputPdf.policyOwner.lifestyleQuestionnaire.lifestylePoliciesItems">
+                  <td>{{item.lifestylePolicyReason}}</td>
+                  <td>{{item.lifestylePolicyDecisionValue}}</td>
+                  <td>{{item.lifestyleInsuranceAmount}}</td>
+                  <td>{{item.lifestyleDocumentNumber}}</td>
+                  <td>{{item.lifestyleCompanyName}}</td>
+               </tr>
+            </table>
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-green white-text-color text-align-center">
+                  <td colspan="2">بيانات الوثيقة</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td style="width:50%">{{data.inputPdf.productName}}
+                  </td>
+                  <td style="width:50%">اسم الوثيقة</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.quotation.basicPlan.information.riskCommencementDate |
+                     date:'dd/MM/yyyy'}}
+                  </td>
+                  <td>بدء التامين</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.quotation.basicPlan.information.policyTerm}}</td>
+                  <td>مدة التأمين بالسنوات</td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td>{{data.inputPdf.paymentDetails.currency}}</td>
+                  <td>العملة</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.quotation.basicPlan.information.sumAssured | number : 2}}</td>
+                  <td>مبلغ التامين</td>
+               </tr>
+               <tr ng-if="data.quotation.riders.length > 0" class="table-content-pns">
+                  <td>
+                     <table>
+                        <tr ng-repeat="item in data.quotation.riders">
+                           <td style="padding: 0px !important; border: none !important;">
+                              <div ng-if="item.riderName == 'ADBR'">التأمين ضد خطر الوفاة بحادث</div>
+                              <div ng-if="item.riderName == 'TPDR'">التأمين ضد خطر الاصابة بالعجز الكامل المستديم</div>
+                              <div ng-if="item.riderName == 'CIBR'">ميزة الأمراض الحرجة</div>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
+                  <td>التغطيات الاضافية</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td>{{data.inputPdf.paymentDetails.premiumFrequency}}</td>
+                  <td>دورية السداد</td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td dir="rtl">
+                     <span style="padding-right: 0px !important;" ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">{{data.inputPdf.paymentDetails.firstPaymentMethod}}</span>
+                     <span style="padding-right: 0px !important;" ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">{{data.inputPdf.paymentDetails.renewalPaymentMethod}}</span>
+                  </td>
+                  <td>طريقة سداد الأقساط</td>
+               </tr>
+               <tr class="table-content-pns"
+                   ng-if="data.application.paymentDetails.renewalPaymentMethod =='DeBAcc' || data.application.paymentDetails.renewalPaymentMethod =='ACHM'">
+                  <td>{{data.application.paymentDetails.bankAccOwnerName}}</td>
+                  <td>اسم صاحب الحساب</td>
+               </tr>
+               <tr class="table-content-pns"
+                   ng-if="data.application.paymentDetails.renewalPaymentMethod =='DeBAcc' || data.application.paymentDetails.renewalPaymentMethod =='ACHM'">
+                  <td>{{data.application.paymentDetails.savingCurrentAccountNumber}}</td>
+                  <td>رقم الحساب</td>
+               </tr>
+            </table>
+            <!-- table Beneficiary  -->
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-black white-text-color text-align-right">
+                  <td colspan="4">المستفيدين</td>
+               </tr>
+               <tr class="table-header-green-beneficiary white-text-color text-align-center non-bottom-border">
+                  <td class="table-border-white">
+                     <span>النسبة</span>
+                  </td>
+                  <td class="table-border-white">
+                     <span>صلة القرابة</span>
+                  </td>
+                  <td class="table-border-white">
+                     <span>اسم المستفيد</span>
+                  </td>
+                  <td>
+                     <span>نوع المستفيد</span>
+                  </td>
+               </tr>
+               <tr ng-repeat="item in data.inputPdf.benefitDetails"
+                   ng-if="item.beneficiaryDetailsBeneficiaryType == 'MB'"
+                   class="table-content-pns text-align-center">
+                  <td class="center">{{item.share}}%</td>
+                  <td class="center" >{{item.relationship}}</td>
+                  <td class="center">{{item.fullName}}</td>
+                  <td>
+                     <span>المستفيد - حالة الاستحقاق</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns text-align-center"
+                   ng-if="data.application.beneficiaryDetailsLegalInheritance =='Y'">
+                  <td>
+                     <hr class="hr-table">
+                  </td>
+                  <td>
+                     <hr class="hr-table">
+                  </td>
+                  <td>
+                     <span>الورثة الشرعيين</span>
+                  </td>
+                  <td>
+                     <span dir="rtl">المستفيدين -  حالة الوفاة</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns text-align-center"
+                   ng-repeat="item in data.inputPdf.benefitDetails"
+                   ng-if="item.beneficiaryDetailsBeneficiaryType == 'DB'">
+                  <td class="center">{{item.share}}%</td>
+                  <td class="center">{{item.relationship}}</td>
+                  <td class="center">
+                     <span>{{item.fullName}}</span>
+                     <span ng-if="data.corporatesBankBranch != null">{{data.corporatesBankBranch}}</span>
+                  </td>
+                  <td>
+                     <span dir="rtl">المستفيدين -  حالة الوفاة</span>
+                  </td>
+               </tr>
+            </table>
+
+            <table style="border: hidden;margin-top: -2px !important;"
+                   class="format-table-all-new-pns arabic-style">
+               <tr class="table-content-pns">
+                  <td>
+                     <span style="font-weight:bold;">لا</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.beneficiaryDetailsQuestion == 'N'"/>
+                           </span>
+                  </td>
+                  <td style="border: hidden;">
+                     <span style="font-weight:bold;">نعم</span>
+                     <span>
+                              <input type="radio"
+                                     ng-checked="data.application.beneficiaryDetailsQuestion == 'Y'"/>
+                           </span>
+                  </td>
+                  <td dir="rtl">
+                     <span style="font-weight:bold;">هل ترغب في الاحتفاظ بحقك في تغيير المستفيدين بالوثيقة ؟ </span>
+                  </td>
+               </tr>
+            </table>
+            <!-- table question -->
+            <table class="format-table-all-new-pns arabic-style">
+               <tr class="table-header-black-new white-text-color text-align-right">
+                  <td colspan="3" style="width: 100%;">الاقرارات الصحية</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td colspan="2" class="center table-question-padding">
+                     CMs &nbsp;
+                     <span ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionHeight}}</span>
+                     <span ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionHeight}}</span>
+                  </td>
+                  <td class="table-question-padding">
+                     <span dir="rtl">الرجاء تحديد طولك (سم). </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td colspan="2" class="center table-question-padding">
+                     KG &nbsp;
+                     <span ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionWeight}}</span>
+                     <span ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionBMIInfo.healthQuestionWeight}}</span>
+                  </td>
+                  <td class="table-question-padding">
+                     <span dir="rtl">الرجاء تحديد وزنك (كجم). </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td colspan="2" class="center table-question-padding"
+                      ng-if="data.application.laisTheSameWithPO != '1'">
+                     <span>الانقباضي:</span><span>{{data.quotation.policyOwner.person.bloodSystolic}}</span><br>
+                     <span>الانبساطي:</span><span>&nbsp;{{data.quotation.policyOwner.person.bloodDiastolic}}</span>
+                  </td>
+                  <td colspan="2" class="center table-question-padding"
+                      ng-if="data.application.laisTheSameWithPO == '1'">
+                     <span>الانقباضي:</span><span>&nbsp;{{data.quotation.lifeInsured[0].person.bloodSystolic}}</span><br>
+                     <span>الانبساطي:</span><span>&nbsp;{{data.quotation.lifeInsured[0].person.bloodDiastolic}}</span>
+                  </td>
+                  <td>
+                     <span>الرجاء تحديد  قياس ضغط الدم</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <span>لا</span>
+                  </td>
+                  <td class="center non-border-left">
+                     <span>نعم</span>
+                  </td>
+                  <td></td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right table-question-padding">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left table-question-padding">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'"/>
+                  </td>
+                  <td class=" table-question-padding">
+                     <span dir="rtl" style="margin-right: 30px;">1.&nbsp;	هل وزنك تعير خلال اخر سنتين  </span><br>
+                     <span style="float: initial;" ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'">
+                            <span ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems" ng-if="item.isIncrease == 'Y'">
+                               <span>زيادة (كجم):</span><span>&nbsp;{{item.healthQIncreaseKG}}</span><br>
+                                   <span>&nbsp;{{item.healthQReason}}</span><span>:سبب التغييرات</span><br>
+                            </span>
+                            <span ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                                  ng-if="item.isIncrease == 'N'">
+                               <span>نقصان (كجم):</span><span>&nbsp;{{item.healthQDecreaseKG}}</span><br>
+                                   <span>&nbsp;{{item.healthQReason}}</span><span>:سبب التغييرات</span><br>
+                            </span>
+                           </span>
+                     <span style="float: initial;" ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.questionValue == 'Y'">
+                                <span ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                                      ng-if="item.isIncrease == 'Y'">
+                               <span>زيادة (كجم):</span><span>&nbsp;{{item.healthQIncreaseKG}}</span><br>
+                                   <span>&nbsp;{{item.healthQReason}}</span><span>:سبب التغييرات</span><br>
+                                </span>
+                                <span ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestionWeightInfo.healthQuestionWeightInfoItems"
+                                      ng-if="item.isIncrease == 'N'">
+                               <span>نقصان (كجم):</span><span>&nbsp;{{item.healthQDecreaseKG}}</span><br>
+                                   <span>&nbsp;{{item.healthQReason}}</span><span>:سبب التغييرات</span><br>
+                                </span>
+                           </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'N' && data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'N' && data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' || data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' || data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'Y'"/>
+                  </td>
+                  <td style="padding-top: 0px !important; padding-bottom: 0px !important;">
+                     <span dir="rtl" style="margin-right: 30px;">2.	&nbsp;هل انت مدخن او تتعاطى مخدرات او كحول الان او خلال السنوات السابقة؟</span><br>
+                     <span dir="rtl" style="margin-right: 30px;">اذا كانت الاجابة بنعم رجاء اذكر النوع والكمية؟ </span><br>
+                     <span style="margin-right: 30px;">.................................................................................................</span><br>
+                     <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship != null">
+                        <span>&nbsp;نوع:</span>
+                        <span>&nbsp;{{data.inputPdf.lifeInsured[0].healthQuestions[0].smokerTypeValue}}</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;العصي او الوحدة في اليوم:</span>
+                        <span>{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[0].smokerUnit}}</span>
+                              <br>
+                           </span>
+                     <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship != null">
+                        <span>&nbsp;نوع:</span>
+                        <span>&nbsp;{{data.inputPdf.lifeInsured[0].healthQuestions[1].drinkerTypeValue}}</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الكمية او الوحدة في اليوم:</span>
+                        <span>{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[1].drinkerAmount}}</span>
+                     </span>
+                     <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship == null">
+                        <span>&nbsp;نوع:</span>
+                        <span>&nbsp;{{data.inputPdf.policyOwner.healthQuestions[0].smokerTypeValue}}</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;العصي او الوحدة في اليوم:</span>
+                        <span>&nbsp;{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[0].smokerUnit}}</span>
+                        <br>
+                     </span>
+                     <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].questionValue == 'Y' && data.application.lifeAssuredDetails[0].larelationship == null">
+                        <span>&nbsp;نوع:</span>
+                        <span>&nbsp;{{data.inputPdf.policyOwner.healthQuestions[1].drinkerTypeValue}}</span>
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;الكمية او الوحدة في اليوم: </span>
+                        <span>{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[1].drinkerAmount}}</span>
+                     </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">3 .هل اعفيت من الخدمة العسكرية ؟ </span><br>
+                     <span dir="rtl" style="margin-right: 45px;">اذا كانت الاجابة بنعم رجاء اذكر السبب؟ </span><br>
+                     <div ng-if="data.application.laisTheSameWithPO == '1'" style="padding-right: 40px;">
+                        <div ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'">
+                           <div ng-if="data.quotation.lifeInsured[0].person.genderCode == 'M'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                        <span>
+                                           <span style="margin-right: -10px; vertical-align: top;" >طبي</span>
+                                           <span>
+                                              <input style=" margin-right: 32px" type="radio" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail == 'Other'"/>&nbsp;
+                                           </span>
+                                        </span>
+                              <span style="margin-right: 80px;">
+                                           <span style="margin-right: -10px; vertical-align: top;">اخرى</span>
+                                           <span>
+                                              <input style=" margin-right: 1px;" type="radio" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail == 'Medical Reason'"/>
+                                           </span>
+                                        </span>
+                           </div>
+                           <div ng-if="data.quotation.lifeInsured[0].person.genderCode == 'F'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                        <span>
+                                           <span style="margin-right: -10px; vertical-align: top;">طبي</span>
+                                           <span>
+                                              <input style="margin-right: 32px;" type="radio"  ng-checked="data.quotation.lifeInsured[0].person.genderCode == 'F'"/>&nbsp;
+                                           </span>
+                                        </span>
+                              <span style="margin-right: 80px;">
+                                           <span style="margin-right: -10px; vertical-align: top;">اخرى</span>
+                                           <span>
+                                              <input style="margin-right: 1px" type="radio"/>
+                                           </span>
+                                        </span>
+                           </div>
+                        </div>
+                        <div ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                     <span>
+                                        <span style="margin-right: -10px; vertical-align: top;">طبي</span>
+                                        <span>
+                                           <input style="margin-right: 32px;" type="radio"/>
+                                        </span>
+                                    </span>
+                           <span style="margin-right: 80px;">
+                                        <span style="margin-right: -10px; vertical-align: top;">اخرى</span>
+                                        <span>
+                                           <input style="margin-right: 1px" type="radio"/>
+                                        </span>
+                                     </span>
+                        </div>
+                     </div>
+                     <div ng-if="data.application.laisTheSameWithPO != '1'" style="padding-right: 40px;">
+                        <div ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'Y'">
+                           <div ng-if="data.quotation.policyOwner.person.genderCode == 'M'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                        <span>
+                                           <span style="margin-right: -10px; vertical-align: top;">طبي</span>
+                                           <span>
+                                              <input style="margin-right: 32px;" type="radio" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail == 'Other'"/>
+                                           </span>
+                                        </span>
+                              <span style="margin-right: 80px;">
+                                           <span style="margin-right: -10px; vertical-align: top;">اخرى</span>
+                                           <span>
+                                              <input style="margin-right: 1px" type="radio" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].lifestyleQDetail == 'Medical Reason'"/>
+                                           </span>
+                                        </span>
+                           </div>
+                           <div ng-if="data.quotation.policyOwner.person.genderCode == 'F'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                        <span>
+                                           <span style="margin-right: -10px; vertical-align: top;">طبي</span>
+                                           <span>
+                                              <input style="margin-right: 32px;" type="radio" ng-checked="data.quotation.policyOwner.person.genderCode == 'F'"/>&nbsp;
+                                           </span>
+                                        </span>
+                              <span style="margin-right: 80px;">
+                                           <span style="margin-right: -10px; vertical-align: top;">اخرى</span>
+                                           <span>
+                                              <input style="margin-right: 1px" type="radio"/>
+                                           </span>
+                                        </span>
+
+                           </div>
+                        </div>
+                        <div ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[0].questionValue == 'N'" style="margin-bottom: -14px; margin-top: 8px; margin-right: -50px;">
+                                    <span >
+                                        <span style="margin-right: -10px; vertical-align: top;">طبي</span>
+                                        <span>
+                                           <input style="margin-right: 32px;" type="radio"/>
+                                        </span>
+                                     </span>
+                           <span style="margin-right: 80px;">
+                                        <span style="margin-right: -10px; vertical-align: top;" >اخرى</span>
+                                        <span>
+                                           <input style="margin-right: 1px" type="radio"/>
+                                        </span>
+                                     </span>
+                        </div>
+                     </div><br>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[2].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[2].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[2].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[2].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">4.&nbsp;	هل تتلقى اى علاج بصفة منتظمة؟</span><br>
+                     <span dir="rtl" style="margin-right: 30px;">اذا كانت الاجابة بنعم اذكر التفاصيل </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[3].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[3].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[3].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[3].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">5.&nbsp;	هل اجرى لك عملية جراحية ؟ </span><br>
+                     <span dir="rtl" style="margin-right: 30px;">اذا كانت الاجابة بنعم اذكر التفاصيل </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="non-border-right"></td>
+                  <td class="non-border-left"></td>
+                  <td colspan="2">
+                     <span dir="rtl" style="margin-right: 30px;">6.	&nbsp;هل تعانى او عانيت من اى من : </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center  non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[4].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[4].questionValue == 'N'"/>
+                  </td>
+                  <td class="center  non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[4].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[4].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">أ‌.&nbsp;	ارتفاع ضغط الدم او امراض القلب.</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[5].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[5].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[5].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[5].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">ب‌.	&nbsp;السكر او زلال بالبول. </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[6].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[6].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[6].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[6].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">ت‌.	&nbsp;امراض الكبد او امراض الكلى. </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[7].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[7].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[7].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[7].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">ث‌.	&nbsp;الربو او امراض الصدر. </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[8].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[8].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[8].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[8].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">ج‌.	&nbsp;اورام او تضخم فى  الغدد اوتضخم فى الغدد اليمفاوية او امراض سرطانية.</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[9].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[9].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[9].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[9].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">ح‌.	&nbsp;اى امراض بالجهاز العصبى او اضطرابات نفسية. </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[10].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[10].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[10].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[10].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">7.	 &nbsp;هل تعانى من اى امراض بالعين؟ </span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[11].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[11].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[11].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[11].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                            <span dir="rtl"
+                                  style="margin-right: 30px;">8.&nbsp;	هل تلبس نظارة ؟</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right ">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[12].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[12].questionValue == 'N'"/>
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[12].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[12].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">9.&nbsp;	هل عولجت بالانسولين او اى ادوية بالسكر ؟</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[13].questionValue == 'N'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[13].questionValue == 'N'"/>
+                  </td>
+                  <td class="center  non-border-left">
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO == '1'"
+                            ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[13].questionValue == 'Y'"/>
+                     <input type="checkbox" ng-if="data.application.laisTheSameWithPO != '1'"
+                            ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[13].questionValue == 'Y'"/>
+                  </td>
+                  <td>
+                     <span dir="rtl" style="margin-right: 30px;">10.&nbsp;	هل اجرى لك نقل دم ؟</span>
+                  </td>
+               </tr>
+               <tr ng-if="data.application.laisTheSameWithPO == '1' && data.quotation.lifeInsured[0].person.genderCode == 'F'" class="table-content-pns">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[14].questionValue == 'N'" />
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.healthQuestionnaire.healthQuestions[14].questionValue == 'Y'" />
+                  </td>
+                  <td>
+                     <span><u>للإناث فقط </u></span><br>
+                     <span dir="rtl" style="margin-right: 30px;">11. هل انتى حامل اذا كان نعم فى اى شهر؟ </span>
+                  </td>
+               </tr>
+               <tr ng-if="data.application.laisTheSameWithPO != '1' && data.quotation.policyOwner.person.genderCode == 'F'" class="table-content-pns ">
+                  <td class="center non-border-right">
+                     <input type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[14].questionValue == 'N'" />
+                  </td>
+                  <td class="center non-border-left">
+                     <input type="checkbox" ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.healthQuestionnaire.healthQuestions[14].questionValue == 'Y'" />
+                  </td>
+                  <td>
+                     <span><u>للإناث فقط </u></span><br>
+                     <span dir="rtl" style="margin-right: 30px;">11. هل انتى حامل اذا كان نعم فى اى شهر؟ </span>
+                  </td>
+               </tr>
+            </table>
+
+            <table ng-if="data.questionValueYes.showBlankRow != true" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+               <tr class="table-header-black white-text-color text-align-right">
+                  <td colspan="5">
+                           <span>اذا كانت الاجابة على الاسئلة من (4-11) بنعم رجاء اذكر التفاصيل بالجدول
+                                 التالى</span>
+                  </td>
+               </tr>
+               <tr class="table-header-green white-text-color non-top-border text-align-center non-bottom-border">
+                  <td class="table-border-white">الحالة الصحية الحالية</td>
+                  <td class="table-border-white">العلاج</td>
+                  <td class="table-border-white">تاريخ التشخيص</td>
+                  <td class="table-border-white">التفاصيل</td>
+                  <td>رقم السؤال</td>
+               </tr>
+               <tr class="table-content-pns text-align-center" ng-repeat="item in data.inputPdf.policyOwner.healthQuestions"
+                   ng-if="item.currentHealthState != ''">
+                  <td>{{item.currentHealthState}}</td>
+                  <td>{{item.medication}}</td>
+                  <td>{{item.diagnosisDate | date:'dd/MM/yyyy'}}</td>
+                  <td>{{item.details}}</td>
+                  <td dir="ltr">{{item.questionNo}}</td>
+               </tr>
+               <tr class="table-content-pns text-align-center" ng-repeat="item in data.inputPdf.lifeInsured[0].healthQuestions"
+                   ng-if="item.currentHealthState != ''">
+                  <td>{{item.currentHealthState}}</td>
+                  <td>{{item.medication}}</td>
+                  <td>{{item.diagnosisDate | date:'dd/MM/yyyy'}}</td>
+                  <td>{{item.details}}</td>
+                  <td dir="ltr">{{item.questionNo}}</td>
+               </tr>
+            </table>
+
+            <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+               <tr class="table-header-black white-text-color text-align-right">
+                  <td colspan="6">التاريخ الصحى العائلي</td>
+               </tr>
+               <tr class="table-header-green white-text-color text-align-center non-bottom-border"
+                   style="border-bottom: 2px solid white;">
+                  <td class="table-border-white" colspan="3"><span>الوفيات</span></td>
+                  <td class="table-border-white" colspan="2"><span>الاحياء</span></td>
+                  <td rowspan="1" style="border-bottom: hidden;">
+                     <span> الاقارب</span></td>
+               </tr>
+               <tr class="table-header-green white-text-color text-align-center  non-bottom-border ">
+                  <td class="table-border-white">
+                     <span>سبب الوفاة </span></td>
+                  <td class="table-border-white"><span>تاريخ الوفاة </span></td>
+                  <td class="table-border-white"><span>السن عند الوفاة</span></td>
+                  <td class="table-border-white"><span>الحالة الصحية الحالية</span></td>
+                  <td class="table-border-white"><span>السن</span></td>
+                  <td class="non-border-top col-invisible"></td>
+               </tr>
+               <tr class="table-content-pns  text-align-center"
+                   ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                   ng-repeat="item in data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.insuredFamilyInformationItem">
+                  <td>{{item.deathCauseOfDeath}}</td>
+                  <td>{{item.deathDate | date:'dd/MM/yyyy'}}</td>
+                  <td>{{item.deathAge}}</td>
+                  <td>{{item.aliveHealthCondition}}</td>
+                  <td>{{item.aliveAge}}</td>
+                  <td>
+                     {{'ipos.familyHistoryNew.ar.' + item.familyQKey | translate}}
+                  </td>
+               </tr>
+               <tr class="table-content-pns  text-align-center"
+                   ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                   ng-repeat="item in data.application.policyOwnerDetails.underwritingDetailsOfProposer.insuredFamilyInformationItem">
+                  <td>{{item.deathCauseOfDeath}}</td>
+                  <td>{{item.deathDate | date:'dd/MM/yyyy'}}</td>
+                  <td>{{item.deathAge}}</td>
+                  <td>{{item.aliveHealthCondition}}</td>
+                  <td>{{item.aliveAge}}</td>
+                  <td>
+                     {{'ipos.familyHistoryNew.ar.' + item.familyQKey | translate}}
+                  </td>
+               </tr>
+            </table>
+            <!-- Section 7 Residence and travel -->
+            <table class="format-table-all-new-pns arabic-style avoid-break-inside">
+               <tr class="table-header-green white-text-color text-align-right">
+                  <td colspan="4" style="width: 100%">الاقامة والسفر</td>
+               </tr>
+               <tr class="table-content-mer non-top-border">
+                  <td class=" text-align-center" style="width: 15%;">
+                     <span>لا</span>
+                     <span>
+                              <input type="radio"
+                                     ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                                     ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'N'"/>
+                              <input type="radio"
+                                     ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                                     ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'N'"/>
+                           </span>
+                  </td>
+                  <td class=" text-align-center" style="width: 15%;border-left: hidden; border-right: hidden;">
+                     <span>نعم</span>
+                     <span>
+                              <span>
+                                 <input type="radio"
+                                        ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                                        ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'Y'"/>
+                                 <input type="radio"
+                                        ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                                        ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].questionValue == 'Y'"/>
+                              </span>
+                           </span>
+                  </td>
+                  <td width="70%" colspan="2">
+                     <span dir="rtl">هل تعيش بالخارج او تنوى السفر للخارج باستثناء قضاء الاجازات او رحلات العمل القصيرة ( لاقل من شهر )؟ </span><br>
+                  </td>
+               </tr>
+               <tr class="table-content-mer non-top-border">
+                  <td></td>
+                  <td style="border-left: hidden; border-right: hidden;"></td>
+                  <td style="padding-right: 0px; border-left: hidden; border-right: hidden;">
+                           <span dir="rtl"
+                                 ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+                              <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail != null">{{'ipos.travelAbroad.' + data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail | translate}}</span>
+                              <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail == null">.................................................................</span>
+                           </span>
+                     <span dir="rtl"
+                           ng-if="data.application.lifeAssuredDetails[0].larelationship == null">
+                              <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail != null">{{'ipos.travelAbroad.' + data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail | translate}}</span>
+                              <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[1].lifestyleQDetail == null">.......................................................................</span>
+                           </span>
+                  </td>
+                  <td style="width:40%;">
+                     <span dir="rtl">اذا كانت الاجابة بنعم برجاء ذكر اسم الدولة</span>
+                  </td>
+               </tr>
+               <tr class="table-content-mer">
+               </tr>
+            </table>
+
+            <!-- Section 8 Dangerous Activities -->
+            <table class="format-table-all-new-pns arabic-style avoid-break-inside">
+               <tr class="table-header-green white-text-color text-align-right">
+                  <td colspan="4" style="width: 100%">الانشطة الخطرة</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td class=" text-align-center" style="width: 15%;">
+                     <span>لا</span>
+                     <span>
+                               <input type="radio"
+                                      ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                                      ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'N'"/>
+                               <input type="radio"
+                                      ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                                      ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'N'"/>
+                           </span>
+                  </td>
+                  <td class=" text-align-center"
+                      style="width: 15%;border-left: hidden; border-right: hidden;">
+                     <span>نعم</span>
+                     <span>
+                               <input type="radio"
+                                      ng-if="data.application.lifeAssuredDetails[0].larelationship != null"
+                                      ng-checked="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'Y'"/>
+                               <input type="radio"
+                                      ng-if="data.application.lifeAssuredDetails[0].larelationship == null"
+                                      ng-checked="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].questionValue == 'Y'"/>
+                           </span>
+                  </td>
+                  <td colspan="2" width="75%">
+                     <span dir="rtl">هل تشارك فى اية اشكال الطيران الخاص ، سباق السيارات ، الغطس ، او اى نوع اخر من انواع الرياضات او الانشطة الخطرة ؟ </span>
+                     <br>
+                  </td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td></td>
+                  <td style="border-left: hidden; border-right: hidden;"></td>
+                  <td style="border-left: hidden; border-right: hidden;">
+                           <span dir="rtl"
+                                 ng-if="data.application.lifeAssuredDetails[0].larelationship != null">
+                               <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail != null">{{data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail}}</span>
+                               <span ng-if="data.application.lifeAssuredDetails[0].underwritingDetailsOfLifeAssured.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail == null">..........................................................</span>
+                           </span>
+                     <span dir="rtl"
+                           ng-if="data.application.lifeAssuredDetails[0].larelationship == null">
+                               <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail != null">{{data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail}}</span>
+                               <span ng-if="data.application.policyOwnerDetails.underwritingDetailsOfProposer.lifestyleQuestionnaire.lifestyleQuestions[2].lifestyleQDetail == null">.................................................................</span>
+                           </span>
+                  </td>
+                  <td style="width: 46%;">
+                     <span dir="rtl">اذا كانت الاجابة بنعم ( برجاء اذكر اسم الرياضة )</span>
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+               </tr>
+            </table>
+
+            <!-- Start Section 9 Declarations -->
+            <table class="format-table-all-new-pns arabic-style avoid-break-inside">
+               <tr class="table-header-green white-text-color text-align-right">
+                  <td>الاقرارات</td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td dir="rtl" style="color: #ff0000 !important">أقر بأن الإجابات بالاسئلة
+                     الواردة أعلاه صحيحة وأننى لم أخفى أية معلومات قد تؤثر على تقييم وقبول
+                     طلب التأمين ، وأوافق على أن هذا النموذج جزء لايتجزأ من طلب التأمين وأعلم
+                     أن إخفاء أية معلومات جوهرية قد تؤدى إلى بطلان العقد وتصبح الأقساط
+                     المدفوعة حقاً مكتسباً للشركة .
+                  </td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td dir="rtl" style="color: #ff0000 !important">وأفوض الشركة في طلب جميع
+                     المعلومات عن حالتي الصحية من المستشفيات ودور العلاج والأطباء الذين كانوا
+                     قد عالجوني قبل أو بعد تاريخ هذا الطلب وأصرح لتلك الجهات بأن يمدو الشركة
+                     بكافة البيانات التي تطلبها منهم .
+                  </td>
+               </tr>
+               <tr class="table-content-pns non-top-border">
+                  <td dir="rtl" style="color: #ff0000 !important">وأوافق على أن الدفعة المقدمة
+                     التي تم دفعها قبل قبول الطلب لا تلزم شركة مصر لتأمينات الحياة بإصدار
+                     الوثيقة الجاري الاتفاق عليها وأن قبول التأمين متوقف على القبول الكامل
+                     لهذا الطلب ودفع القسط واصدار الوثيقة وتخصم الدفعة المقدمة المسددة من
+                     القسط الاول على أن تبقى حقاً مكتسباً للشركة اذا لم يسدد القسط الاول في
+                     بحر الثلاثين يوماً التالية لتاريخ اصدار الوثيقة.
+                  </td>
+               </tr>
+
+            </table>
+
+            <!-- Signature Application -->
+            <table style="margin-top: 25px !important;"
+                   class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+               <tr style="width: 100%;"
+                   class="table-header-green white-text-color text-align-center">
+                  <td style="border-right: 2px solid white !important; width: 33%;">مسوق التأمين
+                  </td>
+                  <td style="border-right: 2px solid white !important; width: 33%;">المؤمن
+                     عليه
+                  </td>
+                  <td style="width: 33%;">المتعاقد</td>
+               </tr>
+               <tr class="table-content-pns non-top-border text-align-center">
+                  <td>
+                     <span ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</span>
+                     <span ng-if="data.licenseFlag != 'true'">{{data.managerName}}</span>
+                  </td>
+                  <td>
+                     <span ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</span>
+                     <span ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                  </td>
+                  <td>
+                     {{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}
+                  </td>
+               </tr>
+               <tr class="table-content-pns text-align-center">
+                  <td>التوقيع</td>
+                  <td>التوقيع</td>
+                  <td>التوقيع</td>
+               </tr>
+               <tr style="height:90px;"
+                   class="table-content-pns text-align-center text-signature">
+                  <td>........................................</td>
+                  <td>........................................</td>
+                  <td>........................................</td>
+               </tr>
+            </table>
+
+            <!-- For Banca role -->
+            <table ng-if="data.isActiveRole == 'BA'" style="margin-top: 25px !important;"
+                   class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+               <tr style="width: 100%;"
+                   class="table-header-green-beneficiary white-text-color text-align-center">
+                  <td  width="50%" colspan="2" style="border-right: 2px solid white !important;">المؤمن
+                     عليه
+                  </td>
+                  <td  width="50%" colspan="2">المتعاقد</td>
+               </tr>
+               <tr class="table-content-pns non-top-border text-align-center">
+                  <td colspan="2">
+                     <span ng-if="data.application.laisTheSameWithPO == '1'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</span>
+                     <span ng-if="data.application.laisTheSameWithPO != '1'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
+                  </td>
+                  <td colspan="2">
+                     {{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}
+                  </td>
+               </tr>
+               <tr class="table-content-pns text-align-center">
+                  <td colspan="2">التوقيع</td>
+                  <td colspan="2">التوقيع</td>
+               </tr>
+               <tr class="table-content-pns non-bottom-border" style="height: 90px;">
+                  <td>
+                     <div style="text-align: center; padding-top: 20px;"
+                          class="div-stamp-mer">
+                        <span>ختم مطابق</span>
+                     </div>
+                  </td>
+                  <td style="border-left: hidden; padding-top: 20px;padding-right: 20px;"
+                      class="signature-new">............................................
+                  </td>
+                  <td>
+                     <div style="text-align: center; padding-top: 20px;"
+                          class="div-stamp-mer">
+                        <span>ختم مطابق</span>
+                     </div>
+                  </td>
+                  <td style="border-left: hidden; padding-top: 20px;padding-right: 20px;"
+                      class="signature-new">............................................
+                  </td>
+               </tr>
+               <tr class="table-header-green-beneficiary white-text-color text-align-center">
+                  <td colspan="2" style="border-right: 2px solid white !important;">خبير
+                     التأمين
+                  </td>
+                  <td colspan="2">مرشح العميل</td>
+               </tr>
+               <tr style="height: 30px;"
+                   class="table-content-pns non-top-border text-align-center">
+                  <td colspan="2">EFSA R.N</td>
+                  <td colspan="2">HR ID</td>
+               </tr>
+               <tr style="height: 90px;" class="table-content-pns text-align-center">
+                  <td colspan="2" style="padding-top: 45px;">
+                     ...........................................................
+                  </td>
+                  <td colspan="2" style="padding-top: 45px;">
+                     ...........................................................
+                  </td>
+               </tr>
+            </table>
+
+         </div>
+      </td>
+   </tr>
+   </tbody>
+   <tfoot>
+   <tr>
+      <td>
+         <footer>
+            <div class="foot">
+               <img class="foot-img" src="../../common/images/misr-footer1.png" alt=""/>
+            </div>
+         </footer>
+      </td>
+   </tr>
+   </tfoot>
+</table>
+</body>
+
+</html>
