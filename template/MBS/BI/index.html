@@ -123,292 +123,44 @@
                             <!--start life insured information-->
                             <table class="format-table-all-new format-table-all-new-inv arabic-style">
                                 <tr class="table-header-green white-text-color text-align-center">
-                                    <td colspan="5" style="width:100%;">بيانات المؤمن عليه المتعاقد / المنتفعين</td>
+                                    <td colspan="4" style="width:100%;">ببيانات المؤمن عليهم المنتفعين</td>
                                 </tr>
                                 <tr style="font-weight: bold;" class="table-content non-top-border green-border">
-                                    <td ng-if="data.quotation.lifeInsured[2] != null" style="width:20%;">المنتفع 3</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">المنتفع 2</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">المنتفع 1</td>
-                                    <td style="width:20%;">المؤمن عليه المتعاقد</td>
-                                    <td style="width:20%;"></td>
+                                    <td style="width:20%;direction:rtl;">صلة القرابة للمتعاقد</td>
+                                    <td style="width:20%;">الرقم القومي</td>
+                                    <td style="width:20%;">تاريخ الميلاد</td>
+                                    <td style="width:40%;">اسم المؤمن عليه</td>
                                 </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.benefitIllustrationTable.lifeInsureds[2].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[1].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[0].relationship}}</td>
+                                <tr class="table-content green-border" ng-repeat="item in data.benefitIllustrationTable.lifeInsureds">
+                                    <td style="width:20%;direction:rtl;">{{item.relationship}}</td>
+                                    <td style="width:20%;">{{item.idNumber}}</td>
                                     <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.benefitIllustrationTable.lifeInsureds[0].relationship}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.benefitIllustrationTable.poRelationship}}</span>
+                                        {{item.birthDate | date:'dd/MM/yyyy'}}
                                     </td>
-                                    <td style="width:20%; font-weight: bold;">صلة القرابة للمتعاقد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.quotation.lifeInsured[2].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[1].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.quotation.lifeInsured[0].person.name.first}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.quotation.lifeInsured[0].person.name.first}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.quotation.policyOwner.person.name.first}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">الاسم الأول</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.quotation.lifeInsured[2].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[1].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.quotation.lifeInsured[0].person.name.last}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.quotation.lifeInsured[0].person.name.last}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.quotation.policyOwner.person.name.last}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">الإسم الأخير</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.quotation.lifeInsured[2].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[1].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.quotation.lifeInsured[0].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.quotation.lifeInsured[0].person.birthDate | date:'dd/MM/yyyy'}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.quotation.policyOwner.person.birthDate | date:'dd/MM/yyyy'}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">تاريخ الميلاد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.quotation.lifeInsured[2].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[1].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.quotation.lifeInsured[0].person.age}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.quotation.lifeInsured[0].person.age}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.quotation.policyOwner.person.age}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">السن</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.benefitIllustrationTable.lifeInsureds[2].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[1].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[0].liGender}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.benefitIllustrationTable.lifeInsureds[0].liGender}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.benefitIllustrationTable.poGender}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">النوع</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.benefitIllustrationTable.lifeInsureds[2].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[1].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[0].nationality}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.benefitIllustrationTable.lifeInsureds[0].nationality}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.benefitIllustrationTable.poNationality}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">الجنسية</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.benefitIllustrationTable.lifeInsureds[2].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[1].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[0].liOccupation}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.benefitIllustrationTable.lifeInsureds[0].liOccupation}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.benefitIllustrationTable.poOccupation}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">المهنة</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td style="width:20%;" ng-if="data.quotation.lifeInsured[2] != null">{{data.benefitIllustrationTable.lifeInsureds[2].height}}/{{data.benefitIllustrationTable.lifeInsureds[2].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 1" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[1].height}}/{{data.benefitIllustrationTable.lifeInsureds[1].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured.length > 0" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[0].height}}/{{data.benefitIllustrationTable.lifeInsureds[0].weight}}</td>
-                                    <td style="width:20%;">
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'true'">{{data.benefitIllustrationTable.lifeInsureds[0].height}}/{{data.benefitIllustrationTable.lifeInsureds[0].weight}}</span>
-                                        <span ng-if="data.quotation.lifeInsured[0].isPolicyOwner == 'false'">{{data.quotation.policyOwner.person.height}}/{{data.quotation.policyOwner.person.weight}}</span>
-                                    </td>
-                                    <td style="width:20%; font-weight: bold;">الطول/الوزن</td>
+                                    <td style="width:40%; font-weight: bold;">{{(item.firstName != null && item.firstName != "") ? item.firstName + ' ' + item.lastName : item.lastName}}</td>
                                 </tr>
                             </table>
-
-                            <table ng-if="data.quotation.lifeInsured[3] != null" class="format-table-all-new format-table-all-new-inv arabic-style">
-                                <tr class="table-header-green white-text-color text-align-center">
-                                    <td colspan="5" style="width:100%;">بيانات المؤمن عليه المتعاقد / المنتفعين</td>
-                                </tr>
-                                <tr style="font-weight: bold;" class="table-content non-top-border green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">المنتفع 7</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">المنتفع 6</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">المنتفع 5</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">المنتفع 4</td>
-                                    <td style="width:20%;"></td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[6].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[5].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[4].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[3].relationship}}</td>
-                                    <td style="width:20%; font-weight: bold;">صلة القرابة للمتعاقد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[6].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.quotation.lifeInsured[5].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[4].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.quotation.lifeInsured[3].person.name.first}}</td>
-                                    <td style="width:20%; font-weight: bold;">الاسم الأول</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[6].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.quotation.lifeInsured[5].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[4].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.quotation.lifeInsured[3].person.name.last}}</td>
-                                    <td style="width:20%; font-weight: bold;">الإسم الأخير</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[6].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.quotation.lifeInsured[5].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[4].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.quotation.lifeInsured[3].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td style="width:20%; font-weight: bold;">تاريخ الميلاد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[6].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.quotation.lifeInsured[5].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.quotation.lifeInsured[4].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.quotation.lifeInsured[3].person.age}}</td>
-                                    <td style="width:20%; font-weight: bold;">السن</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[6].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[5].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[4].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[3].liGender}}</td>
-                                    <td style="width:20%; font-weight: bold;">النوع</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[6].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[5].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[4].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[3].nationality}}</td>
-                                    <td style="width:20%; font-weight: bold;">الجنسية</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[6].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[5].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[4].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[3].liOccupation}}</td>
-                                    <td style="width:20%; font-weight: bold;">المهنة</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[6] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[6].height}}/{{data.benefitIllustrationTable.lifeInsureds[6].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[5] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[5].height}}/{{data.benefitIllustrationTable.lifeInsureds[5].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[4] != null" style="width:20%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[4].height}}/{{data.benefitIllustrationTable.lifeInsureds[4].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[3] != null" style="width:20%;">{{data.benefitIllustrationTable.lifeInsureds[3].height}}/{{data.benefitIllustrationTable.lifeInsureds[3].weight}}</td>
-                                    <td style="width:20%; font-weight: bold;">الطول/الوزن</td>
-                                </tr>
-                            </table>
-
-                            <table ng-if="data.quotation.lifeInsured[7] != null" class="format-table-all-new format-table-all-new-inv arabic-style">
-                                <tr class="table-header-green white-text-color text-align-center">
-                                    <td colspan="4" style="width:100%;">بيانات المؤمن عليه المتعاقد / المنتفعين</td>
-                                </tr>
-                                <tr style="font-weight: bold;" class="table-content non-top-border green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">المنتفع 10</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">المنتفع 9</td>
-                                    <td ng-if="data.quotation.lifeInsured[7] != null" style="width:27%;">المنتفع 8</td>
-                                    <td style="width:19%;"></td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[9].relationship}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.benefitIllustrationTable.lifeInsureds[8].relationship}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.benefitIllustrationTable.lifeInsureds[7].relationship}}</td>
-                                    <td style="width:19%; font-weight: bold;">صلة القرابة للمتعاقد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.quotation.lifeInsured[9].person.name.first}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.quotation.lifeInsured[8].person.name.first}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.quotation.lifeInsured[7].person.name.first}}</td>
-                                    <td style="width:19%; font-weight: bold;">الاسم الأول</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.quotation.lifeInsured[9].person.name.last}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.quotation.lifeInsured[8].person.name.last}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.quotation.lifeInsured[7].person.name.last}}</td>
-                                    <td style="width:19%; font-weight: bold;">الإسم الأخير</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.quotation.lifeInsured[9].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.quotation.lifeInsured[8].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.quotation.lifeInsured[7].person.birthDate | date:'dd/MM/yyyy'}}</td>
-                                    <td style="width:19%; font-weight: bold;">تاريخ الميلاد</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.quotation.lifeInsured[9].person.age}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.quotation.lifeInsured[8].person.age}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.quotation.lifeInsured[7].person.age}}</td>
-                                    <td style="width:19%; font-weight: bold;">السن</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[9].liGender}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.benefitIllustrationTable.lifeInsureds[8].liGender}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.benefitIllustrationTable.lifeInsureds[7].liGender}}</td>
-                                    <td style="width:19%; font-weight: bold;">النوع</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[9].nationality}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.benefitIllustrationTable.lifeInsureds[8].nationality}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.benefitIllustrationTable.lifeInsureds[7].nationality}}</td>
-                                    <td style="width:19%; font-weight: bold;">الجنسية</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[9].liOccupation}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.benefitIllustrationTable.lifeInsureds[8].liOccupation}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.benefitIllustrationTable.lifeInsureds[7].liOccupation}}</td>
-                                    <td style="width:19%; font-weight: bold;">المهنة</td>
-                                </tr>
-                                <tr class="table-content green-border">
-                                    <td ng-if="data.quotation.lifeInsured[9] != null" style="width:27%;direction:rtl;">{{data.benefitIllustrationTable.lifeInsureds[9].height}}/{{data.benefitIllustrationTable.lifeInsureds[9].weight}}</td>
-                                    <td ng-if="data.quotation.lifeInsured[8] != null" style="width:27%;">{{data.benefitIllustrationTable.lifeInsureds[8].height}}/{{data.benefitIllustrationTable.lifeInsureds[8].weight}}</td>
-                                    <td style="width:27%;" ng-if="data.quotation.lifeInsured[7] != null">{{data.benefitIllustrationTable.lifeInsureds[7].height}}/{{data.benefitIllustrationTable.lifeInsureds[7].weight}}</td>
-                                    <td style="width:19%; font-weight: bold;">الطول/الوزن</td>
-                                </tr>
-                            </table>
-
                             <!--end life insured information-->
 
-                            <table class="format-table-all-new format-table-all-new-inv arabic-style">
-                                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
-                                    <td style="width:22%" class="table-border-white">القسط السنوي</td>
-                                    <td style="width:28%" class="table-border-white">الرقم القومي</td>
-                                    <td style="width:28%" class="table-border-white">الإسم</td>
-                                    <td style="width:22%; border-right: 2px solid #0fb273 !important;" class="table-border-white">المنتفعين</td>
-                                </tr>
-                                <tr>
-                                    <td style="border: 2px solid #0fb273 !important;"></td>
-                                    <td style="border: 2px solid #0fb273 !important;"></td>
-                                    <td style="border: 2px solid #0fb273 !important; text-align: center !important;">{{data.quotation.policyOwner.person.name.full}}</td>
-                                    <td style="border: 2px solid #0fb273 !important; font-weight: bold;">المؤمن عليه المتعاقد</td>
-                                </tr>
-                                <tr class="table-content text-align-center" ng-repeat="item in data.benefitIllustrationTable.lifeInsureds">
-                                    <td style="border: 2px solid #0fb273 !important;">{{item.annualPremium | number : 2}}</td>
-                                    <td style="border: 2px solid #0fb273 !important;">{{item.idNumber}}</td>
-                                    <td style="border: 2px solid #0fb273 !important;">{{item.firstName}}&nbsp;{{item.lastName}}</td>
-                                    <td style="border: 2px solid #0fb273 !important; text-align: right !important; font-weight: bold;">
-                                        <span>{{data.benefitIllustrationTable.lifeInsureds.indexOf(item) + 1}}</span>
-                                        <span>المنتفع</span>
-                                    </td>
-                                </tr>
-                            </table>
+
 
                             <table class="format-table-all-new format-table-all-new-inv arabic-style avoid-break-inside format-table-layout-fixed">
                                 <tr class="table-header-black white-text-color text-align-center">
-                                    <td colspan="8" style="width:100%;  ">بيانات القسط الاول</td>
+                                    <td colspan="8" style="width:100%;  ">إجمالي القسط التأميني السنوي للوثيقة </td>
                                 </tr>
                                 <tr class="table-header-green white-text-color text-align-center non-bottom-border">
                                     <td class="table-border-white" width="15%">
-                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">اجمالى القسط الوحيد</span>
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">اجمالي القسط</span>
                                         <span ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">اجمالي القسط الاول</span>
                                     </td>
                                     <td class="table-border-white" width="10%">مصاريف الاصدار</td>
                                     <td class="table-border-white" width="10%">الدمغة النوعية</td>
                                     <td class="table-border-white" width="15%">صندوق ضمان حملة الوثائق</td>
-                                    <td class="table-border-white" width="13%">خدمات اعتماد وتعديل وثائق</td>
+                                    <td class="table-border-white" width="13%">رسم خدمات هيئة الرقابة المالية</td>
                                     <td class="table-border-white" width="13%">رسوم الاشراف والرقابة</td>
                                     <td class="table-border-white" width="10%">الدمغة  النسبية</td>
                                     <td class="table-border-white" style="border-right: 2px solid #0fb273 !important;">
-                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">القسط الوحيد</span>
+                                        <span ng-if="data.quotation.basicPlan.information.premiumFrequency == 'S'">صافي القسط</span>
                                         <span ng-if="data.quotation.basicPlan.information.premiumFrequency != 'S'">القسط</span>
                                     </td>
                                 </tr>
@@ -437,7 +189,7 @@
                                         <table>
                                             <tr>
                                                 <td style="vertical-align: top; border: none!important">1.</td>
-                                                <td style="padding-bottom: 1rem; padding-right: 1em; border: none!important">برنامج  ( ابن سينا –  Ibn Sina)  هو برنامج تأمين طبي فردي أعدته شركة مصر لتأمينات الحياة ليكون مخصص للأفراد و  العائلات  و المجموعات الصغيرة التى تقل عن 50 فرد .</td>
+                                                <td style="padding-bottom: 1rem; padding-right: 1em; border: none!important">برنامج  ( ابن سينا –  Ibn Sina)  هو برنامج تأمين طبي فردي أعدته شركة مصر لتأمينات الحياة ليكون مخصص للأفراد و  العائلات.</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -447,7 +199,7 @@
                                         <table>
                                             <tr>
                                                 <td style="padding-bottom: 1rem; vertical-align: top; border: none!important">2.</td>
-                                                <td style="padding-right: 1em; border: none!important">بموجب هذا العقد  ومقابل سداد قسط التأمين المستحق  فى موعده ، تتعهد شركة مصر لتأمينات الحياة  بتغطية كافة الخدمات  الطبية المعتادة و المألوفة و المعقولة و المصاريف المتعلقة بها و التي قد يتكبدها المؤمن عليه ضمن هذا البرنامج الطبي خلال مدة سريان هذة الوثيقة ووفقا لإحكامها و شروطها وحدود تغطيتها و إستثناءاتها .</td>
+                                                <td style="padding-right: 1em; border: none!important">بموجب هذا العقد  ومقابل سداد قسط التأمين المستحق  فى موعده ، تتعهد شركة مصر لتأمينات الحياة  بتغطية كافة الخدمات  الطبية المعتادة و المألوفة و المعقولة و المصاريف المتعلقة بها و التي قد يتكبدها المؤمن عليه ضمن هذا البرنامج الطبي خلال مدة سريان هذة الوثيقة ووفقا لاحكامها و شروطها وحدود تغطيتها و إستثناءاتها .</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -577,7 +329,7 @@
                                         <table>
                                             <tr>
                                                 <td style="vertical-align: top; border: none!important">15.</td>
-                                                <td style="padding-bottom: 1rem; padding-right: 1em; border: none!important">البرنامج يتيح التأمين على الأشخاص الذين يتراوح أعمارهم من 15 يوم حتى 69 سنة</td>
+                                                <td style="padding-bottom: 1rem; padding-right: 1em; border: none!important">البرنامج يتيح التأمين على الأشخاص الذين يتراوح أعمارهم من 0 يوم حتى 64 سنة</td>
                                             </tr>
                                         </table>
                                     </td>
@@ -607,14 +359,14 @@
                                     <td dir="rtl">
                                         <table>
                                             <tr>
-                                                <td style="padding-bottom: 1rem; border: none!important">طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد فسخ التعاقد خلال فترة السماح 10 ايام عمل من تاريخ اصدار الوثيقة واسترداد قيمة الاقساط المدفوعة بعد خصم مصاريف الاصدار  ان وجدت.</td>
+                                                <td style="padding-bottom: 1rem; border: none!important">طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد فسخ التعاقد خلال فترة السماح 10 ايام عمل من تاريخ اصدار الوثيقة واسترداد قيمة الاقساط المدفوعة بعد خصم مصاريف الاصدار  ان وجدت (شرط عدم إستلام المتعاقد الكارنيهات الطبية الخاصة به أو بعائلته ).</td>
                                             </tr>
                                         </table>
                                     </td>
                                 </tr>
                             </table>
 
-                            <table class="format-table-all-new  arabic-style avoid-break-inside">
+                           <!-- <table class="format-table-all-new  arabic-style avoid-break-inside">
                                 <tr class="table-header-green-che white-text-color">
                                     <td>ملخص الشروط العامة للبرنامج التأميني</td>
                                 </tr>
@@ -633,17 +385,9 @@
                                         </table>
                                     </td>
                                 </tr>
-                            </table>
+                            </table>-->
                             <!--end product summary-->
 
-                            <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside" style="margin-top: 15px !important;">
-                                <tr class="table-header-black white-text-color text-align-right">
-                                    <td style="width:100%;">الاجراءات الطبية</td>
-                                </tr>
-                                <tr class="table-content non-top-border text-align-center">
-                                    <td>.الاجراءات الطبية وفقا للسياسة الاكتتابية للشركة</td>
-                                </tr>
-                            </table>
 
                             <!--start signature-->
                             <table class="format-table-all-new format-table-all-new-inv format-table-layout-fixed arabic-style avoid-break-inside">
