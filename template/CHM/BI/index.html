@@ -362,13 +362,14 @@
 
             <table class="avoid-break-inside format-table-all-new format-table-all-new-inv arabic-style format-table-layout-fixed">
                <tr class="table-header-black white-text-color text-align-right">
-                  <td colspan="9" style="width:100%;">جدول نمو الصندوق</td>
+                  <td colspan="10" style="width:100%;">جدول نمو الصندوق</td>
                </tr>
                <tr style="font-size: xx-small;" class="table-header-green-che white-text-color text-align-center">
                   <td rowspan="1" colspan="2" style="border-bottom: solid !important;" class="non-bottom-border table-border-white">معدل نمو 12% سنوياً</td>
                   <td rowspan="1" colspan="2" style="border-bottom: solid !important;" class="table-border-white non-bottom-border">معدل نمو10% سنوياًً</td>
                   <td rowspan="1" colspan="2" style="border-bottom: solid !important;" class="non-bottom-border table-border-white" style="direction:rtl;">معدل نمو 8% سنوياً</td>
                   <td rowspan="2" colspan="1" class="non-bottom-border table-border-white">مجموع الاقساط المتراكمة</td>
+                  <td rowspan="2" colspan="1" class="non-bottom-border table-border-white">الاقساط الاضافية الاختيارية</td>
                   <td rowspan="2" colspan="1" class="non-bottom-border table-border-white">القسط السنوي</td>
                   <td rowspan="2" colspan="1" style="border-right: 2px solid #00CC99 !important;" class="non-bottom-border table-border-white">نهاية السنة</td>
                </tr>
@@ -388,6 +389,7 @@
                   <td colspan="1">{{item.surrenderAmount1 | number : 2}}</td>
                   <td colspan="1">{{item.investmentAccount1 | number : 2}}</td>
                   <td colspan="1">{{item.totalPaidPremium | number : 2}}</td>
+                  <td colspan="1">{{item.topUpPremium | number : 2}}</td>
                   <td colspan="1">{{data.quotation.basicPlan.information.annualUnitPremium | number : 2}}</td>
                   <td colspan="1">{{item.year}}</td>
                </tr>
