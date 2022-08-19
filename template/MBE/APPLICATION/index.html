@@ -39,11 +39,11 @@
             <td>
                <div class="page none-border">
                   <!--start summary information-->
-                  <table class="format-table-all-new-pns  none-border arabic-style">
+                  <table class="format-table-all-new-mbe  none-border arabic-style">
                      <tr>
                         <td style="width:21%;font-size:10pt;">{{data.application.documentRelation.productCurrencyCase}}</td>
                         <td style="width:18%;font-size:12pt;"> : طلب التأمين رقم</td>
-                        <td dir="rtl" style="width:38%;font-size:12pt;">{{data.strProductNamePart1}}</td>
+                        <td style="font-weight: bold;width:38%;font-size:12pt;">معاشك بإيدك</td>
                         <td style="width:21%;font-weight:bold;font-size:12pt; padding-right:20px">طلب تأمين وثيقة</td>
                      </tr>
                      <tr>
@@ -55,8 +55,7 @@
                            <span dir="{{data.quotation.metaData.language == 'en' ? 'ltr' : 'rtl'}}">{{data.quotation.basicPlan.information.bankBranchName}}</span>
                         </td>
                         <td style="font-size:12pt;"> : الفرع</td>
-                        <td dir="rtl" style="width:38%;font-size:12pt;">{{data.strProductNamePart2}}</td>
-
+                        <td dir="rtl" style="width:38%;font-size:12pt;">(معاش تكميلي)</td>
                      </tr>
                      <tr>
                         <td style="font-size:10pt;" ng-if="data.currentRole === data.quotation.metaData.businessProfile">{{data.currentRole == "BA" ? "MLI / HO" : data.regionName}}</td>
@@ -70,11 +69,11 @@
                   <!--end summary information-->
                   <hr class="hr-new">
                   <!--start agent information-->
-                  <table class="format-table-all-new-pns arabic-style">
+                  <table class="format-table-all-new-mbe arabic-style">
                      <tr class="table-header-green white-text-color text-align-center">
                         <td colspan="4" style="width:100%;">بيانات مسوق التأمين</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td class="email-format" style="width:35%;" ng-if="data.licenseFlag == 'true'">{{data.account.email}}</td>
                         <td style="width:30%;" ng-if="data.licenseFlag != 'true'">{{data.managerEmail}}</td>
                         <td style="width:10%;">الايميل</td>
@@ -82,7 +81,7 @@
                         <td style="width:30%;" ng-if="data.licenseFlag != 'true'">{{data.managerName}}</td>
                         <td style="width:15%;">الاسم</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td ng-if="data.licenseFlag == 'true'">{{data.account.phoneNumber}}</td>
                         <td ng-if="data.licenseFlag != 'true'">{{data.managerMobile}}</td>
                         <td>الموبايل</td>
@@ -96,11 +95,11 @@
                   </table>
                   <!--end agent information-->
 
-                  <table class="format-table-all-new-pns arabic-style">
+                  <table class="format-table-all-new-mbe arabic-style">
                      <tr class="table-header-green white-text-color text-align-center">
                         <td colspan="4" style="width:100%;">بيانات المتعاقد</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td style="width:30%;direction:rtl;">
                            <span>{{data.application.policyOwnerDetails.proporserInformation.person.basic.age}}</span>
                            <span>سنة</span>
@@ -111,25 +110,25 @@
                         </td>
                         <td style="width:15%;">الاسم</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.policyOwner.gender}}</td>
                         <td>النوع</td>
                         <td>{{data.application.policyOwnerDetails.proporserInformation.person.basic.birthDate | date:'dd/MM/yyyy'}}</td>
                         <td>تاريخ الميلاد</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.application.policyOwnerDetails.proporserInformation.person.contacts.mobilePhone}}</td>
                         <td>تليفون المحمول</td>
                         <td class="email-format">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.email}}</td>
                         <td>البريد الالكتروني </td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td dir="rtl" style="padding: 0px;" colspan="3">
                            <span>{{data.inputPdf.policyOwner.address[0].fullAddress}}</span>
                         </td>
                         <td>العنوان الدائم</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td dir="rtl" style="padding: 0px;" colspan="3" ng-if="data.application.mailingAddress.differentMailingAddress != 'Y'">
                            <span>{{data.inputPdf.policyOwner.address[0].fullAddress}}</span>
                         </td>
@@ -140,11 +139,11 @@
                      </tr>
                   </table>
                   <!--If PO=LI, display PO-->
-                  <table ng-if="data.application.laisTheSameWithPO !='1'" class="format-table-all-new-pns arabic-style">
+                  <table ng-if="data.application.laisTheSameWithPO !='1'" class="format-table-all-new-mbe arabic-style">
                      <tr class="table-header-green white-text-color text-align-center">
                         <td colspan="4" style="width:100%;">بيانات المؤمن عليه</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td>
                            <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'P'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].value}}</span>
                            <span ng-if="data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].code == 'E'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.idList[0].value}}</span>
@@ -155,7 +154,7 @@
                         </td>
                         <td style="width:20%;">الاسم</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.policyOwner.nationality}}
                         </td>
                         <td>الجنسية</td>
@@ -163,13 +162,13 @@
                         </td>
                         <td>تاريخ الميلاد</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.policyOwner.maritalStatus}}</td>
                         <td>الحالة الاجتماعية</td>
                         <td>{{data.application.policyOwnerDetails.proporserInformation.otherInformation.placeOfBirth}}</td>
                         <td>محل الميلاد</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.policyOwner.gender}}</td>
                         <td>النوع</td>
                         <td dir="rtl">
@@ -178,13 +177,13 @@
                         </td>
                         <td>السن</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.policyOwner.industry}}</td>
                         <td>طبيعة العمل</td>
                         <td>{{data.occupationValuePO}}</td>
                         <td>المهـــــــــــــــــــــــنة</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.application.policyOwnerDetails.proporserInformation.person.contacts.mobilePhone}}</td>
                         <td>تليفون المحمول</td>
                         <td class="email-format">{{data.application.policyOwnerDetails.proporserInformation.person.contacts.email}}
@@ -193,11 +192,11 @@
                      </tr>
                   </table>
                   <!--If PO<>LI, display LI-->
-                  <table ng-if="data.application.laisTheSameWithPO =='1'" class="format-table-all-new-pns arabic-style">
+                  <table ng-if="data.application.laisTheSameWithPO =='1'" class="format-table-all-new-mbe arabic-style">
                      <tr class="table-header-green white-text-color text-align-center">
                         <td colspan="4" style="width:100%;">بيانات المؤمن عليه</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td>
                            <span ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'P'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value}}</span>
                            <span ng-if="data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].code == 'E'">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.idList[0].value}}</span>
@@ -208,7 +207,7 @@
                         </td>
                         <td style="width:20%;">الاسم</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.lifeInsured[0].nationality}}
                         </td>
                         <td>الجنسية</td>
@@ -216,13 +215,13 @@
                         </td>
                         <td>تاريخ الميلاد</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.lifeInsured[0].maritalStatus}}</td>
                         <td>الحالة الاجتماعية</td>
                         <td>{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.otherInformation.placeOfBirth}}</td>
                         <td>محل الميلاد</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.lifeInsured[0].gender}}</td>
                         <td>النوع</td>
                         <td dir="rtl">
@@ -231,13 +230,13 @@
                         </td>
                         <td>السن</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.inputPdf.lifeInsured[0].industry}}</td>
                         <td>طبيعة العمل</td>
                         <td>{{data.occupationValueLI}}</td>
                         <td>المهـــــــــــــــــــــــنة</td>
                      </tr>
-                     <tr class="table-content-pns">
+                     <tr class="table-content-mbe">
                         <td>{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.mobilePhone}}</td>
                         <td>تليفون المحمول</td>
                         <td class="email-format">{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.contacts.email}}
@@ -247,7 +246,7 @@
                   </table>
                   <!-- This table should be dynamic if client applied for Lump sum -->
                   <div ng-if="data.quotation.basicPlan.information.annuityOption === 'Lumpsum'">
-                     <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                     <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                         <tr class="table-header-black white-text-color text-align-right">
                            <td colspan="4" style="width:100%;" dir="rtl">بيانات الوثيقة</td>
                         </tr>
@@ -257,14 +256,14 @@
                            <td class="table-border-white" style="direction:rtl;">مبلغ التقاعد </td>
                            <td style="direction:rtl;">قيمة القسط الوحيد</td>
                         </tr>
-                        <tr class="table-content-pns text-align-center">
+                        <tr class="table-content-mbe text-align-center">
                            <td>{{data.inputQuotationPdf.MaturityAge}}</td>
                            <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}</td>
                            <td>{{data.quotation.basicPlan.information.totalLumpsum | number : 2 }}</td>
                            <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
                         </tr>
                      </table>
-                     <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                     <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                         <tr>
                            <td colspan="5" style="width:100%; padding-right: 15px;" dir="rtl">بالإضافة الي مبلغ تأمين إضافي قيمته 000 5 جنيه (خمسة ألاف جنيهاً) تصرف في حالة الوفاة فقط.</td>
                         </tr>
@@ -272,7 +271,7 @@
                   </div>
                   <!--This table should be dynamic if client applied for monthly annuity -->
                   <div ng-if="data.quotation.basicPlan.information.annuityOption === 'MonthlyAnnuity'">
-                     <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                     <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                         <tr class="table-header-black white-text-color text-align-right">
                            <td colspan="5" style="width:100%;" dir="rtl">بيانات الوثيقة</td>
                         </tr>
@@ -283,7 +282,7 @@
                            <td class="table-border-white" style="direction:rtl;">دفعات التقاعد الشهرية</td>
                            <td style="direction:rtl;">قيمة القسط الوحيد</td>
                         </tr>
-                        <tr class="table-content-pns text-align-center">
+                        <tr class="table-content-mbe text-align-center">
                            <td>{{data.inputQuotationPdf.MaturityAge}}</td>
                            <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}
                            <td>{{data.quotation.basicPlan.information.durationOfAnnuity}}</td>
@@ -291,46 +290,46 @@
                            <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
                         </tr>
                      </table>
-                     <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                     <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                         <tr>
                            <td colspan="5" style="width:100%; padding-right: 15px;" dir="rtl">بالإضافة الي مبلغ تأمين إضافي قيمته 000 5 جنيه (خمسة ألاف جنيهاً) تصرف في حالة الوفاة فقط.</td>
                         </tr>
                      </table>
                   </div>
 
-                  <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                  <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                      <tr class="table-header-black white-text-color text-align-right">
-                        <td colspan="6">بيانات المستفيدين</td>
+                        <td>بيانات المستفيدين</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
-                        <td colspan="6" dir="rtl" style="padding-bottom:0px;">يصرف مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة للمستفيدين في الحالات الاتية :</td>
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
+                        <td dir="rtl" style="padding-bottom:0px;">يصرف مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة للمستفيدين في الحالات الاتية :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
-                        <td colspan="6" style="padding-top:0px; padding-bottom:0px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
+                        <td style="padding-top:0px; padding-bottom:0px;">
                            <ol style="direction: rtl;padding-right: 12px;margin-bottom: 0px;" type="1">
                               <li>بلوغ المؤمن عليه سن الاستحقاق.</li>
                            </ol>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
-                        <td colspan="6" style="padding-top:0px; padding-bottom:0px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
+                        <td style="padding-top:0px; padding-bottom:0px;">
                            <ol style="direction: rtl;padding-right: 12px;margin-bottom: 0px;" type="1" start="2">
-                              <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالاضافة لمبلغ تامين ثابت قدره 000 5 جنيه خمسة ألاف جنيها ًيدفع في حالة وفاة "المؤمن عليه" خلال مدة التأمين وقبل بلوغه سن الاستحقاق.</li>
+                              <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالاضافة لمبلغ تأمين ثابت قدره 000 5 جنيه خمسة ألاف جنيها ً.</li>
                            </ol>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
-                        <td colspan="6" style="padding-top:0px; padding-bottom:0px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
+                        <td style="padding-top:0px; padding-bottom:0px;">
                            <ol style="direction: rtl;padding-right: 12px;margin-bottom: 0px;" type="1" start="3">
                               <li>ثبوت عجز المؤمن عليه عجزاً كاملاً مستديماً خلال مدة التأمين وقبل بلوغه سن الاستحقاق.</li>
                            </ol>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns">
-                        <td colspan="6">في حالة وفاة المؤمن عليه يتم صرف مبلغ التقاعد او دفعات التقاعد الشهرية بإختيار لأحد البدائل</td>
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns">
+                        <td>في حالة وفاة المؤمن عليه يتم صرف مبلغ التقاعد او دفعات التقاعد الشهرية بإختيار لأحد البدائل</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns">
-                     <td colspan="6">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns">
+                     <td>
                         <span>الورثة الشرعيين</span>
                         <span>
                            <img ng-if="data.application.beneficiaryDetailsLegalInheritance == 'Y'" style="width:16px;" src="../../common/images/checked.png" alt="">
@@ -338,8 +337,8 @@
                            </span>
                      </td>
                   </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns">
-                        <td colspan="6">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns">
+                        <td>
                            <span>حسب الجدول</span>
                            <span>
                               <img ng-if="data.application.beneficiaryDetailsLegalInheritance == 'Y'" style="width:16px;" src="../../common/images/unchecked.png" alt="">
@@ -347,63 +346,66 @@
                            </span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns">
-                        <td colspan="6" dir="ltr" style="text-align: right;padding-bottom: 5px;">
+                     <tr class="table-content-mbe non-top-border table-content-benefit-pns">
+                        <td dir="ltr" style="text-align: right;padding-bottom: 5px;">
                            <div>رجاء ذكر الاسم و لقب المستفيدين ،درجة قرابتهم ونسب التوزيع بينهم</div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <table style="margin-top: 0px !important;" class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style">
+                              <tr class="table-header-green white-text-color text-align-center non-bottom-border">
+                                 <td class="table-border-white">صلة القرابة</td>
+                                 <td class="table-border-white">النسبة</td>
+                                 <td >المستفيدون حالة الاستحقاق</td>
+                              </tr>
+                              <tr class="table-content-mbe table-content-benefit-pns" ng-repeat="item in data.inputPdf.benefitDetails"
+                                  ng-if="item.beneficiaryDetailsBeneficiaryType == 'MB'">
+                                 <td class="center" >{{item.relationship}}</td>
+                                 <td class="center">{{item.share}}%</td>
+                                 <td class="center">{{item.fullName}}</td>
+                              </tr>
+                           </table>
+
+                           <table style="margin-top: -7px !important;" ng-if="data.beneficiaryTypeDB == true" class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style">
+                              <tr class="table-header-green white-text-color non-top-border text-align-center non-bottom-border">
+                                 <td class="table-border-white">صلة القرابة </td>
+                                 <td class="table-border-white">النسبة</td>
+                                 <td>المستفيدون حالة الوفاة</td>
+                              </tr>
+                              <tr class="table-content-mbe table-content-benefit-pns" ng-repeat="item in data.inputPdf.benefitDetails"
+                                  ng-if="item.beneficiaryDetailsBeneficiaryType == 'DB'">
+                                 <td colspan="2" class="center">{{item.relationship}}</td>
+                                 <td colspan="2" class="center">{{item.share}}%</td>
+                                 <td colspan="2" class="center">
+                                    <span>{{item.fullName}}</span>
+                                    <span ng-if="data.corporatesBankBranch != null">{{data.corporatesBankBranch}}</span>
+                                 </td>
+                              </tr>
+                           </table>
                         </td>
                      </tr>
                   </table>
 
-                   <table style="margin-top: -5px !important;" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
-                       <tr class="table-header-green white-text-color text-align-center non-bottom-border">
-                           <td colspan="2" class="table-border-white">صلة القرابة</td>
-                           <td colspan="2" class="table-border-white">النسبة</td>
-                           <td colspan="2">المستفيدون حالة الاستحقاق</td>
-                       </tr>
-                       <tr class="table-content-pns table-content-benefit-pns" ng-repeat="item in data.inputPdf.benefitDetails"
-                           ng-if="item.beneficiaryDetailsBeneficiaryType == 'MB'">
-                           <td colspan="2" class="center" >{{item.relationship}}</td>
-                           <td colspan="2" class="center">{{item.share}}%</td>
-                           <td colspan="2" class="center">{{item.fullName}}</td>
-                       </tr>
-                   </table>
-
-                   <table style="margin-top: -7px !important;" ng-if="data.beneficiaryTypeDB == true" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
-                       <tr class="table-header-green white-text-color non-top-border text-align-center non-bottom-border">
-                           <td colspan="2" class="table-border-white">صلة القرابة </td>
-                           <td colspan="2" class="table-border-white">النسبة</td>
-                           <td colspan="2">المستفيدون حالة الوفاة</td>
-                       </tr>
-                       <tr class="table-content-pns table-content-benefit-pns" ng-repeat="item in data.inputPdf.benefitDetails"
-                           ng-if="item.beneficiaryDetailsBeneficiaryType == 'DB'">
-                           <td colspan="2" class="center">{{item.relationship}}</td>
-                           <td colspan="2" class="center">{{item.share}}%</td>
-                           <td colspan="2" class="center">
-                              <span>{{item.fullName}}</span>
-                              <span ng-if="data.corporatesBankBranch != null">{{data.corporatesBankBranch}}</span>
-                           </td>
-                       </tr>
-                   </table>
-
-                  <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                  <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                      <tr style="width:100%;" class="table-header-black white-text-color text-align-right">
                         <td colspan="3">الاقرارات</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border line-height-mbe">
                         <td colspan="3" dir="rtl" style="padding-bottom: 0px;">أقر بأنني بصحة جيدة و ان الإجابات الواردة أعلاه صحيحة وأننى لم أخفى أية معلومات قد تؤثر على تقييم وقبول طلب التأمين ، وأوافق على أن هذا النموذج جزء لايتجزأ من طلب التأمين وأعلم أن إخفاء أية  معلومات جوهرية قد تؤدى إلى بطلان العقد وتصبح الأقساط المدفوعة حقاً مكتسباً للشركة .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border line-height-mbe">
-                        <td colspan="3" dir="rtl" style="padding-top: 10px;padding-bottom: 0px;">وأفوض الشركة في طلب جميع المعلومات عن حالتي الصحية من المستشفيات ودور العلاج والأطباء الذين كانوا قد عالجوني قبل أو بعد تاريخ هذا الطلب وأصرح لتلك الجهات بأن يمدو الشركة بكافة البيانات التي تطلبها منهم. </td>
+                     <tr class="table-content-mbe non-top-border non-bottom-border line-height-mbe">
+                        <td colspan="3" dir="rtl" style="padding-top: 5px;padding-bottom: 0px;">وأفوض الشركة في طلب جميع المعلومات عن حالتي الصحية من المستشفيات ودور العلاج والأطباء الذين كانوا قد عالجوني قبل أو بعد تاريخ هذا الطلب وأصرح لتلك الجهات بأن يمدو الشركة بكافة البيانات التي تطلبها منهم. </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
-                        <td colspan="3" style="padding-top:20px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
+                        <td colspan="3" style="padding-top:5px;">
                            <span>اوافق</span> &nbsp;
                            <span>
                                <img style="width:16px;" src="../../common/images/checked.png" alt="">
                            </span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border">
+                     <tr class="table-content-mbe non-top-border non-bottom-border">
                         <td colspan="3" >
                            <span>لا اوافق</span> &nbsp;
                            <span>
@@ -411,8 +413,8 @@
                            </span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border line-height-mbe">
-                        <td colspan="3" dir="rtl" style="padding-bottom:0px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border line-height-mbe">
+                        <td colspan="3" dir="rtl" style="padding-bottom:2px;">
                            <span>اقر انا /</span>
                            <span >{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
                            <span>باننى على دراية كاملة بطبيعة وثيقة التامين وشروطها واحكامها . وان المنتج التامينى الذى قمت بالتقدم بطلب تامين رقم</span>
@@ -420,19 +422,19 @@
                            <span>يخص شركة مصر لتامينات الحياة دون ادنى مسئوليه على وذلك طبقا لضوابط البنك المركزى والهيئة العامة للرقابه المالية المتعلقة بممارسة اعمال التامين المصرفى .</span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border line-height-mbe">
-                        <td colspan="3" style="padding-top:0px;" dir="rtl">وهذا اقرار مني بذلك.</td>
+                     <tr class="table-content-mbe non-top-border line-height-mbe">
+                        <td colspan="3" style="padding-top:0px; padding-bottom:4px;" dir="rtl">وهذا اقرار مني بذلك.</td>
                      </tr>
                   </table>
 
-                  <table style="margin-top: -7px !important;margin-bottom: 0px !important;" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                  <table style="margin-top: -7px !important;margin-bottom: 0px !important;" class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                      <tr class="table-header-green white-text-color text-align-center non-bottom-border">
                         <td class="table-border-white">مسوق التأمين</td>
                         <td class="table-border-white">مرشح العميل</td>
                         <td>المؤمن عليه</td>
                      </tr>
-                     <tr class="table-content-pns text-align-center">
-                        <td style="height:40px;">
+                     <tr class="table-content-mbe text-align-center">
+                        <td style="height:25px;">
                             <span ng-if="data.licenseFlag == 'true'">{{data.account.fullName}}</span>
                             <span ng-if="data.licenseFlag != 'true'">{{data.managerName}}</span>
                         </td>
@@ -442,85 +444,95 @@
                            <span ng-if="data.application.laisTheSameWithPO == '0'">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns text-align-center">
-                        <td style="height:40px;">التوقيع</td>
+                     <tr class="table-content-mbe text-align-center">
+                        <td style="height:25px;">التوقيع</td>
                         <td>التوقيع</td>
                         <td>التوقيع</td>
                      </tr>
-                     <tr class="table-content-pns text-align-center">
-                        <td style="height:40px;padding-top: 17px;">
+                     <tr class="table-content-mbe text-align-center">
+                        <td style="height:25px;padding-top: 17px;">
                            <div>...................................................</div>
                         </td>
-                        <td style="height:40px;padding-top: 17px;">
+                        <td style="height:25px;padding-top: 17px;">
                            <div>...................................................</div>
                         </td>
-                        <td style="height:40px;padding-top: 17px;">
+                        <td style="height:25px;padding-top: 17px;">
                            <div>...................................................</div>
                         </td>
                      </tr>
-                     <tr class="table-content-pns">
-                        <td class="text-align-center" style="height:70px;" colspan="2">
-                           <div class="div-new-stamp">
+                     <tr class="table-content-mbe">
+                        <td class="text-align-center" style="height:25px;" colspan="2">
+                           <div class="div-new-stamp-mbe">
                               ختم مطابق
                            </div>
                         </td>
-                        <td class="text-align-right" style="padding-top:25px; vertical-align: top;text-align: left;">ختم مطابق</td>
+                        <td class="text-align-right" style="padding-top:15px; vertical-align: top;text-align: left;">ختم مطابق</td>
                      </tr>
                   </table>
 
-                  <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style page-break avoid-break-inside">
+                  <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style page-break">
                      <tr class="table-header-black white-text-color text-align-right">
                         <td dir="rtl">الشروط والاحكام</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">تتعهد شركة مصر لتأمينات الحياة بدفع مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة لمدة 10 او 15 او 20 سنة حسب اختيار المتعاقد في الحالات الاتية:</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
-                           <ul class="list-style-black-square">
+                           <ul style="margin-bottom: 5px !important;" class="list-style-black-square">
                               <li>بقاء المؤمن عليه على قيد الحياة حتى سن الاستحقاق .</li>
-                              <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالإضافة لمبلغ تامين ثابت قدره 000 5 جنيه (خمسة ألاف جنيهاً) يدفع في حالة وفاة "المؤمن عليه" خلال مدة التأمين وقبل بلوغه سن الاستحقاق .</li>
+                              <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالإضافة لمبلغ تامين ثابت قدره 000 5 جنيه (خمسة ألاف جنيهاً) .</li>
                               <li>ثبوت العجز الكلي المستديم للمؤمن عليه خلال مدة التامين وقبل بلوغه سن الاستحقاق .</li>
                            </ul>
-                           <ul>يقصد بالعجز عدم المقدرة التامة والمستديمة التى تعوق صاحبها عن كل عمل أو كسب والتي تكون ناتجة عن عاهات جسمانية أو أمراض يمكن إثباتها بأعراض ظاهرة ويشترط لذلك .</ul>
+                        </td>
+                     </tr>
+                  </table>
+                  <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style page-break avoid-break-inside">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td>
+                           <ul style="margin-bottom: 5px !important;">يقصد بالعجز عدم المقدرة التامة والمستديمة التى تعوق صاحبها عن كل عمل أو كسب والتي تكون ناتجة عن عاهات جسمانية أو أمراض يمكن إثباتها بأعراض ظاهرة ويشترط لذلك .</ul>
                         </td>
                      </tr>
 
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
                            <span>أ. أن يحدث العجز وتبلغ عنه الشركة من المتعاقد قبل بلوغ المؤمن عليه سن الاستحقاق .</span> <br>
                            <span>ب. ألا يكون العجز ناتجاً عن أمراض أو جروح حدثت أثناء الخدمة العسكرية فى وقت الحرب .</span> <br>
                            <span>ج. ألا يكون العجز نتيجة مباشرة أو غير مباشرة للتنقلات والأسفار الجوية التى لا تغطيها نصوص الشروط العامة لوثيقة التأمين .</span> <br>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">إذا كان العجز ناتجاً عن أحد الأسباب المذكورة فيما يلى تلتزم الشركة بأن تدفع إلى المستفيدين فى حالة العجز مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl" style="padding: 0px;">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td dir="rtl" style="padding: 1px 5px !important;">
                            <span>1 . فقد البصر كلياً بحيث لا يكون قابلاً للشفاء .</span><br>
-                           <span>2 . شلل كامل غير قابل للشفاء للذراعين أو لليدين أو فقد الذراعين أو اليدين سواء ببترهما أو عجزهما تماماً عن تأدية وظيفتهما .</span><br>
+                           <span>2 . شلل كامل غير قابل للشفاء للذراعين أو لليدين أو فقد الذراعين أو اليدين سواء ببترهما أو عجزهما تماماً عن تأدية وظيفتهما .</span>
+                        </td>
+                     </tr>
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td dir="rtl" style="padding: 1px 5px !important;">
                            <span>3 . شلل كامل غير قابل للشفاء للساقين أو للقدمين أو فقد الساقين أو القدمين سواء ببترهما أو عجزهما تماماً عن تأدية وظيفتهما .</span><br>
                            <span>4 . شلل كامل غير قابل للشفاء لذراع وساق أو يد وقدم أو فقد زراع وساق أو يد وقدم سواء ببترهما أو عجزهما تماماً عن تأدية وظيفتهما .</span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">لتطبيق حالة العجز  يجب على المتعاقد أن يقدم للشركة تقريراً مفصلاً من الأطباء الذين عالجوا المؤمن عليه موضحاً به أسباب وسير ومدة المرض الذى تسبب عنه العجز .</td>
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td dir="rtl">لتطبيق حالة العجز يجب على المتعاقد أن يقدم للشركة تقريراً مفصلاً من الأطباء الذين عالجوا المؤمن عليه موضحاً به أسباب وسير ومدة المرض الذى تسبب عنه العجز .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ويجب أن يحرر هذا التقرير متى طلبت الشركة ذلك حسب البيانات الخاصة التى تطلبها .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ويكون المؤمن عليه فى هذه الحالة ملزماً بذكر جميع البيانات التى تطلبها الشركة بكل دقة وصدق وأن يقدم جميع الإثباتات التى تطلب منه وأن يتقدم بمجرد طلب الشركة للكشف عليه بواسطة الأطباء الذين تعهد إليهم بذلك بحيث إذا قصر فى شئ من هذا يحرم من حق تطبيق شروط العجز المنوه عنها أنفاً .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">لا يغطي التأمين حالات الوفاة او العجز التي تنشأ بطريقة مباشرة او غير مباشرة عن أي من الاخطار الاتية :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
-                           <ul class="list-style-black-square" style="margin-bottom: 0px; margin-bottom: 10px;">
+                           <ul class="list-style-black-square" style="margin-bottom: 0px;">
                               <li>مسابقات السرعة بواسطة مركبات ذات الة محركة سواء كانت أرضية او مائية .</li>
-                              <li>التنقلات الجوية او البحرية الا اذا قام بها " المؤمن عليه " باعتباره راكباً عادياً على خط ملاحة جوي او بحري يقوم بخدمة عامة منتظمة .</li>
+                              <li>التنقلات الجوية او البحرية الا اذا قام بها " المؤمن عليه " باعتباره راكباً عادياً على خط ملاحة جوي او بحري يقوم بخدمة عامة منتظمة.</li>
                               <li>الانتحار اذا حدث خلال السنتين الاولتين من بدء الـتأمين الا اذا اثبت أن سبب انتحار المؤمن عليه مرض افقده ارادته وقت الانتحار .</li>
                               <li>العمليات الحربية أو ما قد يترتب عنها ( قذف قنابل أو معارك أو ابعاد أو نفي أو الاعدام .... الخ ) التي تكون نتيجة مباشرة او غير مباشرة لحالة حرب خارجية اوداخلية سواء اعلنت او لم تعلن أو التي تكون نتيجة ثورات أو أضطرابات اهلية اذا كان " المؤمن عليه " مجندا أو مستبقى أى مستدعى للاحتياط ، ويفهم من ذلك أن التأمين يغطي الوفاة المترتبة على اخطار الحرب للمدنيين ، وذلك دون الاخلال بسريان التغطية التأمينية لتشمل شريحة العاملين بجهاز الشرطة والقوات المسلحة خلال مدة سريان التأمين على ان يتم صرف مبلغ التقاعد او دفعات التقاعد الشهرية في حالة الوفاة او العجز نتيجة أية اعمال ارهابية .</li>
                               <li>الاعدام بناء على  حكم قضائي .</li>
@@ -529,91 +541,91 @@
                            </ul>
                         </td>
                      </tr>
-                  </table>
-                  <table class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl" style="font-weight: bold !important;">التصفية:</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">تلتزم الشركة بتصفية الوثيقة بناءا على طلب " المتعاقد " بعد مرور سنة كاملة من سداد القسط وتدفع الشركة 75% من القسط المدفوع في حالة التصفية خلال السنة الثانية و 80% من القسط المدفوع خلال السنة الثالثة و90% من القسط المدفوع خلال السنة الرابعة و 100% من القسط المدفوع خلال السنة الخامسة ومابعدها وذلك لكل دفعة قسط وحيد على حده .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">السحب:</td>
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td style="font-weight: bold;" dir="rtl">السحب:</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">تدخل الوثيقة في سحبين كل سنة في شهري ابريل وأكتوبر من كل عام لتربح وثيقة لكل الف وثيقة زيادة مقدارها 50% من قيمة مبلغ التقاعد او دفعات التقاعد الشهري ليصبح اجمالي مبلغ التقاعد او دفعات التقاعد 150% وتستمر الوثيقة في الدخول في باقي السحوبات .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ويجرى السحب علناً بالمركز الرئيسي للشركة بحضور من يمثل الشركة ومندوب وزارة التضامن الاجتماعي ، ومندوب الهيئة العامة للرقابة المالية ويعلن كشف بالأرقام الرابحة فى مركز الشركة الرئيسي لمدة خمسة عشر يوما .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">شرط التأجيل:</td>
+                  </table>
+                  <table class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style page-break avoid-break-inside">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td style="font-weight: bold;" dir="rtl">شرط التأجيل:</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">في حالة الوفاة او العجز الكلي المستديم للمؤمن عليه خلال الثلاث سنوات الاولى من تاريخ سداد القسط المدفوع يتحدد مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة في هذه الوثيقة بواقع 2.703% من مبلغ التقاعد او دفعات التقاعد الشهريه عن كل شهر انقضى من سداد القسط المدفوع وبحد ادنى صافي قيمة القسط المدفوع وذلك لكل دفعة قسط على حدة .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">اذا حدثت الوفاة او العجز الكلي المستديم نتيجة لحادث في اي وقت يتم دفع مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة كاملاً .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">الضرائب:</td>
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td style="font-weight: bold;" dir="rtl">الضرائب:</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">يتحمل المتعاقد أو من يحل محله والمستفيد كل العوائد والضرائب والرسوم أياً كان نوعها متى صدر بها قانون أو مرسوم أو قرارات أو لوائح أو أوامر والتى تخضع لها الآن أو في المستقبل كافة المستندات الخاصة بوثيقة التأمين وكل المدفوعات الناشئة عنه إلا إذا نص قانونا على خلاف ذلك .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">سقوط الحق في المطالبة بالتأمين وفى الدعاوى:</td>
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td style="font-weight: bold;" dir="rtl">سقوط الحق في المطالبة بالتأمين وفى الدعاوى:</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">يسقط الحق بالمطالبة بأي حق من الحقوق الناشئة عن وثيقة التأمين إذا لم يطالب به أصحاب الحق أو لم يقدموا للشركة المستندات الدالة على الوفاة، كما يسقط بالتقادم حق المستفيدين في رفع الدعاوى ضد الشركة لمطالبتها بالحقوق الناشئة عن هذه الوثيقة بمضي ثلاث سنوات من وقت حدوث الوفاة ما لم يثبتوا أنهم لم يعلموا بالوفاة إلا في تاريخ لاحق لوقوعها فتبدأ منه مدة الثلاث سنوات .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
-                        <td dir="rtl">المنازعات الخاصة بوثيقة التأمين والإختصاص:</td>
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
+                        <td style="font-weight: bold;" dir="rtl">المنازعات الخاصة بوثيقة التأمين والإختصاص:</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">من المتفق عليه صراحة أن كل نزاع ينشأ عن هذه الوثيقة يكون الاختصاص بنظره للمحاكم التى تحددها القوانين السارية .</td>
                      </tr>
-                     <tr class="table-content-pns non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">المستندات الواجب توافرها لصرف مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">اولا : سن الاستحقاق :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
                            <span>1. صورة بطاقة الرقم القومي للمؤمن عليه .</span> <br>
                            <span>2. وثيقة التأمين</span> <br>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ثانيا : ثبوت العجز :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
                            <span>1. صورة بطاقة الرقم القومي للمؤمن عليه .</span> <br>
                            <span>2. وثيقة التأمين</span> <br>
                            <span>3. مستند رسمي يفيد تحقق العجز .</span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ثالثاً : الوفاة :</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">
                            <span>1. شهادة الميلاد أوصورة معتمدة منها أوصورة الرقم القومى معتمدة .</span> <br>
                            <span>2. شهادة وفاة المؤمن عليه مبينا بها سبب الوفاة .</span><br>
                            <span>3. اعلام وراثة .</span><br>
                            <span>4. صورة من محضر الشرطة وقرار النيابة او شهادة من واقع جدول النيابة العامة المعتمد في حالة الوفاة نتيجة حادث .</span><br>
-                           <span>5. تقريراً طبياً محرراً على استمارة الشركة عن المرض الأخير للمؤمن عليه أو عن أي سبب آخر للوفاة إذا حدثت الوفاة خلال الثلاث سنوات الأولى من بدء التامين .</span><br>
+                           <span>5. تقريراً طبياً محرراً على استمارة الشركة عن المرض الأخير للمؤمن عليه أو عن أي سبب آخر للوفاة إذا حدثت الوفاة خلال الثلاث سنوات الأولى من بدء التامين .</span>
                         </td>
                      </tr>
-                     <tr class="table-content-pns non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
+                     <tr class="table-content-mbe non-top-border non-bottom-border table-content-benefit-pns line-height-mbe">
                         <td dir="rtl">ويحق للشركة المطالبة بأية مستندات أخرى ترى تقديمها استيفاءاً لإجراءات الصرف فاذا كانت الأدلة المقدمة كافية تقوم الشركة بدفع مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة فى خلال خمسة عشر يوماً من تاريخ استيفاء جميع المستندات المطلوبة .</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
-                        <td dir="rtl" style="padding-top: 20px;padding-bottom: 10px;">
+                     <tr class="table-content-mbe non-top-border">
+                        <td dir="rtl" style="padding-top: 10px;padding-bottom: 5px;">
                            <span>
-                               <img style="width:16px;" src="../../common/images/unchecked.png" alt="">
+                               <img style="width:16px;" src="../../common/images/checked.png" alt="">
                            </span> &nbsp;
                            <span style="font-weight: bold !important;">اطلعت وموافق على الشروط والاحكام</span>
                         </td>
@@ -621,17 +633,17 @@
                   </table>
 
                   <!--signature LI-->
-                  <table style="margin-top:20px !important;" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                  <table style="margin-top:10px !important;" class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                      <tr class="table-header-black white-text-color text-align-right">
                         <td colspan="6">المؤمن عليه</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td colspan="6" ng-if="data.application.laisTheSameWithPO =='1'" >{{data.application.lifeAssuredDetails[0].lifeAssuredInformation.person.basic.name.full}}</td>
                         <td colspan="6" ng-if="data.application.laisTheSameWithPO =='0'" >{{data.quotation.lifeInsured[0].person.name.full}}</td>
                      </tr>
-                     <tr class="table-content-pns">
-                        <td colspan="2" class="text-align-center" style="height:80px;" >
-                           <div class="div-new-stamp">
+                     <tr class="table-content-mbe">
+                        <td colspan="2" class="text-align-center" style="height:25px;" >
+                           <div class="div-new-stamp-mbe">
                               ختم مطابق
                            </div>
                         </td>
@@ -641,16 +653,16 @@
                   </table>
 
                   <!--signature PO-->
-                  <table style="margin-top:20px !important;" class="format-table-all-new-pns format-table-layout-fixed-pns arabic-style avoid-break-inside">
+                  <table style="margin-top:5px !important;" class="format-table-all-new-mbe format-table-layout-fixed-pns arabic-style avoid-break-inside">
                      <tr class="table-header-black white-text-color text-align-right">
                         <td colspan="6" >المتعاقد</td>
                      </tr>
-                     <tr class="table-content-pns non-top-border">
+                     <tr class="table-content-mbe non-top-border">
                         <td colspan="6">{{data.application.policyOwnerDetails.proporserInformation.person.basic.name.full}}</td>
                      </tr>
-                     <tr class="table-content-pns">
-                        <td colspan="2" class="text-align-center" style="height:80px;">
-                           <div class="div-new-stamp">
+                     <tr class="table-content-mbe">
+                        <td colspan="2" class="text-align-center" style="height:25px;">
+                           <div class="div-new-stamp-mbe">
                              ختم مطابق
                            </div>
                         </td>

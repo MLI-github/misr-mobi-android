@@ -44,7 +44,7 @@
                     <tr>
                         <td style="width:21%;font-size:10pt;">{{data.productCurrencyCase}}</td>
                         <td style="width:18%;font-size:12pt;"> : طلب التأمين رقم</td>
-                        <td dir="rtl" style="width:38%;font-size:12pt;">{{data.strProductNamePart1}}</td>
+                        <td style="font-weight: bold;width:38%;font-size:12pt;">معاشك بإيدك</td>
                         <td style="width:21%;font-weight:bold;font-size:12pt;">عرض اسعار وثيقة</td>
                     </tr>
                     <tr>
@@ -53,7 +53,7 @@
                             <span dir="{{data.quotation.metaData.language == 'en' ? 'ltr' : 'rtl'}}" ng-if="data.currentRole == 'BA'">{{data.quotation.basicPlan.information.bankBranchName}}</span>
                         </td>
                         <td style="font-size:12pt;"> : فرع البنك  </td>
-                        <td dir="rtl" style="width:38%;font-size:12pt;">{{data.strProductNamePart2}}</td>
+                        <td dir="rtl" style="width:38%;font-size:12pt;">(معاش تكميلي)</td>
                     </tr>
                     <tr>
                         <td style="font-size:10pt;" ng-repeat="item in data.account.profile.insurerProfiles" ng-if="item.role === data.quotation.metaData.businessProfile">{{data.currentRole == "BA" ? "MLI / HO" : item.regionName}}</td>
@@ -168,7 +168,7 @@
                             <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
                         </tr>
                     </table>
-                    <table class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+                    <table style="margin: 1px 0px !important;" class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
                         <tr>
                             <td colspan="5" style="width:100%; padding-right: 15px;" dir="rtl">بالإضافة الي مبلغ تأمين إضافي قيمته 000 5 جنيه (خمسة ألاف جنيهاً) تصرف في حالة الوفاة فقط.</td>
                         </tr>
@@ -195,7 +195,7 @@
                             <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
                         </tr>
                     </table>
-                    <table class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+                    <table style="margin: 1px 0px !important;" class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
                         <tr>
                             <td colspan="5" style="width:100%; padding-right: 15px;" dir="rtl">بالإضافة الي مبلغ تأمين إضافي قيمته 000 5 جنيه (خمسة ألاف جنيهاً) تصرف في حالة الوفاة فقط.</td>
                         </tr>
@@ -230,7 +230,7 @@
                 </table>
                 <!--Arabic text should be dynamic if client required recurring premium-->
                 <div ng-if="data.quotation.basicPlan.information.recPremiumFrequency != 'N'">
-                    <table class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+                    <table style="margin: 2px 0px !important;" class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
                         <tr>
                             <td dir="rtl" style="font-weight: 400;font-size: 10pt;padding-right: 15px;">فى حالة رغبة العميل فى دفع قسط بصفة منتظمة خلال مدة التأمين (اختيارى) : </td>
                         </tr>
@@ -279,7 +279,7 @@
                         <td>المزايا التأمينية</td>
                     </tr>
                     <tr class="table-content non-top-border non-bottom-border">
-                        <td dir="rtl" style="padding-top:8px;">
+                        <td dir="rtl" style="padding-top:4px;">
                            <span dir="rtl">تتعهد شركة مصر لتأمينات الحياة بدفع مبلغ التقاعد او دفعات التقاعد الشهرية المضمونة لمدة 10 او 15 او 20 سنة حسب اختيار المتعاقد في الحالات الاتية:</span>
                         </td>
                     </tr>
@@ -287,7 +287,7 @@
                         <td dir="rtl">
                             <ul class="list-style-black-square">
                                 <li>بقاء المؤمن عليه على قيد الحياة حتى سن الاستحقاق .</li>
-                                <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالإضافة لمبلغ تامين ثابت قدره 000 5 جنيه (خمسة ألاف جنيهاً) يدفع في حالة وفاة "المؤمن عليه" خلال مدة التأمين وقبل بلوغه سن الاستحقاق .</li>
+                                <li>وفاة المؤمن عليه خلال مدة التأمين وقبل بلوغه سن الاستحقاق بالإضافة لمبلغ تامين ثابت قدره 000 5 جنيه (خمسة ألاف جنيهاً) .</li>
                                 <li>ثبوت العجز الكلي المستديم للمؤمن عليه خلال مدة التامين وقبل بلوغه سن الاستحقاق .</li>
                            </ul>
                             <ul style="padding-right: 50px;">
@@ -299,21 +299,21 @@
                         <td dir="rtl" style="padding-top:0px;">يتم تحديد دفعه التقاعد عن كل قسط يدفعه المتعاقد خلال مدة التأمين طبقاً لسن المؤمن عليه في تاريخ سداد القسط وسن الاستحقاق الذي تم تحديده عند بدء التعاقد.</td>
                     </tr>
                     <tr class="table-content non-top-border">
-                        <td dir="rtl" style="padding-top:0px;padding-bottom: 8px;">وفي حالة تحقق اي من حالات الاستحقاق السابقة يتم حساب اجمالي دفعات التقاعد المتكونه للمستفيدين ويبدأ صرف دفعات التقاعد المستحقه للمستفيدين من اول الشهر التالي لتحقق حالة الاستحقاق.</td>
+                        <td dir="rtl" style="padding-top:0px;padding-bottom: 4px;">وفي حالة تحقق اي من حالات الاستحقاق السابقة يتم حساب اجمالي دفعات التقاعد المتكونه للمستفيدين ويبدأ صرف دفعات التقاعد المستحقه للمستفيدين من اول الشهر التالي لتحقق حالة الاستحقاق.</td>
                     </tr>
                     <tr class="table-content non-top-border non-bottom-border">
-                        <td dir="rtl" style="padding-top:0px;padding-bottom: 6px;">هذا العرض مجرد دليل ويجب قراءاته بالاضافة الي وثيقة التأمين والتي تشمل توضيح لشروط وأحكام المزايا الملحقة بالوثيقة.</td>
+                        <td dir="rtl" style="padding-top:0px;padding-bottom: 4px;">هذا العرض مجرد دليل ويجب قراءاته بالاضافة الي وثيقة التأمين والتي تشمل توضيح لشروط وأحكام المزايا الملحقة بالوثيقة.</td>
                     </tr>
                     <tr class="table-content non-top-border non-bottom-border">
-                        <td dir="rtl" style="padding-top:0px;padding-bottom: 6px;">لايمثل هذا العرض قبولا من شركة مصر لتأمينات الحياة ويسرى القبول فقط بعد سداد القسط بالكامل واتمام الاكتتاب بما يتوافق مع سياسة الشركة.</td>
+                        <td dir="rtl" style="padding-top:0px;padding-bottom: 4px;">لايمثل هذا العرض قبولا من شركة مصر لتأمينات الحياة ويسرى القبول فقط بعد سداد القسط بالكامل واتمام الاكتتاب بما يتوافق مع سياسة الشركة.</td>
                     </tr>
                     <tr class="table-content non-top-border">
-                        <td dir="rtl" style="padding-top:0px;padding-bottom: 6px;">طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد فسخ التعاقد خلال فترة السماح 10 ايام عمل من تاريخ اصدار الوثيقة واسترداد قيمة الاقساط المدفوعة بعد خصم مصاريف الاصدار  والاجراءات الطبية ان وجدت.</td>
+                        <td dir="rtl" style="padding-top:0px;padding-bottom: 4px;">طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد فسخ التعاقد خلال فترة السماح 10 ايام عمل من تاريخ اصدار الوثيقة واسترداد قيمة الاقساط المدفوعة بعد خصم مصاريف الاصدار  والاجراءات الطبية ان وجدت.</td>
                     </tr>
                 </table>
                 <!--end product summary-->
                 <!--start signature-->
-                <table style="margin-top: 25px !important;" class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
+                <table style="margin-top: 15px !important;" class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
                     <tr class="table-header-black white-text-color text-align-center">
                         <td style="border-right: 2px solid white !important;">مسوق التأمين</td>
                         <td style="border-right: 2px solid white !important;">المؤمن عليه</td>
@@ -327,7 +327,7 @@
                         <td>{{data.quotation.lifeInsured[0].person.name.full}}</td>
                         <td>{{data.quotation.policyOwner.person.name.full}}</td>
                     </tr>
-                    <tr style="height:90px;" class="table-content text-align-center">
+                    <tr style="height:65px;" class="table-content text-align-center">
                         <td></br></td>
                         <td></br></td>
                         <td></br></td>

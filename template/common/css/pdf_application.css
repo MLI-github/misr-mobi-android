@@ -32,6 +32,7 @@ tfoot.report-footer {
 
 body {
     color: #000;
+    size: A4;
 }
 
 tr.spaceUnder>td {
@@ -249,6 +250,19 @@ th {
     text-align: center;
 }
 
+.div-new-stamp-mbe {
+    margin: 0 auto;
+    padding-top:10px;
+    width: 100px;
+    height: 45px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    text-align: center;
+}
+
 .div-stamp-mer {
     margin: 0 auto;
     width: 70%;
@@ -379,6 +393,12 @@ footer {
     padding: 2px 5px;
     border: 2px solid black;
 }
+
+.table-content-mbe td {
+    padding: 1px 5px;
+    border: 2px solid black;
+}
+
 .table-content-inp td {
     padding: 1px 5px;
     border: 2px solid black;
@@ -389,8 +409,18 @@ footer {
     padding-top:0px;
 }
 
+.table-content-benefit-pns-product td {
+    padding-bottom:0px;
+    padding-top:2px;
+    border-right-style: inset;
+    border-left-style: inset;
+}
+
 .table-question-padding td,span {
     padding: 3px 5px;
+}
+.table-pns-question-padding td,span {
+    padding: 1px 5px;
 }
 
 .table-coverage-padding {
@@ -404,14 +434,24 @@ footer {
     overflow-wrap: break-word;
 }
 
+.format-table-all-new-mbe {
+    max-width: 184.6mm;
+    width: 100%;
+    margin: 1px 0px !important;
+    overflow-wrap: break-word;
+}
+
 .format-table-layout-fixed-pns {
    table-layout: fixed;
 }
 .line-height-pns td, span {
     line-height: 20px;
 }
+.line-height-pns-product td, span {
+    line-height: 18px;
+}
 .line-height-mbe td, span {
-    line-height: 17px;
+    line-height: 16px;
 }
 .table-header-black {
     font-weight: 600;
@@ -689,12 +729,12 @@ input[type=radio] {
 }
 .list-style-arrow li:before {
     content: '';
-    width: 13px !important;
-    height: 13px !important;
+    width: 12px !important;
+    height: 12px !important;
     position: absolute;
     background-image: url('../../common/images/arrow_small.png') !important;
     background-repeat: no-repeat;
-    background-size:13px 13px !important;
+    background-size:12px 12px !important;
     background-position: top;
     right: 0;
     top: 10px;
@@ -720,7 +760,7 @@ input[type=radio] {
     background-size: cover;
     background-position: top;
     right: 0;
-    top: 12px;
+    top: 10px;
     transform: translateY(-50%);
     list-style-position: outside;
 }

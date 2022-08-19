@@ -284,6 +284,26 @@ table.account td {
     margin-bottom:2px;
 }
 
+.line-height-delegation-mbe td, span {
+    line-height: 20px;
+}
+
+.line-height-delegation td, span {
+    line-height: 25px;
+}
+
+.report-content{
+    border:2px solid #0fb273;
+    margin-bottom:2px;
+}
+
+.non-top-border {
+    border-top: hidden;
+}
+.non-bottom-border {
+    border-bottom: hidden;
+}
+
 table.report-container {
     page-break-after: always;
 }

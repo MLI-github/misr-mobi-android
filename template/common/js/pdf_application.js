@@ -45,6 +45,9 @@ app.controller('Ctrl', function ($scope) {
     /*Add page number into template*/
     window.onbeforeprint = addPageNumbers;
     function addPageNumbers() {
+        if ($scope.data.quotation.metaData.productName == 'pns') {
+          addBorder();
+        }
         var totalPages = Math.ceil(document.body.children[0].children[1].scrollHeight / 842);  //842px A4 pageheight for 72dpi, 1123px A4 pageheight for 96dpi,
         for (var i = 1; i <= totalPages; i++) {
            var pageNumberDiv = document.createElement("div");
@@ -56,6 +59,45 @@ app.controller('Ctrl', function ($scope) {
            document.body.insertBefore(pageNumberDiv, document.getElementById("content"));
            pageNumberDiv.style.right = "calc(100% - (" + pageNumberDiv.offsetWidth + "px + 390px))";
         }
+    };
+    function addBorder() {
+      var bodyTemplate = document.body.children[0].children[1].children[0].children[0].children[0].children;
+      var totalHeight = 0;
+      var totalHeightProductSummary = 0;
+      for (var i = 0; i <= bodyTemplate.length; i++) {
+         if (bodyTemplate[i].id == "table-productSummary") {
+            totalHeightProductSummary = bodyTemplate[i].scrollHeight;
+            break;
+         } else {
+             if(bodyTemplate[i].children[0] != null) {
+                 totalHeight = totalHeight + bodyTemplate[i].children[0].scrollHeight + 10;
+             } else {
+                totalHeight = totalHeight + bodyTemplate[i].scrollHeight;
+             }
+         }
+      }
+      totalHeight = totalHeight - 10;
+      console.log("totalHeight: " + totalHeight);
+      console.log("totalHeightProductSummary: " + totalHeightProductSummary);
+      var positionTable = 842 - (totalHeight%842);
+      var bodyTableProductSummary = document.getElementById("table-productSummary");
+      childOfTableProductSummary = bodyTableProductSummary.children[0].children;
+      var totalHeightTr = 0;
+      var totalHeightPage = 0;
+      for (var j = 0; j < childOfTableProductSummary.length; j++) {
+         totalHeightTr = totalHeightTr + childOfTableProductSummary[j].scrollHeight;
+         if (totalHeightTr > positionTable) {
+            childOfTableProductSummary[j - 1].classList.remove('non-bottom-border');
+            childOfTableProductSummary[j].classList.remove('non-top-border');
+            totalHeightTr = 0;
+            positionTable = 825;
+         } else if (totalHeightTr == positionTable) {
+            childOfTableProductSummary[j - 1].classList.remove('non-bottom-border');
+            childOfTableProductSummary[j].classList.remove('non-top-border');
+            totalHeightTr = 0;
+            positionTable = 825;
+         }
+      }
     }
 });
 app.config(["$translateProvider", function ($translateProvider) {
