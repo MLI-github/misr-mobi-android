@@ -1,0 +1,2460 @@
+{
+  "quotation": {
+    "id": "72059916-b76c-44a8-8a6f-ec7d51e95178",
+    "version": 0,
+    "acceptedDate": "2020-07-02T07:44:24+0000",
+    "basicPlan": {
+      "annualRate": null,
+      "exclusion": null,
+      "funds": [],
+      "information": {
+        "annualPremium": null,
+        "annualUnitPremium": null,
+        "annuityAmount": 3232.37,
+        "annuityAndRecurringAmount": 0,
+        "annuityOption": "MonthlyAnnuity",
+        "backDatingDate": null,
+        "bankBranch": null,
+        "bankBranchName": null,
+        "basicAnnualPremiumPDF": null,
+        "basicPremium": null,
+        "billingCurrency": "EGP",
+        "childAge": null,
+        "childBirthdate": null,
+        "contractCurrency": "EGP",
+        "durationOfAnnuity": "10",
+        "effectiveDate": "2020-07-02",
+        "enableRCD": "true",
+        "expirationDate": "2020-07-12",
+        "installmentPremium": null,
+        "investmentAnnualPremiumPDF": null,
+        "investmentPremium": null,
+        "isExpire": 0,
+        "isMaturityAgeTextInputEnable": null,
+        "isRiskCommencement": null,
+        "jointAge": null,
+        "lumpSumAmount": 0,
+        "lumpSumAndRecurringAmount": 0,
+        "maturityAge": "455P",
+        "maturityDate": "2044-07-01",
+        "monthlyAnnuityLimit": 75,
+        "monthlyPayment": null,
+        "occupationClass": "1",
+        "policyTerm": 24,
+        "premiumForCI": null,
+        "premiumForDeath": null,
+        "premiumForInvestment": null,
+        "premiumFrequency": "S",
+        "premiumTerm": null,
+        "recPremiumFrequency": "N",
+        "recPremiumFrequencyAmount": null,
+        "regularLumpSumAmount": null,
+        "regularMonthlyAnnuityAmount": null,
+        "regularPremium": null,
+        "renewalPaymentMethod": "N",
+        "riskCommencementDate": "2020-07-01",
+        "singleLumpSumAmount": 271420,
+        "singleMonthlyAnnuityAmount": null,
+        "singlePremium": 60000,
+        "sumAssured": null,
+        "totalAnnualPremium": null,
+        "ciannualPremiumPDF": 0
+      },
+      "loadingInformation": [
+        {
+          "loading": null,
+          "loadingType": null,
+          "reason": null
+        }
+      ],
+      "loanDetails": {
+        "loanAmount": null,
+        "loanInstalments": null,
+        "loanPaymentFrequency": null,
+        "loanTerm": 24,
+        "sumAssuredDecreasingFrequency": null
+      },
+      "singleTopUp": [
+        {
+          "singleTopUpAmount": null,
+          "year": null
+        }
+      ],
+      "withdrawal": [
+        {
+          "withdrawalAmount": null,
+          "year": null
+        }
+      ]
+    },
+    "benefitAmount": null,
+    "benefitIllustration": {
+      "inputPdf": "{\"benefitIllustration\":{\"benefitIllustrationTable\":[{\"year\":null,\"age\":null,\"annualPremium\":null,\"totalPaidPremium\":null,\"x1\":null,\"x2\":null,\"x3\":null,\"ratio\":null}]},\"totalDividend1\":null,\"totalDividend2\":null,\"totalDividend3\":null,\"sa1\":null,\"sa2\":null,\"sa3\":null,\"totalBenefitsAge\":null,\"totalBenefitsAge1\":null,\"totalBenefitsAge2\":null,\"totalBenefitsAge3\":null}",
+      "outputPdf": "{\"poOccupation\" : \"\\u0627\\u0633\\u062a\\u0627\\u0630 \\u062c\\u0627\\u0645\\u0639\\u0649\",\"liOccupation\" : \"\\u0645\\u062f\\u064a\\u0631\\u0639\\u0627\\u0645 \\u0628\\u062c\\u0647\\u0627\\u0632\\u0627\\u0644\\u0645\\u0631\\u0643\\u0632\\u064a \\u0644\\u0644\\u0645\\u062d\\u0627\\u0633\\u0628\\u0627\\u062a\",\"poGender\" : \"\\u0627\\u0646\\u062b\\u064a\",\"liGender\" : \"\\u0630\\u0643\\u0631\",\"liSmokingStatus\" : \"\\u0645\\u062f\\u062e\\u0646\",\"relationship\" : \"\\u0634\\u0631\\u064a\\u0643 \\u0639\\u0645\\u0644\",\"productName\" : \"\\u0645\\u0639\\u0627\\u0634 \\u0628\\u0643\\u0631\\u0647\",\"frequency\" : \"\\u0642\\u0633\\u0637 \\u0648\\u062d\\u064a\\u062f\",\"recPremiumFrequency\" : \"\\u0644\\u0627 \\u0634\\u064a\\u0621\",\"MaturityAge\" : \"55\"}"
+    },
+    "documentRelation": {
+      "actionType": null,
+      "caseId": "91061a59-fedc-496f-864f-82003ec1ecea",
+      "refContact": {
+        "refDocName": "CMINV58737212",
+        "refId": "51069aa5-1ce0-4907-a5c2-f94f654f1651",
+        "refVersion": 51455981,
+        "status": "VALID"
+      },
+      "refContactLifeInsured": [
+        {
+          "refDocName": "CMINV39799427",
+          "refId": "a98e3bb9-de3e-4e86-95bc-4639dbf27ff9",
+          "refVersion": 18396711,
+          "status": "VALID",
+          "refIdOfLI": "BIPNS48516471_0"
+        }
+      ]
+    },
+    "efsaFees": 148.441375,
+    "efsaServiceFees": 59.37655,
+    "financialInformation": {
+      "homeCurrency": "EGP"
+    },
+    "firstPremiumPayable": 59376.55,
+    "initialPremiumPayable": 59376.55,
+    "isAddLifeInsured": "1",
+    "isQuotationComputed": null,
+    "issuanceFees": 95,
+    "lifeInsured": [
+      {
+        "idLifeInsured": "BIPNS48516471_0",
+        "invalidDate": null,
+        "isContactSelected": "Y",
+        "isPolicyOwner": null,
+        "natureOfBusiness": null,
+        "prospectIdOfCRM": null,
+        "relationship": "BP",
+        "occupationModel": {
+          "industryCode": "13",
+          "occupationClass": "1",
+          "occupationCode": "CAGM",
+          "uuid": null
+        },
+        "person": {
+          "version": null,
+          "age": 31,
+          "annualEmployeeIncome": 100000,
+          "birthCountryCode": null,
+          "birthDate": "1989-10-10",
+          "bloodDiastolic": null,
+          "bloodSystolic": null,
+          "genderCode": "M",
+          "height": null,
+          "liMaturityAge": null,
+          "maritalStatusCode": null,
+          "nationalityCode": null,
+          "outputBMI": null,
+          "photo": null,
+          "question1": null,
+          "question2": null,
+          "raceCode": null,
+          "referralTypeCode": null,
+          "referrerFullname": null,
+          "religionCode": null,
+          "smokerStatus": "S",
+          "uuid": null,
+          "weight": null,
+          "idList": [
+            {
+              "code": "E",
+              "uuid": null,
+              "value": "28910102222210"
+            }
+          ],
+          "name": {
+            "alias": null,
+            "first": "Tom",
+            "full": "Tom Banner",
+            "last": "Banner",
+            "middle": null,
+            "prefix": null,
+            "suffix": null,
+            "titleCode": "MR",
+            "uuid": null
+          }
+        }
+      }
+    ],
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "ACCEPTED",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-02T07:41:59+0000",
+      "docId": "72059916-b76c-44a8-8a6f-ec7d51e95178",
+      "docName": "BIPNS48516471",
+      "docType": "quotation",
+      "documentStatus": "FREEZE",
+      "entityNumber": null,
+      "entityType": null,
+      "language": "en",
+      "modifyDate": "2020-07-02T07:44:24+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "BI40048516471",
+      "productName": "pns",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "payableAmount": 60100.003775,
+    "paymentAmount": 60100,
+    "policyHolderGuaranteedFund": 118.7531,
+    "policyOwner": {
+      "invalidDate": null,
+      "natureOfBusiness": null,
+      "opportunityID": null,
+      "prospectIdOfCRM": null,
+      "occupationModel": {
+        "agencyCode": null,
+        "industryCode": "12",
+        "occupationClass": null,
+        "occupationCode": "UNIL",
+        "regionCode": null,
+        "subRegionCode": null,
+        "uuid": null
+      },
+      "person": {
+        "version": null,
+        "age": 32,
+        "annualEmployeeIncome": 50000,
+        "birthCountryCode": null,
+        "birthDate": "1988-10-10",
+        "bloodDiastolic": null,
+        "bloodSystolic": null,
+        "genderCode": "F",
+        "height": null,
+        "maritalStatusCode": null,
+        "nationalityCode": "ET",
+        "outputBMI": null,
+        "photo": null,
+        "poMaturityAge": null,
+        "question1": null,
+        "question2": null,
+        "raceCode": null,
+        "referralTypeCode": null,
+        "referrerFullname": null,
+        "religionCode": null,
+        "smokerStatus": "S",
+        "uuid": null,
+        "weight": null,
+        "idList": [
+          {
+            "code": "E",
+            "uuid": null,
+            "value": "28810102222221"
+          }
+        ],
+        "name": {
+          "alias": null,
+          "first": "Marry",
+          "full": "Marry Cole",
+          "last": "Cole",
+          "middle": null,
+          "prefix": null,
+          "suffix": null,
+          "titleCode": "MISS",
+          "uuid": null
+        }
+      }
+    },
+    "premiumPayable": 59376.55,
+    "quotationType": "QUO",
+    "renewalEFSAFees": 148.441375,
+    "renewalEfsaServiceFees": 59.37655,
+    "renewalPolicyHolderGuaranteedFund": 118.7531,
+    "renewalPremium": 60000,
+    "renewalTax": 296.88275,
+    "riders": [
+      {
+        "benefitAmount": 271420,
+        "maturityAge": 55,
+        "planCode": null,
+        "premium": null,
+        "premiumTerm": 1,
+        "riderAnnualPremium": null,
+        "riderInstallmentPremium": null,
+        "riderName": "TPDR",
+        "riderTerm": 24,
+        "sumAssured": null,
+        "unit": null
+      }
+    ],
+    "stamp": 5,
+    "stampFees": 0,
+    "tax": 296.88275,
+    "totalPremiumPayable": 60100.003775,
+    "totalSumAssured": null,
+    "pensionCoverage": [
+      {
+        "coverageType": null,
+        "maturityAge": null,
+        "policyNumber": null,
+        "policyStatus": null
+      }
+    ],
+    "docName": "BIPNS48516471"
+  },
+  "application": {
+    "id": "56a6bc32-a9ca-4dde-9cb7-55ddefa5929f",
+    "version": 0,
+    "agentDeclarationList": {
+      "questionAgentDeclaration1": "Y",
+      "questionAgentDeclaration2": "",
+      "questionAgentDeclaration3": "Y",
+      "questionAgentDeclaration4": "Y",
+      "reasonAgentDeclaration": "Abc"
+    },
+    "beneficiaryDetailsCorporate": null,
+    "beneficiaryDetailsLegalInheritance": "Y",
+    "beneficiaryDetailsQuestion": "Y",
+    "beneficiaryItems": [
+      {
+        "beneficiaryDetailsBankBranchName": null,
+        "beneficiaryDetailsBankName": null,
+        "beneficiaryDetailsBeneficiaryFirstName": "Marry",
+        "beneficiaryDetailsBeneficiaryLastName": "Cole",
+        "beneficiaryDetailsBeneficiaryNationality": "ET",
+        "beneficiaryDetailsBeneficiaryType": "MB",
+        "beneficiaryDetailsCheckLegalInheritance": null,
+        "beneficiaryDetailsDateOfBirth": "1988-10-10",
+        "beneficiaryDetailsGender": "F",
+        "beneficiaryDetailsIdNumber": "28810102222221",
+        "beneficiaryDetailsIdType": "E",
+        "beneficiaryDetailsRelationship": "SELF",
+        "beneficiaryDetailsShare": 100,
+        "idBeneficiaryDetails": "yQ0nCnylX",
+        "isClickedFatcaBeneficiary": null
+      }
+    ],
+    "channelAndPolicyDelivery": {
+      "email": null,
+      "policyDelivery": "COUR",
+      "referralCode": null
+    },
+    "contractCurrency": "EGP",
+    "delegationInfo": {
+      "accountNo": null,
+      "bankManager": null,
+      "bankName": null,
+      "branch": null,
+      "idNumber": null,
+      "insuranceDate": null,
+      "isClicked": null,
+      "policyName": null,
+      "policyNumber": null,
+      "proposerName": null,
+      "proposerPrimaryAddress": null
+    },
+    "documentRelation": {
+      "actionType": null,
+      "caseId": "91061a59-fedc-496f-864f-82003ec1ecea",
+      "docNameCase": null,
+      "docNameQuotation": "BIPNS48516471",
+      "productCurrencyCase": "MC40074786629",
+      "productCurrencyQuotation": "BI40048516471",
+      "quotationId": "72059916-b76c-44a8-8a6f-ec7d51e95178",
+      "refLifeAssured": [
+        {
+          "refDocName": "CMINV39799427",
+          "refId": "a98e3bb9-de3e-4e86-95bc-4639dbf27ff9",
+          "refVersion": 18396711,
+          "status": "VALID",
+          "refIdOfLI": "BIPNS48516471_0"
+        }
+      ],
+      "refProposer": {
+        "refDocName": "CMINV58737212",
+        "refId": "51069aa5-1ce0-4907-a5c2-f94f654f1651",
+        "refVersion": 51455981,
+        "status": "VALID"
+      },
+      "versionQuotation": null
+    },
+    "effectiveDateQuotation": null,
+    "enteredDeathBeneficiary": null,
+    "fatcaBeneficiaryDeclaration": [],
+    "financialInformation": {
+      "billingCurrency": "EGP",
+      "homeCurrency": "EGP"
+    },
+    "lAIsTheSameWithPO": "1",
+    "lifeAssuredDetails": [
+      {
+        "fatcaDetail": {
+          "fatcaDeclaration": {
+            "declaration": null,
+            "isClicked": null,
+            "signatureDate": null
+          },
+          "fatcaQuestionnaire": {
+            "fatcaQuestionnaireDetails": [
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              },
+              {
+                "accountNumber": null,
+                "fatcaQuestionnaireKey": null,
+                "fatcaQuestionnaireValue": null,
+                "numberId": null,
+                "passportId": null,
+                "qnaireDetail": null
+              }
+            ]
+          }
+        },
+        "idLifeAssured": "BIPNS48516471_0",
+        "isPolicyOwner": null,
+        "lifeAssuredInformation": {
+          "healthCondition": {
+            "isHaveMedicalCondition": null,
+            "medicalConditionDetail": null
+          },
+          "invalidDate": null,
+          "natureOfBusinessModel": {
+            "additionalNote": null,
+            "natureOfBusinessList": [
+              {
+                "code": null,
+                "value": null
+              }
+            ]
+          },
+          "occupationModel": {
+            "industryCode": null,
+            "occupationCode": "CAGM"
+          },
+          "otherInformation": {
+            "annualEmployeeIncome": 100000,
+            "clientNumber": null,
+            "countryOfBirth": null,
+            "education": "PRE",
+            "employerName": null,
+            "employmentStatus": null,
+            "leadID": null,
+            "leadStatus": null,
+            "placeOfBirth": "Paris",
+            "sourceOfFund": null,
+            "sourceOfName": null,
+            "staff": null,
+            "vip": null
+          },
+          "parentModule": null,
+          "person": {
+            "addresses": [
+              {
+                "addressId": null,
+                "addressType": "PRIMARY",
+                "areaCode": null,
+                "buildingName": null,
+                "cityCode": null,
+                "countryCode": "ET",
+                "district": "يجب ألا",
+                "fullAddress": null,
+                "governorate": "2",
+                "houseNumber": null,
+                "isOverseas": "false",
+                "postalCode": "0000",
+                "prefered": null,
+                "provinceCode": null,
+                "region": null,
+                "stateCode": null,
+                "street": "يجب",
+                "typeCode": "R",
+                "unitNo": "يجب ألا يكون"
+              },
+              {
+                "addressId": "ybgkc4c3vmd",
+                "addressType": "NON-PRIMARY",
+                "areaCode": "",
+                "buildingName": "",
+                "cityCode": "",
+                "countryCode": "ET",
+                "district": "يجب ألا",
+                "fullAddress": "",
+                "governorate": "1",
+                "houseNumber": null,
+                "isOverseas": "false",
+                "postalCode": "1111",
+                "prefered": "",
+                "provinceCode": "",
+                "region": null,
+                "stateCode": "",
+                "street": "يجب ألا",
+                "typeCode": "R",
+                "unitNo": "يجب ألا"
+              }
+            ],
+            "basic": {
+              "age": 31,
+              "birthCountryCode": null,
+              "birthDate": "1989-10-10",
+              "clientStatus": null,
+              "genderCode": "M",
+              "idList": [
+                {
+                  "code": "E",
+                  "idExpiryDate": null,
+                  "value": "28910102222210"
+                }
+              ],
+              "industry": "13",
+              "maritalStatusCode": "S",
+              "name": {
+                "alias": null,
+                "first": "Tom",
+                "full": "Tom Banner",
+                "last": "Banner",
+                "middle": null,
+                "prefix": null,
+                "suffix": null,
+                "titleCode": "MR"
+              },
+              "nationalityCode": "ET",
+              "photo": null,
+              "raceCode": null,
+              "raceInfor": null,
+              "referralTypeCode": null,
+              "referrerFullname": null,
+              "religionCode": null,
+              "smokerStatus": "S"
+            },
+            "contacts": {
+              "email": "tombanner@gmail.com",
+              "handPhone": null,
+              "homePhone": null,
+              "mobilePhone": "+20 123456789012",
+              "officePhone": null
+            }
+          },
+          "roadShowID": null
+        },
+        "moneyLaundering": {
+          "bankAccountNo": null,
+          "bankName": null,
+          "dateOfBirth": null,
+          "emailAddress": null,
+          "faxNumber": null,
+          "fullName": null,
+          "idNumber": null,
+          "isClicked": null,
+          "mobilePhone": null,
+          "nationality": null,
+          "occupationCode": null,
+          "placeOfResidence": null,
+          "primaryAddress": null,
+          "workAddress": null
+        },
+        "underwritingDetailsOfLifeAssured": {
+          "healthQuestionnaire": {
+            "healthQuestionBMIInfo": {
+              "healthQuestionBMI": null,
+              "healthQuestionHeight": null,
+              "healthQuestionWeight": null,
+              "questionKeyHeight": null,
+              "questionKeyWeight": null
+            },
+            "healthQuestionWeightInfo": {
+              "healthQuestionWeightInfoItems": [
+                {
+                  "healthQDecreaseKG": null,
+                  "healthQIncreaseKG": null,
+                  "healthQReason": null,
+                  "isIncrease": null
+                }
+              ],
+              "questionKey": null,
+              "questionValue": null
+            },
+            "healthQuestions": [
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              },
+              {
+                "currentHealthState": null,
+                "details": null,
+                "diagnosisDate": null,
+                "drinkerAmount": null,
+                "drinkerType": null,
+                "medication": null,
+                "period": null,
+                "questionKey": null,
+                "questionValue": null,
+                "smokerType": null,
+                "smokerUnit": null
+              }
+            ]
+          },
+          "insuredFamilyInformationDetail": null,
+          "insuredFamilyInformationItem": [
+            {
+              "aliveAge": null,
+              "aliveDiabetes": null,
+              "aliveHealthCondition": null,
+              "aliveHeartOrStroke": null,
+              "aliveHypertension": null,
+              "aliveTumorOrCancer": null,
+              "amount": null,
+              "deathAge": null,
+              "deathCauseOfDeath": null,
+              "deathDate": null,
+              "familyQKey": null
+            },
+            {
+              "aliveAge": null,
+              "aliveDiabetes": null,
+              "aliveHealthCondition": null,
+              "aliveHeartOrStroke": null,
+              "aliveHypertension": null,
+              "aliveTumorOrCancer": null,
+              "amount": null,
+              "deathAge": null,
+              "deathCauseOfDeath": null,
+              "deathDate": null,
+              "familyQKey": null
+            },
+            {
+              "aliveAge": null,
+              "aliveDiabetes": null,
+              "aliveHealthCondition": null,
+              "aliveHeartOrStroke": null,
+              "aliveHypertension": null,
+              "aliveTumorOrCancer": null,
+              "amount": null,
+              "deathAge": null,
+              "deathCauseOfDeath": null,
+              "deathDate": null,
+              "familyQKey": null
+            },
+            {
+              "aliveAge": null,
+              "aliveDiabetes": null,
+              "aliveHealthCondition": null,
+              "aliveHeartOrStroke": null,
+              "aliveHypertension": null,
+              "aliveTumorOrCancer": null,
+              "amount": null,
+              "deathAge": null,
+              "deathCauseOfDeath": null,
+              "deathDate": null,
+              "familyQKey": null
+            },
+            {
+              "aliveAge": null,
+              "aliveDiabetes": null,
+              "aliveHealthCondition": null,
+              "aliveHeartOrStroke": null,
+              "aliveHypertension": null,
+              "aliveTumorOrCancer": null,
+              "amount": null,
+              "deathAge": null,
+              "deathCauseOfDeath": null,
+              "deathDate": null,
+              "familyQKey": null
+            }
+          ],
+          "lifestyleQuestionnaire": {
+            "lifestylePolicies": {
+              "lifestylePoliciesItems": []
+            },
+            "lifestyleQuestions": [
+              {
+                "lifestyleQDecision": null,
+                "lifestyleQDetail": null,
+                "questionKey": null,
+                "questionValue": null
+              },
+              {
+                "lifestyleQDecision": null,
+                "lifestyleQDetail": null,
+                "questionKey": null,
+                "questionValue": null
+              },
+              {
+                "lifestyleQDecision": null,
+                "lifestyleQDetail": null,
+                "questionKey": null,
+                "questionValue": null
+              },
+              {
+                "lifestyleQDecision": null,
+                "lifestyleQDetail": null,
+                "questionKey": null,
+                "questionValue": null
+              }
+            ]
+          }
+        },
+        "larelationship": "BP"
+      }
+    ],
+    "mailingAddress": {
+      "addressId": null,
+      "addressType": null,
+      "areaCode": null,
+      "buildingName": null,
+      "cityCode": null,
+      "countryCode": null,
+      "differentMailingAddress": null,
+      "district": null,
+      "fullAddress": null,
+      "governorate": null,
+      "houseNumber": null,
+      "isOverseas": null,
+      "postalCode": null,
+      "prefered": null,
+      "provinceCode": null,
+      "region": null,
+      "stateCode": null,
+      "street": null,
+      "typeCode": null,
+      "unitNo": null
+    },
+    "maturitybeneficiary": [
+      {
+        "beneficiaryDetailsBankBranchName": null,
+        "beneficiaryDetailsBankName": null,
+        "beneficiaryDetailsBeneficiaryFirstName": "Marry",
+        "beneficiaryDetailsBeneficiaryLastName": "Cole",
+        "beneficiaryDetailsBeneficiaryNationality": "ET",
+        "beneficiaryDetailsBeneficiaryType": "MB",
+        "beneficiaryDetailsCheckLegalInheritance": null,
+        "beneficiaryDetailsDateOfBirth": "1988-10-10",
+        "beneficiaryDetailsGender": "F",
+        "beneficiaryDetailsIdNumber": "28810102222221",
+        "beneficiaryDetailsIdType": "E",
+        "beneficiaryDetailsRelationship": "SELF",
+        "beneficiaryDetailsShare": 100,
+        "idBeneficiaryDetails": "yQ0nCnylX",
+        "isClickedFatcaBeneficiary": null
+      }
+    ],
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "DR",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-02T07:45:23+0000",
+      "docId": "56a6bc32-a9ca-4dde-9cb7-55ddefa5929f",
+      "docName": "APPNS77356569",
+      "docType": "application",
+      "documentStatus": "VALID",
+      "entityNumber": null,
+      "entityType": null,
+      "language": "en",
+      "modifyDate": "2020-07-02T07:45:23+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "AP40077356569",
+      "productName": "pns",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "outputPdf": "{\"productName\" : \"\\u0645\\u0639\\u0627\\u0634 \\u0628\\u0643\\u0631\\u0647\",\"policyOwner\" : {\"gender\" : \"\\u0627\\u0646\\u062b\\u064a\",\"occupation\" : \"\\u0627\\u0633\\u062a\\u0627\\u0630 \\u062c\\u0627\\u0645\\u0639\\u0649\",\"nationality\" : \"\\u0645\\u0635\\u0631\\u064a\\u0629\",\"natureOfWork\" : \"\",\"maritalStatus\" : \"\\u0645\\u062a\\u0632\\u0648\\u062c\",\"industry\" : \"\\u0627\\u0644\\u062a\\u0639\\u0644\\u064a\\u0645\",\"lifestyleQuestionnaire\" : {\"lifestyleQuestions\" : [{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifeStyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifeStyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifeStyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifeStyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"}],\"lifestylePoliciesItems\" : \"\"},\"healthQuestions\" : [{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"}],\"relationship\" : \"\\u0646\\u0641\\u0633\\u0647\",\"address\" : [{\"addressType\" : \"PRIMARY\",\"governorates\" : \"\\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629\",\"country\" : \"\\u0645\\u0635\\u0631\",\"fullAddress\" : \"\\u0641\\u0631 \\u0641\\u0631 \\u0641\\u0631 \\u0641\\u0631 \\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629 \\u0645\\u0635\\u0631\"},{\"addressType\" : \"NON-PRIMARY\",\"governorates\" : \"\\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629\",\"country\" : \"\\u0645\\u0635\\u0631\",\"fullAddress\" : \"\\u0641\\u0631 \\u0641\\u0631 \\u0641\\u0631 \\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629 \\u0645\\u0635\\u0631\"}]},\"lifeInsured\" : [{\"gender\" : \"\\u0630\\u0643\\u0631\",\"occupation\" : \"\\u0645\\u062f\\u064a\\u0631\\u0639\\u0627\\u0645 \\u0628\\u062c\\u0647\\u0627\\u0632\\u0627\\u0644\\u0645\\u0631\\u0643\\u0632\\u064a \\u0644\\u0644\\u0645\\u062d\\u0627\\u0633\\u0628\\u0627\\u062a\",\"nationality\" : \"\\u0645\\u0635\\u0631\\u064a\",\"natureOfWork\" : \"\",\"maritalStatus\" : \"\\u0623\\u0639\\u0632\\u0628\",\"industry\" : \"\\u0627\\u0644\\u062d\\u0643\\u0648\\u0645\\u0629 \\u0648\\u0627\\u0644\\u0642\\u0636\\u0627\\u0621\",\"lifestyleQuestionnaire\" : {\"lifestyleQuestions\" : [{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifestyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifestyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifestyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"},{\"lifestyleQuestionKey\" : \"\",\"lifestyleQuestionValue\" : \"\",\"lifestyleQDetail\" : \"\",\"lifestyleDetail\" : \"\",\"lifestyleQDecision\" : \"\",\"lifestyleQDecisionValue\" : \"\"}],\"lifestylePoliciesItems\" : \"\"},\"healthQuestions\" : [{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"},{\"questionKey\" : \"\",\"questionNo\" : \"\",\"questionValue\" : \"\",\"smokerType\" : \"\",\"smokerUnit\" : \"\",\"smokerTypeValue\" : \"\",\"drinkerType\" : \"\",\"drinkerTypeValue\" : \"\",\"drinkerAmount\" : \"\",\"currentHealthState\" : \"\",\"medication\" : \"\",\"diagnosisDate\" : \"\",\"details\" : \"\",\"period\" : \"\"}],\"relationship\" : \"\\u0634\\u0631\\u064a\\u0643 \\u0639\\u0645\\u0644\",\"isPolicyOwner\" : \"\",\"address\" : [{\"addressType\" : \"PRIMARY\",\"governorates\" : \"\\u0627\\u0644\\u0625\\u0633\\u0643\\u0646\\u062f\\u0631\\u064a\\u0629\",\"country\" : \"\\u0645\\u0635\\u0631\",\"fullAddress\" : \"\\u064a\\u062c\\u0628 \\u064a\\u062c\\u0628 \\u0623\\u0644\\u0627 \\u064a\\u0643\\u0648\\u0646 \\u064a\\u062c\\u0628 \\u0623\\u0644\\u0627 \\u0627\\u0644\\u0625\\u0633\\u0643\\u0646\\u062f\\u0631\\u064a\\u0629 \\u0645\\u0635\\u0631 0000\"},{\"addressType\" : \"NON-PRIMARY\",\"governorates\" : \"\\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629\",\"country\" : \"\\u0645\\u0635\\u0631\",\"fullAddress\" : \"\\u064a\\u062c\\u0628 \\u0623\\u0644\\u0627 \\u064a\\u062c\\u0628 \\u0623\\u0644\\u0627 \\u064a\\u062c\\u0628 \\u0623\\u0644\\u0627 \\u0627\\u0644\\u0642\\u0627\\u0647\\u0631\\u0629 \\u0645\\u0635\\u0631 1111\"}]}],\"benefitDetails\" : [{\"beneficiaryDetailsBeneficiaryType\" : \"MB\",\"beneficiaryType\" : \"Maturity Beneficiary\",\"bankBranch\" : \"\",\"bankBranchName\" : \"\",\"fullName\" : \"Marry Cole\",\"relationshipType\" : \"SELF\",\"relationship\" : \"\\u0646\\u0641\\u0633\\u0647\",\"share\" : \"100\"}],\"fatcaBeneficiaryDeclaration\" : \"\",\"paymentDetails\" : {\"currency\" : \"\\u062c\\u0646\\u064a\\u0647 \\u0645\\u0635\\u0631\\u0649\",\"premiumFrequency\" : \"\\u0642\\u0633\\u0637 \\u0648\\u062d\\u064a\\u062f\",\"firstPaymentMethod\" : \"Cash\",\"renewalPaymentMethod\" : \"None Bill\",\"bankName\" : \"\",\"bankBranch\" : \"\",\"arBankName\" : \"\",\"arBankBranch\" : \"\"},\"mailingAddress\" : {\"governorate\" : \"\",\"country\" : \"\"},\"salaryDeductionDelegation\" : \"\"}",
+    "paymentDetails": {
+      "accountHolderNRICPassport": null,
+      "bankAccOwnerName": null,
+      "bankAccountType": null,
+      "bankBranch": null,
+      "bankNameBranchCity": null,
+      "currency": "EGP",
+      "differencePayor": null,
+      "firstPaymentMethod": "Cash",
+      "optionSelection": "N",
+      "payorIDType": null,
+      "payorNRICPassport": null,
+      "payorName": null,
+      "payorRelationship": null,
+      "premiumFrequency": "S",
+      "renewalPaymentMethod": "N",
+      "savingCurrentAccountNumber": null
+    },
+    "poIsMaturityBeneficiary": "Y",
+    "policyOwnerDetails": {
+      "fatcaDetail": {
+        "fatcaDeclaration": {
+          "declaration": null,
+          "isClicked": "false",
+          "signatureDate": null
+        },
+        "fatcaQuestionnaire": {
+          "fatcaQuestionnaireDetails": [
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            },
+            {
+              "accountNumber": null,
+              "fatcaQuestionnaireKey": null,
+              "fatcaQuestionnaireValue": null,
+              "numberId": null,
+              "passportId": null,
+              "qnaireDetail": null
+            }
+          ]
+        }
+      },
+      "moneyLaundering": {
+        "bankAccountNo": null,
+        "bankName": null,
+        "dateOfBirth": null,
+        "emailAddress": null,
+        "faxNumber": null,
+        "fullName": null,
+        "idNumber": null,
+        "isClicked": null,
+        "mobilePhone": null,
+        "nationality": null,
+        "occupationCode": null,
+        "placeOfResidence": null,
+        "primaryAddress": null,
+        "workAddress": null
+      },
+      "proporserInformation": {
+        "healthCondition": {
+          "isHaveMedicalCondition": null,
+          "medicalConditionDetail": null
+        },
+        "invalidDate": null,
+        "natureOfBusinessModel": {
+          "additionalNote": null,
+          "natureOfBusinessList": [
+            {
+              "code": null,
+              "value": null
+            }
+          ]
+        },
+        "occupationModel": {
+          "industryCode": null,
+          "occupationCode": "UNIL"
+        },
+        "otherInformation": {
+          "annualEmployeeIncome": 50000,
+          "clientNumber": null,
+          "countryOfBirth": null,
+          "education": "PRE",
+          "employerName": null,
+          "employmentStatus": null,
+          "leadID": null,
+          "leadStatus": null,
+          "placeOfBirth": "London",
+          "sourceOfFund": null,
+          "sourceOfName": null,
+          "staff": null,
+          "vip": null
+        },
+        "parentModule": null,
+        "person": {
+          "addresses": [
+            {
+              "addressId": null,
+              "addressType": "PRIMARY",
+              "areaCode": null,
+              "buildingName": null,
+              "cityCode": null,
+              "countryCode": "ET",
+              "district": "فر فر",
+              "fullAddress": null,
+              "governorate": "1",
+              "houseNumber": null,
+              "isOverseas": "false",
+              "postalCode": null,
+              "prefered": null,
+              "provinceCode": null,
+              "region": null,
+              "stateCode": null,
+              "street": "فر",
+              "typeCode": "R",
+              "unitNo": "فر"
+            },
+            {
+              "addressId": "qlq2z2kpiu",
+              "addressType": "NON-PRIMARY",
+              "areaCode": "",
+              "buildingName": "",
+              "cityCode": "",
+              "countryCode": "ET",
+              "district": "فر",
+              "fullAddress": "",
+              "governorate": "1",
+              "houseNumber": null,
+              "isOverseas": "false",
+              "postalCode": null,
+              "prefered": "",
+              "provinceCode": "",
+              "region": null,
+              "stateCode": "",
+              "street": "فر",
+              "typeCode": "R",
+              "unitNo": "فر"
+            }
+          ],
+          "basic": {
+            "age": 32,
+            "birthCountryCode": null,
+            "birthDate": "1988-10-10",
+            "clientStatus": null,
+            "genderCode": "F",
+            "idList": [
+              {
+                "code": "E",
+                "idExpiryDate": null,
+                "value": "28810102222221"
+              }
+            ],
+            "industry": "12",
+            "maritalStatusCode": "M",
+            "name": {
+              "alias": null,
+              "first": "Marry",
+              "full": "Marry Cole",
+              "last": "Cole",
+              "middle": null,
+              "prefix": null,
+              "suffix": null,
+              "titleCode": "MISS"
+            },
+            "nationalityCode": "ET",
+            "photo": null,
+            "raceCode": null,
+            "raceInfor": null,
+            "referralTypeCode": null,
+            "referrerFullname": null,
+            "religionCode": null,
+            "smokerStatus": "S"
+          },
+          "contacts": {
+            "email": "mcole@gmail.com",
+            "handPhone": null,
+            "homePhone": null,
+            "mobilePhone": "+20 123123123123",
+            "officePhone": null
+          }
+        },
+        "roadShowID": null
+      },
+      "underwritingDetailsOfProposer": {
+        "healthQuestionnaire": {
+          "healthQuestionBMIInfo": {
+            "healthQuestionBMI": null,
+            "healthQuestionHeight": null,
+            "healthQuestionWeight": null,
+            "questionKeyHeight": null,
+            "questionKeyWeight": null
+          },
+          "healthQuestionWeightInfo": {
+            "healthQuestionWeightInfoItems": [
+              {
+                "healthQDecreaseKG": null,
+                "healthQIncreaseKG": null,
+                "healthQReason": null,
+                "isIncrease": null
+              }
+            ],
+            "questionKey": null,
+            "questionValue": null
+          },
+          "healthQuestions": [
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            },
+            {
+              "currentHealthState": null,
+              "details": null,
+              "diagnosisDate": null,
+              "drinkerAmount": null,
+              "drinkerType": null,
+              "medication": null,
+              "period": null,
+              "questionKey": null,
+              "questionValue": null,
+              "smokerType": null,
+              "smokerUnit": null
+            }
+          ]
+        },
+        "insuredFamilyInformationDetail": null,
+        "insuredFamilyInformationItem": [
+          {
+            "aliveAge": null,
+            "aliveDiabetes": null,
+            "aliveHealthCondition": null,
+            "aliveHeartOrStroke": null,
+            "aliveHypertension": null,
+            "aliveTumorOrCancer": null,
+            "amount": null,
+            "deathAge": null,
+            "deathCauseOfDeath": null,
+            "deathDate": null,
+            "familyQKey": null
+          },
+          {
+            "aliveAge": null,
+            "aliveDiabetes": null,
+            "aliveHealthCondition": null,
+            "aliveHeartOrStroke": null,
+            "aliveHypertension": null,
+            "aliveTumorOrCancer": null,
+            "amount": null,
+            "deathAge": null,
+            "deathCauseOfDeath": null,
+            "deathDate": null,
+            "familyQKey": null
+          },
+          {
+            "aliveAge": null,
+            "aliveDiabetes": null,
+            "aliveHealthCondition": null,
+            "aliveHeartOrStroke": null,
+            "aliveHypertension": null,
+            "aliveTumorOrCancer": null,
+            "amount": null,
+            "deathAge": null,
+            "deathCauseOfDeath": null,
+            "deathDate": null,
+            "familyQKey": null
+          },
+          {
+            "aliveAge": null,
+            "aliveDiabetes": null,
+            "aliveHealthCondition": null,
+            "aliveHeartOrStroke": null,
+            "aliveHypertension": null,
+            "aliveTumorOrCancer": null,
+            "amount": null,
+            "deathAge": null,
+            "deathCauseOfDeath": null,
+            "deathDate": null,
+            "familyQKey": null
+          },
+          {
+            "aliveAge": null,
+            "aliveDiabetes": null,
+            "aliveHealthCondition": null,
+            "aliveHeartOrStroke": null,
+            "aliveHypertension": null,
+            "aliveTumorOrCancer": null,
+            "amount": null,
+            "deathAge": null,
+            "deathCauseOfDeath": null,
+            "deathDate": null,
+            "familyQKey": null
+          }
+        ],
+        "lifestyleQuestionnaire": {
+          "lifestylePolicies": {
+            "lifestylePoliciesItems": []
+          },
+          "lifestyleQuestions": [
+            {
+              "lifestyleQDecision": null,
+              "lifestyleQDetail": null,
+              "questionKey": null,
+              "questionValue": null
+            },
+            {
+              "lifestyleQDecision": null,
+              "lifestyleQDetail": null,
+              "questionKey": null,
+              "questionValue": null
+            },
+            {
+              "lifestyleQDecision": null,
+              "lifestyleQDetail": null,
+              "questionKey": null,
+              "questionValue": null
+            },
+            {
+              "lifestyleQDecision": null,
+              "lifestyleQDetail": null,
+              "questionKey": null,
+              "questionValue": null
+            }
+          ]
+        }
+      }
+    },
+    "salaryDeductionDelegation": {
+      "deductionDate": null,
+      "employeeIdNumber": null,
+      "governmentName": null,
+      "jobTitle": null,
+      "poIdNumber": null,
+      "policyOwnerName": null,
+      "subGovernmentName": null
+    },
+    "totalPayableAmount": 60100.003775,
+    "totalSumAssured": null,
+    "ustaxDeclaration": {
+      "taxDeclaration": null,
+      "ustaxIDNumber": null
+    },
+    "insuredDeclaration": {
+      "businessCaseNo": "MC40074786629",
+      "insuredName": "Tom Banner",
+      "isClicked": "true"
+    },
+    "laisTheSameWithPO": "1",
+    "docName": "APPNS77356569"
+  },
+  "beneficiaryTypeDB": false,
+  "corporatesBankBranch": null,
+  "occupationValuePO": "استاذ جامعى",
+  "occupationValueLI": "مديرعام بجهازالمركزي للمحاسبات",
+  "questionValueYes": {
+    "showBlankRow": true,
+    "resultValueQuestionYes": ""
+  },
+  "account": {
+    "addresses": [],
+    "agentStatus": "ACTIVE",
+    "approverIds": [],
+    "auditorIdRef": null,
+    "dateOfBirth": "1959-07-04",
+    "defaultLanguage": "en",
+    "email": "stockoptionplans@utc.com",
+    "firstName": null,
+    "fullName": "AG0002 Frederic Chapa",
+    "gender": "M",
+    "id": null,
+    "idNumber": "93004075991444",
+    "idType": null,
+    "isActive": "true",
+    "isAdminRole": null,
+    "lastName": null,
+    "loginAttempts": "-1",
+    "loginDuration": null,
+    "loginStatus": null,
+    "managerEmail": null,
+    "managerID": null,
+    "maritalStatus": null,
+    "mobility": {
+      "isAllowIPOSApp": "Y",
+      "loginTimeout": "8",
+      "loginTimeoutFrequency": "D",
+      "mobiId": "50a2267e-3343-4ad0-b778-a106b78c283a"
+    },
+    "nationality": "UAE",
+    "occupation": null,
+    "phoneNumber": "8607287000",
+    "phoneNumbers": [
+      "8607287000"
+    ],
+    "profile": {
+      "id": null,
+      "profileId": "5f333c8d-6b43-4475-9577-81a090a00bab",
+      "insurerProfiles": [
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "mnguyen203@dxc.com",
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "MR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "PR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "SA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "BHO",
+          "branchName": "MLI Head Office Banca",
+          "channel": "BA",
+          "clientID": "BT000001",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "45783475657",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "nchaudhary22@dxc.com",
+          "pasId": "BT000001",
+          "pasType": "LIFE",
+          "regionCode": "",
+          "regionName": "",
+          "role": "BA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "000",
+          "branchName": "MLI Zone 1",
+          "channel": "DS",
+          "clientID": "AG000002",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "755253890",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "stockoptionplans@utc.com",
+          "pasId": "AG000002",
+          "pasType": "LIFE",
+          "regionCode": "ML0002ZO",
+          "regionName": "MLI Zone 1",
+          "role": "AG",
+          "sumInsured": null,
+          "underwritingLevel": null
+        }
+      ],
+      "roles": [
+        "PR",
+        "AG",
+        "BA",
+        "MR",
+        "SA"
+      ]
+    },
+    "userName": "automationtest",
+    "userPassword": null
+  },
+  "convertNumberTotalSumAssuredToText": "Zero EGP",
+  "convertPensionAmountToText": "Zero EGP",
+  "convertPremiumAmountToText": "Zero EGP",
+  "convertSingleLumpSumAmountToText": "Zero EGP",
+  "convertSingleMontlyAnnuityAmountToText": "Three Thousand Two Hundred And Thirty Two EGP And Thirty Seven",
+  "convertLoanAmountToText": "Zero EGP",
+  "isActiveRole": "AG",
+  "licenseFlag": "true",
+  "managerCode": null,
+  "branchName": "MLI Zone 1",
+  "regionName": "MLI Zone 1",
+  "inputPdf": {
+    "productName": "معاش بكره",
+    "policyOwner": {
+      "gender": "انثي",
+      "occupation": "استاذ جامعى",
+      "nationality": "مصرية",
+      "natureOfWork": "",
+      "maritalStatus": "متزوج",
+      "industry": "التعليم",
+      "lifestyleQuestionnaire": {
+        "lifestyleQuestions": [
+          {
+            "lifestyleQuestionKey": "",
+            "lifestyleQuestionValue": "",
+            "lifestyleQDetail": "",
+            "lifeStyleDetail": "",
+            "lifestyleQDecision": "",
+            "lifestyleQDecisionValue": ""
+          },
+          {
+            "lifestyleQuestionKey": "",
+            "lifestyleQuestionValue": "",
+            "lifestyleQDetail": "",
+            "lifeStyleDetail": "",
+            "lifestyleQDecision": "",
+            "lifestyleQDecisionValue": ""
+          },
+          {
+            "lifestyleQuestionKey": "",
+            "lifestyleQuestionValue": "",
+            "lifestyleQDetail": "",
+            "lifeStyleDetail": "",
+            "lifestyleQDecision": "",
+            "lifestyleQDecisionValue": ""
+          },
+          {
+            "lifestyleQuestionKey": "",
+            "lifestyleQuestionValue": "",
+            "lifestyleQDetail": "",
+            "lifeStyleDetail": "",
+            "lifestyleQDecision": "",
+            "lifestyleQDecisionValue": ""
+          }
+        ],
+        "lifestylePoliciesItems": ""
+      },
+      "healthQuestions": [
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        },
+        {
+          "questionKey": "",
+          "questionNo": "",
+          "questionValue": "",
+          "smokerType": "",
+          "smokerUnit": "",
+          "smokerTypeValue": "",
+          "drinkerType": "",
+          "drinkerTypeValue": "",
+          "drinkerAmount": "",
+          "currentHealthState": "",
+          "medication": "",
+          "diagnosisDate": "",
+          "details": "",
+          "period": ""
+        }
+      ],
+      "relationship": "نفسه",
+      "address": [
+        {
+          "addressType": "PRIMARY",
+          "governorates": "القاهرة",
+          "country": "مصر",
+          "fullAddress": "فر فر فر فر القاهرة مصر"
+        },
+        {
+          "addressType": "NON-PRIMARY",
+          "governorates": "القاهرة",
+          "country": "مصر",
+          "fullAddress": "فر فر فر القاهرة مصر"
+        }
+      ]
+    },
+    "lifeInsured": [
+      {
+        "gender": "ذكر",
+        "occupation": "مديرعام بجهازالمركزي للمحاسبات",
+        "nationality": "مصري",
+        "natureOfWork": "",
+        "maritalStatus": "أعزب",
+        "industry": "الحكومة والقضاء",
+        "lifestyleQuestionnaire": {
+          "lifestyleQuestions": [
+            {
+              "lifestyleQuestionKey": "",
+              "lifestyleQuestionValue": "",
+              "lifestyleQDetail": "",
+              "lifestyleDetail": "",
+              "lifestyleQDecision": "",
+              "lifestyleQDecisionValue": ""
+            },
+            {
+              "lifestyleQuestionKey": "",
+              "lifestyleQuestionValue": "",
+              "lifestyleQDetail": "",
+              "lifestyleDetail": "",
+              "lifestyleQDecision": "",
+              "lifestyleQDecisionValue": ""
+            },
+            {
+              "lifestyleQuestionKey": "",
+              "lifestyleQuestionValue": "",
+              "lifestyleQDetail": "",
+              "lifestyleDetail": "",
+              "lifestyleQDecision": "",
+              "lifestyleQDecisionValue": ""
+            },
+            {
+              "lifestyleQuestionKey": "",
+              "lifestyleQuestionValue": "",
+              "lifestyleQDetail": "",
+              "lifestyleDetail": "",
+              "lifestyleQDecision": "",
+              "lifestyleQDecisionValue": ""
+            }
+          ],
+          "lifestylePoliciesItems": ""
+        },
+        "healthQuestions": [
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          },
+          {
+            "questionKey": "",
+            "questionNo": "",
+            "questionValue": "",
+            "smokerType": "",
+            "smokerUnit": "",
+            "smokerTypeValue": "",
+            "drinkerType": "",
+            "drinkerTypeValue": "",
+            "drinkerAmount": "",
+            "currentHealthState": "",
+            "medication": "",
+            "diagnosisDate": "",
+            "details": "",
+            "period": ""
+          }
+        ],
+        "relationship": "شريك عمل",
+        "isPolicyOwner": "",
+        "address": [
+          {
+            "addressType": "PRIMARY",
+            "governorates": "الإسكندرية",
+            "country": "مصر",
+            "fullAddress": "يجب يجب ألا يكون يجب ألا الإسكندرية مصر 0000"
+          },
+          {
+            "addressType": "NON-PRIMARY",
+            "governorates": "القاهرة",
+            "country": "مصر",
+            "fullAddress": "يجب ألا يجب ألا يجب ألا القاهرة مصر 1111"
+          }
+        ]
+      }
+    ],
+    "benefitDetails": [
+      {
+        "beneficiaryDetailsBeneficiaryType": "MB",
+        "beneficiaryType": "Maturity Beneficiary",
+        "bankBranch": "",
+        "bankBranchName": "",
+        "fullName": "Marry Cole",
+        "relationshipType": "SELF",
+        "relationship": "نفسه",
+        "share": "100"
+      }
+    ],
+    "fatcaBeneficiaryDeclaration": "",
+    "paymentDetails": {
+      "currency": "جنيه مصرى",
+      "premiumFrequency": "قسط وحيد",
+      "firstPaymentMethod": "Cash",
+      "renewalPaymentMethod": "None Bill",
+      "bankName": "",
+      "bankBranch": "",
+      "arBankName": "",
+      "arBankBranch": ""
+    },
+    "mailingAddress": {
+      "governorate": "",
+      "country": ""
+    },
+    "salaryDeductionDelegation": ""
+  },
+  "riderKeys": "Total Permanent Disability",
+  "managerEmail": "stockoptionplans@utc.com",
+  "managerName": "AG0002 Frederic Chapa",
+  "managerMobile": "8607287000",
+  "managerLicense": "755253890",
+  "currentRole": "AG"
+}

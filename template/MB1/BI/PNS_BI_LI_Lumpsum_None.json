@@ -1,0 +1,1253 @@
+{
+  "productCurrencyCase": "MC40019202222",
+  "quotation": {
+    "id": "d5bffdd4-ee3f-47bd-a80f-6244d03b6296",
+    "version": 0,
+    "acceptedDate": null,
+    "basicPlan": {
+      "annualRate": null,
+      "exclusion": null,
+      "funds": [],
+      "information": {
+        "annualPremium": null,
+        "annualUnitPremium": null,
+        "annuityAmount": 0,
+        "annuityAndRecurringAmount": 0,
+        "annuityOption": "Lumpsum",
+        "backDatingDate": null,
+        "bankBranch": null,
+        "bankBranchName": null,
+        "basicAnnualPremiumPDF": null,
+        "basicPremium": null,
+        "billingCurrency": "EGP",
+        "childAge": null,
+        "childBirthdate": null,
+        "contractCurrency": "EGP",
+        "durationOfAnnuity": "0",
+        "effectiveDate": "2020-07-07",
+        "enableRCD": "true",
+        "expirationDate": "2020-07-17",
+        "installmentPremium": null,
+        "investmentAnnualPremiumPDF": null,
+        "investmentPremium": null,
+        "isExpire": 0,
+        "isMaturityAgeTextInputEnable": null,
+        "isRiskCommencement": null,
+        "jointAge": null,
+        "lumpSumAmount": 167983,
+        "lumpSumAndRecurringAmount": 0,
+        "maturityAge": "450P",
+        "maturityDate": "2039-07-01",
+        "monthlyAnnuityLimit": 75,
+        "monthlyPayment": null,
+        "occupationClass": "1",
+        "policyTerm": 19,
+        "premiumForCI": null,
+        "premiumForDeath": null,
+        "premiumForInvestment": null,
+        "premiumFrequency": "S",
+        "premiumTerm": null,
+        "recPremiumFrequency": "N",
+        "recPremiumFrequencyAmount": null,
+        "regularLumpSumAmount": null,
+        "regularMonthlyAnnuityAmount": null,
+        "regularPremium": null,
+        "renewalPaymentMethod": "N",
+        "riskCommencementDate": "2020-07-01",
+        "singleLumpSumAmount": 167983,
+        "singleMonthlyAnnuityAmount": null,
+        "singlePremium": 50000,
+        "sumAssured": null,
+        "totalAnnualPremium": null,
+        "ciannualPremiumPDF": 0
+      },
+      "loadingInformation": [
+        {
+          "loading": null,
+          "loadingType": null,
+          "reason": null
+        }
+      ],
+      "loanDetails": {
+        "loanAmount": null,
+        "loanInstalments": null,
+        "loanPaymentFrequency": null,
+        "loanTerm": 19,
+        "sumAssuredDecreasingFrequency": null
+      },
+      "singleTopUp": [
+        {
+          "singleTopUpAmount": null,
+          "year": null
+        }
+      ],
+      "withdrawal": [
+        {
+          "withdrawalAmount": null,
+          "year": null
+        }
+      ]
+    },
+    "benefitAmount": null,
+    "benefitIllustration": {
+      "inputPdf": "{\"benefitIllustration\":{\"benefitIllustrationTable\":[{\"year\":null,\"age\":null,\"annualPremium\":null,\"totalPaidPremium\":null,\"x1\":null,\"x2\":null,\"x3\":null,\"ratio\":null}]},\"totalDividend1\":null,\"totalDividend2\":null,\"totalDividend3\":null,\"sa1\":null,\"sa2\":null,\"sa3\":null,\"totalBenefitsAge\":null,\"totalBenefitsAge1\":null,\"totalBenefitsAge2\":null,\"totalBenefitsAge3\":null}",
+      "outputPdf": "{\"poOccupation\" : \"\\u0627\\u0633\\u062a\\u0627\\u0630 \\u062c\\u0627\\u0645\\u0639\\u0649\",\"liOccupation\" : \"\\u0645\\u062f\\u064a\\u0631\\u0639\\u0627\\u0645 \\u0628\\u062c\\u0647\\u0627\\u0632\\u0627\\u0644\\u0645\\u0631\\u0643\\u0632\\u064a \\u0644\\u0644\\u0645\\u062d\\u0627\\u0633\\u0628\\u0627\\u062a\",\"poGender\" : \"\\u0627\\u0646\\u062b\\u064a\",\"liGender\" : \"\\u0630\\u0643\\u0631\",\"liSmokingStatus\" : \"\\u0645\\u062f\\u062e\\u0646\",\"relationship\" : \"\\u0634\\u0631\\u064a\\u0643 \\u0639\\u0645\\u0644\",\"productName\" : \"\\u0645\\u0639\\u0627\\u0634 \\u0628\\u0643\\u0631\\u0647\",\"frequency\" : \"\\u0642\\u0633\\u0637 \\u0648\\u062d\\u064a\\u062f\",\"recPremiumFrequency\" : \"\\u0644\\u0627 \\u0634\\u064a\\u0621\",\"MaturityAge\" : \"50\"}"
+    },
+    "documentRelation": {
+      "actionType": null,
+      "caseId": "93fe20a2-8421-400f-9f3c-a5e6b358bc5d",
+      "refContact": {
+        "refDocName": "CMINV58737212",
+        "refId": "b804d69c-5f13-4168-b858-a97a3529a579",
+        "refVersion": 43480497,
+        "status": "VALID"
+      },
+      "refContactLifeInsured": [
+        {
+          "refDocName": "CMINV39799427",
+          "refId": "449a8304-9bf5-418f-b6e4-c5cd21ede3cb",
+          "refVersion": 19646000,
+          "status": "VALID",
+          "refIdOfLI": "BIPNS12417126_0"
+        }
+      ]
+    },
+    "efsaFees": 123.70115,
+    "efsaServiceFees": 49.48046,
+    "financialInformation": {
+      "homeCurrency": "EGP"
+    },
+    "firstPremiumPayable": 49480.46,
+    "initialPremiumPayable": 49480.46,
+    "isAddLifeInsured": "1",
+    "isQuotationComputed": null,
+    "issuanceFees": 95,
+    "lifeInsured": [
+      {
+        "idLifeInsured": "BIPNS12417126_0",
+        "invalidDate": null,
+        "isContactSelected": "Y",
+        "isPolicyOwner": null,
+        "natureOfBusiness": null,
+        "occupationModel": {
+          "industryCode": "13",
+          "occupationClass": "1",
+          "occupationCode": "CAGM",
+          "uuid": null
+        },
+        "person": {
+          "version": null,
+          "age": 31,
+          "annualEmployeeIncome": 100000,
+          "birthCountryCode": null,
+          "birthDate": "1989-10-10",
+          "bloodDiastolic": null,
+          "bloodSystolic": null,
+          "genderCode": "M",
+          "height": null,
+          "idList": [
+            {
+              "code": "E",
+              "uuid": null,
+              "value": "28910102222210"
+            }
+          ],
+          "liMaturityAge": null,
+          "maritalStatusCode": null,
+          "name": {
+            "alias": null,
+            "first": "Tom",
+            "full": "Tom Banner",
+            "last": "Banner",
+            "middle": null,
+            "prefix": null,
+            "suffix": null,
+            "titleCode": "MR",
+            "uuid": null
+          },
+          "nationalityCode": null,
+          "outputBMI": null,
+          "photo": null,
+          "question1": null,
+          "question2": null,
+          "raceCode": null,
+          "referralTypeCode": null,
+          "referrerFullname": null,
+          "religionCode": null,
+          "smokerStatus": "S",
+          "uuid": null,
+          "weight": null
+        },
+        "prospectIdOfCRM": null,
+        "relationship": "BP"
+      }
+    ],
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "DR",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-07T03:49:31+0000",
+      "docId": "d5bffdd4-ee3f-47bd-a80f-6244d03b6296",
+      "docName": "BIPNS12417126",
+      "docType": "quotation",
+      "documentStatus": "VALID",
+      "entityNumber": null,
+      "entityType": null,
+      "language": "en",
+      "modifyDate": "2020-07-07T04:08:43+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "BI40012417126",
+      "productName": "pns",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "payableAmount": 50100.00483,
+    "paymentAmount": 50100,
+    "policyHolderGuaranteedFund": 98.96092,
+    "policyOwner": {
+      "invalidDate": null,
+      "natureOfBusiness": null,
+      "occupationModel": {
+        "agencyCode": null,
+        "industryCode": "12",
+        "occupationClass": null,
+        "occupationCode": "UNIL",
+        "regionCode": null,
+        "subRegionCode": null,
+        "uuid": null
+      },
+      "opportunityID": null,
+      "person": {
+        "version": null,
+        "age": 32,
+        "annualEmployeeIncome": 50000,
+        "birthCountryCode": null,
+        "birthDate": "1988-10-10",
+        "bloodDiastolic": null,
+        "bloodSystolic": null,
+        "genderCode": "F",
+        "height": null,
+        "idList": [
+          {
+            "code": "E",
+            "uuid": null,
+            "value": "28810102222221"
+          }
+        ],
+        "maritalStatusCode": null,
+        "name": {
+          "alias": null,
+          "first": "Marry",
+          "full": "Marry Cole",
+          "last": "Cole",
+          "middle": null,
+          "prefix": null,
+          "suffix": null,
+          "titleCode": "MISS",
+          "uuid": null
+        },
+        "nationalityCode": "ET",
+        "outputBMI": null,
+        "photo": null,
+        "poMaturityAge": null,
+        "question1": null,
+        "question2": null,
+        "raceCode": null,
+        "referralTypeCode": null,
+        "referrerFullname": null,
+        "religionCode": null,
+        "smokerStatus": "S",
+        "uuid": null,
+        "weight": null
+      },
+      "prospectIdOfCRM": null
+    },
+    "premiumPayable": 49480.46,
+    "quotationType": "QUO",
+    "renewalEFSAFees": 123.70115,
+    "renewalEfsaServiceFees": 49.48046,
+    "renewalPolicyHolderGuaranteedFund": 98.96092,
+    "renewalPremium": 50000,
+    "renewalTax": 247.4023,
+    "riders": [
+      {
+        "benefitAmount": 167983,
+        "maturityAge": 50,
+        "planCode": null,
+        "premium": null,
+        "premiumTerm": 1,
+        "riderAnnualPremium": null,
+        "riderInstallmentPremium": null,
+        "riderName": "TPDR",
+        "riderTerm": 19,
+        "sumAssured": null,
+        "unit": null
+      }
+    ],
+    "stamp": 5,
+    "stampFees": 0,
+    "tax": 247.4023,
+    "totalPremiumPayable": 50100.00483,
+    "totalSumAssured": null,
+    "pensionCoverage": [
+      {
+        "coverageType": null,
+        "maturityAge": null,
+        "policyNumber": null,
+        "policyStatus": null
+      }
+    ],
+    "docName": "BIPNS12417126"
+  },
+  "occupationValuePO": "استاذ جامعى",
+  "occupationValueLI": "مديرعام بجهازالمركزي للمحاسبات",
+  "benefitIllustrationTable": {
+    "poOccupation": "استاذ جامعى",
+    "liOccupation": "مديرعام بجهازالمركزي للمحاسبات",
+    "poGender": "انثي",
+    "liGender": "ذكر",
+    "liSmokingStatus": "مدخن",
+    "relationship": "شريك عمل",
+    "productName": "معاش بكره",
+    "frequency": "قسط وحيد",
+    "recPremiumFrequency": "لا شيء",
+    "MaturityAge": "50"
+  },
+  "account": {
+    "addresses": [],
+    "agentStatus": "ACTIVE",
+    "approverIds": [],
+    "auditorIdRef": null,
+    "dateOfBirth": "1959-07-04",
+    "defaultLanguage": "en",
+    "email": "stockoptionplans@utc.com",
+    "firstName": null,
+    "fullName": "AG0002 Frederic Chapa",
+    "gender": "M",
+    "id": null,
+    "idNumber": "93004075991444",
+    "idType": null,
+    "isActive": "true",
+    "isAdminRole": null,
+    "lastName": null,
+    "loginAttempts": "-1",
+    "loginDuration": null,
+    "loginStatus": null,
+    "managerEmail": null,
+    "managerID": null,
+    "maritalStatus": null,
+    "mobility": {
+      "isAllowIPOSApp": "Y",
+      "loginTimeout": "8",
+      "loginTimeoutFrequency": "D",
+      "mobiId": "50a2267e-3343-4ad0-b778-a106b78c283a"
+    },
+    "nationality": "UAE",
+    "occupation": null,
+    "phoneNumber": "8607287000",
+    "phoneNumbers": [
+      "8607287000"
+    ],
+    "profile": {
+      "id": null,
+      "profileId": "5f333c8d-6b43-4475-9577-81a090a00bab",
+      "insurerProfiles": [
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "mnguyen203@dxc.com",
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "MR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "PR",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": null,
+          "branchName": null,
+          "channel": null,
+          "clientID": null,
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": null,
+          "licenseNumber": null,
+          "manageBy": null,
+          "managerId": null,
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": null,
+          "pasId": null,
+          "pasType": null,
+          "regionCode": null,
+          "regionName": null,
+          "role": "SA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "BHO",
+          "branchName": "MLI Head Office Banca",
+          "channel": "BA",
+          "clientID": "BT000001",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "45783475657",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "nchaudhary22@dxc.com",
+          "pasId": "BT000001",
+          "pasType": "LIFE",
+          "regionCode": "",
+          "regionName": "",
+          "role": "BA",
+          "sumInsured": null,
+          "underwritingLevel": null
+        },
+        {
+          "branch": "000",
+          "branchName": "MLI Zone 1",
+          "channel": "DS",
+          "clientID": "AG000002",
+          "demotionDate": null,
+          "dobPolicyHolder": null,
+          "effectiveDate": null,
+          "id": null,
+          "insurerId": null,
+          "insurerName": null,
+          "integrateC2LAgentId": null,
+          "integrateC2LManagerOfAgentId": null,
+          "isAdmin": null,
+          "licenseExpiryDate": null,
+          "licenseFlag": "true",
+          "licenseNumber": "755253890",
+          "manageBy": "automationtest",
+          "managerId": "GL000002",
+          "nric": null,
+          "otpType": null,
+          "otpValue": null,
+          "pasEmail": "stockoptionplans@utc.com",
+          "pasId": "AG000002",
+          "pasType": "LIFE",
+          "regionCode": "ML0002ZO",
+          "regionName": "MLI Zone 1",
+          "role": "AG",
+          "sumInsured": null,
+          "underwritingLevel": null
+        }
+      ],
+      "roles": [
+        "PR",
+        "AG",
+        "BA",
+        "MR",
+        "SA"
+      ]
+    },
+    "userName": "automationtest",
+    "userPassword": null
+  },
+  "caseData": {
+    "id": "93fe20a2-8421-400f-9f3c-a5e6b358bc5d",
+    "version": 0,
+    "agentInfo": {
+      "agentBranch": "000",
+      "agentBranchName": "MLI Zone 1",
+      "agentEmail": "stockoptionplans@utc.com",
+      "agentId": "AG000002",
+      "agentName": "AG0002 Frederic Chapa",
+      "agentNumber": null,
+      "agentRegionCode": "ML0002ZO",
+      "agentRegionName": "MLI Zone 1"
+    },
+    "application": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": "life",
+      "refDocName": null,
+      "refId": null,
+      "refProductName": "pns",
+      "refType": "application",
+      "refVersion": null,
+      "status": null,
+      "beneficiaryDetailsCorporate": null,
+      "firstPaymentMethod": null,
+      "liFatcaQuestionnaire": {
+        "liFatcaQuestions": [
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          }
+        ]
+      },
+      "poFatcaQuestionnaire": {
+        "poFatcaQuestions": [
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          },
+          {
+            "fatcaQKey": null,
+            "fatcaQValue": null
+          }
+        ]
+      },
+      "renewalPaymentMethod": null,
+      "laisTheSameWithPO": null
+    },
+    "attachments": [
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": null,
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": null,
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D001_IDF",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D001_IDB",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D002_SI",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "OP",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": null,
+        "fileSize": null,
+        "isHiddenAttachment": "false",
+        "isPreloadAttachment": "true",
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "D003_AP",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Quotation_.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "BI",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Application_.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "APPLICATION",
+        "uploadedBy": null
+      },
+      {
+        "attachment": {
+          "documentType": null,
+          "refBusinessStatus": null,
+          "refBusinessType": null,
+          "refDocName": null,
+          "refId": null,
+          "refProductName": null,
+          "refType": null,
+          "refVersion": null,
+          "status": null
+        },
+        "attachmentGroup": "TD",
+        "attachmentStatus": null,
+        "commentContent": null,
+        "createdDate": null,
+        "fileName": "Agent Declaration_AG0002 Frederic Chapa.pdf",
+        "fileSize": null,
+        "isHiddenAttachment": null,
+        "isPreloadAttachment": null,
+        "isSigned": null,
+        "isSyncToECM": null,
+        "statusCode": null,
+        "typeCode": "AD",
+        "uploadedBy": null
+      }
+    ],
+    "branch": "MLI Zone 1",
+    "draftNumber": "00000003",
+    "effectiveDateQuotation": null,
+    "fnaInside": {
+      "declaration": {
+        "client": {
+          "objectQ1": {
+            "declarationQuestion1s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ2": {
+            "declarationQuestion2s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ3": {
+            "declarationQuestion3s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              },
+              {
+                "key": "Q11",
+                "value": "Y"
+              }
+            ]
+          }
+        },
+        "joint": {
+          "objectQ1": {
+            "declarationQuestion1s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ2": {
+            "declarationQuestion2s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              }
+            ]
+          },
+          "objectQ3": {
+            "declarationQuestion3s": [
+              {
+                "key": "Q01",
+                "value": "Y"
+              },
+              {
+                "key": "Q02",
+                "value": "Y"
+              },
+              {
+                "key": "Q03",
+                "value": "Y"
+              },
+              {
+                "key": "Q04",
+                "value": "Y"
+              },
+              {
+                "key": "Q05",
+                "value": "Y"
+              },
+              {
+                "key": "Q06",
+                "value": "Y"
+              },
+              {
+                "key": "Q07",
+                "value": "Y"
+              },
+              {
+                "key": "Q08",
+                "value": "Y"
+              },
+              {
+                "key": "Q09",
+                "value": "Y"
+              },
+              {
+                "key": "Q10",
+                "value": "Y"
+              },
+              {
+                "key": "Q11",
+                "value": "Y"
+              }
+            ]
+          }
+        }
+      },
+      "recommendation": {
+        "benefitPlan": null,
+        "limitationPlan": null,
+        "productName": null,
+        "reasonPlan": null
+      },
+      "refIdModel": {
+        "documentType": null,
+        "refBusinessStatus": null,
+        "refBusinessType": null,
+        "refDocName": null,
+        "refId": null,
+        "refProductName": null,
+        "refType": null,
+        "refVersion": null,
+        "status": null
+      },
+      "summary": {
+        "clientName": null,
+        "clientRiskProfile": null,
+        "jointName": null,
+        "jointRiskProfile": null
+      }
+    },
+    "frozenChoice": null,
+    "isCompletedAttachment": null,
+    "isESignatureDocuments": null,
+    "isLifeInsuredDifferent": "N",
+    "isStp": null,
+    "lifeInsured": "",
+    "managerreview": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null,
+      "accountManagerId": null,
+      "managerEmail": null,
+      "managerId": null,
+      "managerName": null
+    },
+    "metaData": {
+      "businessProfile": "AG",
+      "businessStatus": "DR",
+      "businessType": "life",
+      "cloneVersion": null,
+      "createDate": "2020-07-07T03:49:04+0000",
+      "docId": "93fe20a2-8421-400f-9f3c-a5e6b358bc5d",
+      "docName": "MCPNS19202222",
+      "docType": "case",
+      "documentStatus": "INVALID",
+      "entityNumber": null,
+      "entityType": null,
+      "language": null,
+      "modifyDate": "2020-07-07T04:08:43+0000",
+      "operationStatus": null,
+      "ownerId": null,
+      "ownerName": "automationtest",
+      "producFamily": null,
+      "productCurrencyCode": "MC40019202222",
+      "productName": "pns",
+      "productOrigin": null,
+      "profileId": "",
+      "synchronizationDate": null
+    },
+    "opportunityID": null,
+    "packageFeedback": {
+      "clientNumberBene": [
+        ""
+      ],
+      "clientNumberLi": null,
+      "clientNumberMailing": null,
+      "clientNumberPo": null,
+      "error": null,
+      "policyNumber": null,
+      "policyStatus": null,
+      "receiptNumbers": [
+        {
+          "paymentRefNumber": null,
+          "receiptNumber": null
+        }
+      ]
+    },
+    "payment": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null
+    },
+    "policyOwner": "Marry Cole",
+    "prospects": [
+      {
+        "documentType": null,
+        "refBusinessStatus": "DR",
+        "refBusinessType": null,
+        "refDocName": "CMINV58737212",
+        "refId": "b804d69c-5f13-4168-b858-a97a3529a579",
+        "refProductName": null,
+        "refType": "contact",
+        "refVersion": "43480497",
+        "status": "VALID",
+        "birthDate": "1988-10-10",
+        "idNumber": "28810102222221",
+        "prospectType": "PROPOSER",
+        "prospectsName": "Marry Cole"
+      }
+    ],
+    "quotationIndex": 0,
+    "quotations": [
+      {
+        "documentType": null,
+        "refBusinessStatus": "DR",
+        "refBusinessType": "life",
+        "refDocName": "BIPNS12417126",
+        "refId": "d5bffdd4-ee3f-47bd-a80f-6244d03b6296",
+        "refProductName": "pns",
+        "refType": "quotation",
+        "refVersion": null,
+        "status": "VALID",
+        "annuityAmount": 0,
+        "annuityOption": "Lumpsum",
+        "bankBranch": null,
+        "bankBranchCode": null,
+        "currency": "EGP",
+        "isCaseExpired": "false",
+        "lifeAssured": [
+          "Tom Banner"
+        ],
+        "lumsumAmount": 0,
+        "payableAmount": 50100.00483,
+        "policyOwner": "Marry Cole",
+        "sumAssured": 0,
+        "totalPayableAmount": 0
+      }
+    ],
+    "submittedDate": null,
+    "underwriting": {
+      "documentType": null,
+      "refBusinessStatus": null,
+      "refBusinessType": null,
+      "refDocName": null,
+      "refId": null,
+      "refProductName": null,
+      "refType": null,
+      "refVersion": null,
+      "status": null,
+      "countFindingCode": 0
+    },
+    "docName": "MCPNS19202222"
+  },
+  "licenseFlag": "true",
+  "managerCode": "GL000002",
+  "managerEmail": "stockoptionplans@utc.com",
+  "managerName": "AG0002 Frederic Chapa",
+  "managerMobile": "8607287000",
+  "managerLicense": "755253890",
+  "currentRole": "AG"
+}
