@@ -160,10 +160,16 @@
                         <td style="direction:rtl;">قيمة القسط الوحيد</td>
                     </tr>
                     <tr class="table-content text-align-center">
-                        <td>{{"ipos.maturityAge." + data.quotation.basicPlan.information.maturityAge | translate}}</td>
+                        <td>{{data.benefitIllustrationTable.MaturityAge}}</td>
                         <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}</td>
-                        <td>{{data.quotation.basicPlan.information.totalLumpsum | number : 2 }}</td>
-                        <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
+                        <td>
+                            <span>{{data.quotation.basicPlan.information.totalLumpsum | number : 2 }}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
                     </tr>
                 </table>
                 <!--This table should be dynamic if client applied for monthly annuity -->
@@ -179,11 +185,17 @@
                         <td style="direction:rtl;">قيمة القسط الوحيد</td>
                     </tr>
                     <tr class="table-content text-align-center">
-                        <td>{{"ipos.maturityAge." + data.quotation.basicPlan.information.maturityAge | translate}}</td>
+                        <td>{{data.benefitIllustrationTable.MaturityAge}}</td>
                         <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}
                         <td>{{data.quotation.basicPlan.information.durationOfAnnuity}}</td>
-                        <td>{{data.quotation.basicPlan.information.totalMonthlyAnnuity | number : 2 }}</td>
-                        <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
+                        <td>
+                            <span>{{data.quotation.basicPlan.information.totalMonthlyAnnuity | number : 2 }}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
                     </tr>
                 </table>
                 <!--The end table-->
@@ -203,14 +215,38 @@
                         <td>القسط الوحيد</td>
                     </tr>
                     <tr class="table-content text-align-center">
-                        <td>{{data.quotation.payableAmount | number : 2}}</td>
-                        <td>{{data.quotation.issuanceFees | number : 2}}</td>
-                        <td>{{data.quotation.stamp | number : 2}}</td>
-                        <td>{{data.quotation.policyHolderGuaranteedFund | number : 2}}</td>
-                        <td>{{data.quotation.efsaServiceFees | number : 2}}</td>
-                        <td>{{data.quotation.efsaFees | number : 2}}</td>
-                        <td>{{data.quotation.tax | number : 2}}</td>
-                        <td>{{data.quotation.firstPremiumPayable | number : 2}}</td>
+                        <td>
+                            <span>{{data.quotation.payableAmount | number : 0}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.issuanceFees | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.stamp | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.policyHolderGuaranteedFund | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.efsaServiceFees | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.efsaFees | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.tax | number : 2}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                            <span>{{data.quotation.firstPremiumPayable | number : 0}}</span>
+                            <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
                     </tr>
                 </table>
                 <!--Arabic text should be dynamic if client required recurring premium-->
@@ -231,9 +267,15 @@
                             <td>القسط</td>
                         </tr>
                         <tr class="table-content text-align-center">
-                            <td>{{data.quotation.basicPlan.information.lumpSumAndRecurringAmount | number : 2}}</td>
+                            <td>
+                                <span>{{data.quotation.basicPlan.information.lumpSumAndRecurringAmount | number : 2}}</span>
+                                <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                            </td>
                             <td>{{data.benefitIllustrationTable.recPremiumFrequency}}</td>
-                            <td>{{data.quotation.basicPlan.information.recPremiumFrequencyAmount | number : 0 }}</td>
+                            <td>
+                                <span>{{data.quotation.basicPlan.information.recPremiumFrequencyAmount | number : 0 }}</span>
+                                <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                            </td>
                         </tr>
                     </table>
                     <!--This table should be dynamic if client applied for monthly annuity and required recurring premium-->
@@ -247,9 +289,15 @@
                             <td>القسط</td>
                         </tr>
                         <tr class="table-content text-align-center">
-                            <td>{{data.quotation.basicPlan.information.annuityAndRecurringAmount | number : 2}}</td>
+                            <td>
+                                <span>{{data.quotation.basicPlan.information.annuityAndRecurringAmount | number : 2}}</span>
+                                <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                            </td>
                             <td>{{data.benefitIllustrationTable.recPremiumFrequency}}</td>
-                            <td>{{data.quotation.basicPlan.information.recPremiumFrequencyAmount | number : 0}}</td>
+                            <td>
+                                <span>{{data.quotation.basicPlan.information.recPremiumFrequencyAmount | number : 0}}</span>
+                                <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -255,10 +255,16 @@
                         <td style="direction:rtl; padding: 1px 5px;">قيمة القسط الوحيد</td>
                      </tr>
                      <tr class="table-content-pns text-align-center">
-                        <td>{{"ipos.maturityAge." + data.quotation.basicPlan.information.maturityAge | translate}}</td>
+                        <td>{{data.inputQuotationPdf.MaturityAge}}</td>
                         <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}</td>
-                        <td>{{data.quotation.basicPlan.information.totalLumpsum | number : 2 }}</td>
-                        <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
+                        <td>
+                           <span>{{data.quotation.basicPlan.information.totalLumpsum | number : 2 }}</span>
+                           <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                           <span>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</span>
+                           <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
                      </tr>
                   </table>
                   <!--This table should be dynamic if client applied for monthly annuity -->
@@ -274,11 +280,17 @@
                         <td style="padding: 1px 5px;" style="direction:rtl;">قيمة القسط الوحيد</td>
                      </tr>
                      <tr class="table-content-pns text-align-center">
-                        <td>{{"ipos.maturityAge." + data.quotation.basicPlan.information.maturityAge | translate}}</td>
+                        <td>{{data.inputQuotationPdf.MaturityAge}}</td>
                         <td>{{data.quotation.basicPlan.information.riskCommencementDate | date:'dd/MM/yyyy'}}
                         <td>{{data.quotation.basicPlan.information.durationOfAnnuity}}</td>
-                        <td>{{data.quotation.basicPlan.information.totalMonthlyAnnuity | number : 2 }}</td>
-                        <td>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</td>
+                        <td>
+                           <span>{{data.quotation.basicPlan.information.totalMonthlyAnnuity | number : 2 }}</span>
+                           <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
+                        <td>
+                           <span>{{data.quotation.basicPlan.information.singlePremium | number : 0 }}</span>
+                           <span>{{data.quotation.basicPlan.information.billingCurrency}}</span>
+                        </td>
                      </tr>
                   </table>
 
