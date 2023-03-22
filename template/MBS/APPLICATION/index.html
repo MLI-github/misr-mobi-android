@@ -386,7 +386,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top; border: none!important; width: 30px;">1.</td>
-                           <td style="padding-right: 2px; border: none!important">أمراض القلب والأوعية الدموية : (إرتفاع ضط الدم ، ارتفاع الكولسترول، أمراض الشريان التاجي أو النوبة القلبية ......................)</td>
+                           <td style="padding-right: 2px; border: none!important">أمراض القلب والأوعية الدموية : (إرتفاع ضغط الدم ، ارتفاع الكولسترول، أمراض الشريان التاجي أو النوبة القلبية ......................)</td>
                         </tr>
                      </table>
                   </td>
@@ -402,7 +402,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">2.</td>
-                           <td style="padding-right: 2px; border: none!important">أمراض الجهاز التنفسي ( الربوم، السل....)</td>
+                           <td style="padding-right: 2px; border: none!important">أمراض الجهاز التنفسي( الربو، السل....)</td>
                         </tr>
                      </table>
                   </td>
@@ -434,7 +434,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">4.</td>
-                           <td style="padding-right: 2px; border: none!important">أمراض الجهاز العصبي ( الإكتئاب،الصرع.، الصداع المزمن ........)</td>
+                           <td style="padding-right: 2px; border: none!important">أمراض الجهاز العصبي( الإكتئاب،الصرع.، الصداع المزمن ........)</td>
                         </tr>
                      </table>
                   </td>
@@ -482,7 +482,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">7.</td>
-                           <td style="padding-right: 2px; border: none!important">الأمرام الخبيثة و الحميدة  (السرطان ، سرطان الدم , سرطان الجلد ........)</td>
+                           <td style="padding-right: 2px; border: none!important">الأورام الخبيثة و الحميدة  (السرطان ، سرطان الدم , سرطان الجلد ........)</td>
                         </tr>
                      </table>
                   </td>
@@ -498,7 +498,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">8.</td>
-                           <td style="padding-right: 2px; border: none!important">هل أنت أو من تعلول ممن يتعاطى المخدرات أو الكحوليات ؟</td>
+                           <td style="padding-right: 2px; border: none!important">هل أنت أو من تعول ممن يتعاطى المخدرات أو الكحوليات ؟</td>
                         </tr>
                      </table>
                   </td>
@@ -562,7 +562,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">12.</td>
-                           <td style="padding-right: 2px; border: none!important">الأمراض المنقولة جنسيا ( الأيدز ، الفيرسات  ..... )</td>
+                           <td style="padding-right: 2px; border: none!important">الأمراض المنقولة جنسيا ( الأيدز ، الفيروسات  ..... )</td>
                         </tr>
                      </table>
                   </td>
@@ -578,7 +578,7 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top;border: none!important; width: 30px;">13.</td>
-                           <td style="padding-right: 2px; border: none!important">الاضطرابات العضلية (ضمور العضلات، وإضطرابات العضلات المتكررة  ، العمود الفقري ........)</td>
+                           <td style="padding-right: 2px; border: none!important">الاضطرابات العضلية(ضمور العضلات، وإضطرابات العضلات المتكررة  ، العمود الفقري ........)</td>
                         </tr>
                      </table>
                   </td>
@@ -628,9 +628,28 @@
                            <td style="vertical-align: top;border: none!important; width: 30px;">16.</td>
                            <td style="padding-right: 2px; border: none!important">هل أنت من المدخنين والكمية المستهلكة يوميا ؟</td>
                         </tr>
+                        <tr>
+                           <td style="vertical-align: top;border: none!important; width: 30px;"></td>
+                           <td style="padding-right: 2px; border: none!important">اذا كانت الاجابة بنعم رجاء اذكر النوع والكمية؟</td>
+                        </tr>
+                     </table>
+                     <table ng-if="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionKey == 'HQ16' &&
+data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionValue == 'Y'">
+                        <tr>
+                           <td style="border: none; width: 20% !important;">
+                              <span style="padding: 0px;">نوع :</span>
+                              <span>{{data.inputPdf.healthUnderwritings.smokerType != null ? data.inputPdf.healthUnderwritings.smokerType : ""}}</span>
+                           </td>
+                           <td style="border: none; width: 20% !important;"></td>
+                           <td style="border: none; width: 60% !important;">
+                              <span>العصي او الوحدة في اليوم :</span>
+                              <span>{{data.inputPdf.healthUnderwritings.smokerUnit != null ? data.inputPdf.healthUnderwritings.smokerUnit : ""}}</span>
+                           </td>
+                        </tr>
                      </table>
                   </td>
                </tr>
+
             </table>
 
             <table class="format-table-all-new-pns arabic-style avoid-break-inside" ng-if="data.inputPdf.healthDetails.length > 0">
