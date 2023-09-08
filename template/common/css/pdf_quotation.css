@@ -8,6 +8,7 @@
 .page {
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 @page {
@@ -216,6 +217,19 @@
 
 }
 
+.table-content-mbs {
+    font-weight: 400;
+    font-size: 10pt;
+    background-color: white;
+    font-color: #58585b;
+}
+
+.table-content-mbs td {
+    padding: 0px 2px;
+    border: 2px solid black;
+
+}
+
 .table-benefitIllustrationTable td {
     padding: 0.2em 0.5em;
 }
@@ -253,6 +267,15 @@
 .non-bottom-border {
     border-bottom: hidden;
 }
+
+.non-left-border {
+    border-left: hidden !important;
+}
+
+.non-right-border {
+    border-right: hidden !important;
+}
+
 .table-border-white {
     border-right: 2px solid white !important;
 }
@@ -305,6 +328,10 @@
 
 .format-table-all-new-inv {
     margin: 8px 0px !important;
+}
+
+.format-table-all-new-mbs {
+    margin: 2px 0px !important;
 }
 
 .format-table-layout-fixed {
@@ -669,14 +696,14 @@ bg-color th {
 }
 .list-style-arrow li:before {
     content: '';
-    width: 13px !important;
-    height: 13px !important;
+    width: 12px !important;
+    height: 12px !important;
     position: absolute;
     background-image: url('../../common/images/arrow_small.png') !important;
     background-repeat: no-repeat;
-    background-size:13px 13px !important;
+    background-size:12px 12px !important;
     background-position: top;
-    right: 0;
+    right: -1em;
     top: 10px;
     transform: translateY(-50%);
     list-style-position: outside;
