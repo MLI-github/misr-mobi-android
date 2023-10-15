@@ -286,7 +286,7 @@
             </table>
 
 
-            <table class="format-table-all-new-pns arabic-style">
+            <table class="format-table-all-new-pns arabic-style avoid-break-inside">
                <tr class="table-header-green white-text-color text-align-center">
                   <td colspan="2">بيانات البرنامج التأميني</td>
                </tr>
@@ -349,10 +349,10 @@
                </tr>
                <tr class="table-content-pns green-border">
                   <td>{{data.quotation.basicPlan.information.policyTerm}}</td>
-                  <td>مدة التغطية التأمينية</td>
+                  <td>مدة التغطية التأمينية بالسنوات</td>
                </tr>
                <tr class="table-content-pns green-border">
-                  <td>تشمل التغطية التأمينية الأفراد المؤمن عليهم و مدرج أسماءهم بالوثيقة داخل حدود جمهورية مصر العربية أو خارج حدود جمهورية مصر العربية بنظام الإستردادالنقدي طبقا لأسعار التعاقد مع الشبكة الطبية المعتمدة داخل مصر  .</td>
+                  <td dir="rtl">تشمل التغطية التأمينية الأفراد المؤمن عليهم و مدرج أسماءهم بالوثيقة داخل حدود جمهورية مصر العربية أو خارج حدود جمهورية مصر العربية بنظام الإستردادالنقدي طبقا لأسعار التعاقد مع الشبكة الطبية المعتمدة داخل مصر  .</td>
                   <td>نطاق التغطية الجغرافية</td>
                </tr>
             </table>
@@ -362,15 +362,15 @@
                      <table>
                         <tr>
                            <td style="vertical-align: top; border: none!important">1.</td>
-                           <td style="padding-bottom: 1px; border: none!important"> لا يغطي البرنامج الحالات المرضية السابقة على التعاقد ( سواء أكانت بعلم أو بدون علم المتعاقد / أوالمؤمن عليه .</td>
+                           <td style="padding-bottom: 1px; border: none!important">لا يغطي  البرنامج الحالات المرضية السابقة على التعاقد ( سواء أكانت بعلم أو بدون علم المتعاقد / أوالمؤمن عليه .</td>
                         </tr>
                         <tr>
                            <td style="vertical-align: top; border: none!important">2.</td>
-                           <td style="padding-bottom: 1px; border: none!important">طبقا لدليل حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد /أو المؤمن له فسخ التعاقد خلال فترة السماح 10 ايام عمل تبدأ من تاريخ تعاقد المتعاقد /أو المؤمن له مع شركة التأمين واسترداد قيمة الاقساط المدفوعة بعد خصم أي مصاريف إدارية تكبدتها شركة التأمين لإصدار العقد و بشرط عدم إستلام المتعاقد / أو المؤمن له بطاقة التأمين الطبي الخاصة به أو أفراد عائلتة .</td>
+                           <td style="padding-bottom: 1px; border: none!important">طبقا لدليل  حماية المتعاملين في القطاع المالي غير المصرفي الوارد من الهيئة العامة للرقابة المالية يحق للمتعاقد /أو المؤمن له فسخ التعاقد خلال فترة السماح 10 ايام عمل تبدأ من تاريخ تعاقد المتعاقد /أو المؤمن له مع شركة التأمين واسترداد قيمة الاقساط المدفوعة بعد خصم أي مصاريف إدارية تكبدتها شركة التأمين لإصدار العقد و بشرط عدم إستلام المتعاقد / أو المؤمن له بطاقة التأمين الطبي الخاصة به أو أفراد عائلتة .</td>
                         </tr>
                         <tr>
                            <td style="vertical-align: top; border: none!important">3.</td>
-                           <td style="padding-bottom: 1px; border: none!important">يجب على المتعاقد /أوالمؤمن عليه في حالة طلب الاسترداد النقدي للإجراءات الطبية التي قام بها خارج الشبكة الطبية المعتمدة للشركة ( في المناطق التي لا يتوافر بها شبكة طبية فقط ) أن يقوم بتقديم جميع أصول المستندات و الفواتير و التقرارير الطبية الداله على الصرف لشركة إدارة الخدمات الطبية على مقر عنوانها في مدة لا تتجاوز 60 يوم من تاريخ حدوث الحالة المرضية .</td>
+                           <td style="padding-bottom: 1px; border: none!important">يجب  على المتعاقد /أوالمؤمن عليه في حالة طلب الاسترداد النقدي للإجراءات الطبية التي قام بها خارج الشبكة الطبية المعتمدة للشركة ( في المناطق التي لا يتوافر بها شبكة طبية فقط ) أن يقوم بتقديم جميع أصول المستندات و الفواتير و التقرارير الطبية الداله على الصرف لشركة إدارة الخدمات الطبية على مقر عنوانها في مدة لا تتجاوز 60 يوم من تاريخ حدوث الحالة المرضية .</td>
                         </tr>
                      </table>
                   </td>
@@ -379,30 +379,41 @@
             <!-- table question -->
             <table class="format-table-all-new-pns arabic-style">
                <tr class="table-header-black white-text-color text-align-right">
-                  <td colspan="3" style="width: 100%;">الاقرارات الصحية</td>
+                  <td style="width=100%" colspan="4" style="width: 100%;">الاقرارات الصحية</td>
                </tr>
                <tr class="table-content-pns non-top-border">
-                  <td colspan="3" class="table-question-padding">
-                     <span dir="rtl">هل سبق لك أو لأى شخص أخر  من المدرجين بطلب التأمين قد عان أو زار طبيب أو أخذ دواء لأى من الحالات الطبية التالية ؟</span>
+                  <td colspan="4" class="table-question-padding">
+                     <span dir="rtl">هل سبق لك أو لأى شخص أخر  من المدرجين بطلب التأمين قد عان أو زار طبيب أو أخذ دواء  لأى من الحالات الطبية التالية ؟</span>
                   </td>
-               </tr>
-               <tr class="table-content-pns ">
-                  <td class="center non-border-right">
-                     <span>لا</span>
-                  </td>
-                  <td class="center non-border-left">
-                     <span>نعم</span>
-                  </td>
-                  <td></td>
                </tr>
                <tr class="table-content-pns">
+                  <td style="width:48%"></td>
+                  <td style="width:2%" class="center non-border-right">
+                     <span>لا</span></br>
+                     <span>No</span>
+                  </td>
+                  <td style="width:2%" class="center non-border-left">
+                     <span>نعم</span></br>
+                     <span>Yes</span>
+                  </td>
+                  <td style="width:48%"></td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">1.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Cardiovascular diseases (hypertension, Hypercholesterolemia, coronary artery disease, or heart attack, …...)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[0].questionValue == 'N'"/>
                   </td>
                   <td class="center non-border-left table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[0].questionValue == 'Y'"/>
                   </td>
-                  <td style="padding-right: 2em" dir="rtl" class="table-question-padding">
+                  <td dir="rtl" class="table-question-padding">
                      <table>
                         <tr>
                            <td style="vertical-align: top; border: none!important; width: 30px;">1.</td>
@@ -412,6 +423,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">2.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Respiratory diseases (Asthma, Tuberculosis, …...)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[1].questionValue == 'N'"/>
                   </td>
@@ -428,6 +447,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">3.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Nephrological Disorders (Kidney Stones, Kidney Failure, ……)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[2].questionValue == 'N'"/>
                   </td>
@@ -444,6 +471,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">4.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Neurological and Mental Disorders (Depression, Epilepsy, Chronic Headache, ……)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[3].questionValue == 'N'"/>
                   </td>
@@ -460,6 +495,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">5.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Gastrointestinal and Hepatic Diseases (Ulcerative colitis, hepatitis A, B&C, diaphragm hernia, ….)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[4].questionValue == 'N'"/>
                   </td>
@@ -476,6 +519,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">6.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Endocrine Disorders (Diabetes, thyroid Diseases,….)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[5].questionValue == 'N'"/>
                   </td>
@@ -492,6 +543,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">7.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Malignant and/or benign Tumors (cancer, leukemia, dermatome, ….)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[6].questionValue == 'N'"/>
                   </td>
@@ -508,6 +567,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">8.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Do you or any of your family members abuse drugs or alcohol?</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[7].questionValue == 'N'"/>
                   </td>
@@ -524,6 +591,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">9.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Autoimmune diseases (Psoriasis, Vitiligo, Alopecia, Lupus Erythematosus, …....)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[8].questionValue == 'N'"/>
                   </td>
@@ -540,6 +615,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">10.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Hematological Disorders (Anemia, Leucocytosis, .......)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[9].questionValue == 'N'"/>
                   </td>
@@ -556,6 +639,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">11.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Ear, nose, throat diseases and eye diseases</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[10].questionValue == 'N'"/>
                   </td>
@@ -572,6 +663,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">12.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Sexually transmitted diseases (AIDS, syphilis, ....)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[11].questionValue == 'N'"/>
                   </td>
@@ -588,6 +687,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">13.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Musculoskeletal Diseases (muscular atrophy, multiple sclerosis, Polymyositis, osteoporosis, Spinal diseases,...)</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[12].questionValue == 'N'"/>
                   </td>
@@ -604,6 +711,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">14.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Do you or any of your family members have any genetic disorders or birth defects?</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[13].questionValue == 'N'"/>
                   </td>
@@ -620,6 +735,14 @@
                   </td>
                </tr>
                <tr class="table-content-pns ">
+                  <td dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 20px;">15.</td>
+                           <td style="padding-left: 2px; border: none!important; text-align: left;">Do you have any past diseases or symptoms other than those mentioned above?</td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[14].questionValue == 'N'"/>
                   </td>
@@ -636,6 +759,35 @@
                   </td>
                </tr>
                <tr class="table-content-pns">
+                  <td style="padding-right: 2em" dir="ltr" class="table-question-padding">
+                     <table>
+                        <tr>
+                           <td style="vertical-align: top;border: none!important; width: 30px;">16.</td>
+                           <td style="padding-right: 2px; border: none!important; text-align: left;">Are you a smoker? How many cigarettes per day?</td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top;border: none!important; width: 30px;"></td>
+                           <td style="padding-right: 2px; border: none!important; text-align: left;">If yes, please state the type and quantity?</td>
+                        </tr>
+                     </table>
+                     <table ng-if="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionKey == 'HQ16' &&
+                            data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionValue == 'Y'">
+                        <tr>
+                           <td style="vertical-align: top;border: none!important; width: 30px;"></td>
+                           <td dir="ltr" style="border: none; text-align: left; padding: 0px">
+                              <span>Type:</span>
+                              <span>{{data.inputPdf.healthUnderwritings.smokerType != null ? data.inputPdf.healthUnderwritings.smokerType : ""}}</span>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top;border: none!important; width: 30px;"></td>
+                           <td dir="ltr" style="border: none; text-align: left; padding: 0px">
+                              <span>Stick(s) or Unit / Day:</span>
+                              <span>{{data.inputPdf.healthUnderwritings.smokerUnit != null ? data.inputPdf.healthUnderwritings.smokerUnit : ""}}</span>
+                           </td>
+                        </tr>
+                     </table>
+                  </td>
                   <td class="center non-border-right table-question-padding">
                      <input type="radio" ng-checked="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionValue == 'N'"/>
                   </td>
@@ -645,23 +797,26 @@
                   <td style="padding-right: 2em" dir="rtl" class="table-question-padding">
                      <table>
                         <tr>
-                           <td style="vertical-align: top;border: none!important; width: 30px;">16.</td>
+                           <td style="vertical-align: top; border: none!important; width: 30px;">16.</td>
                            <td style="padding-right: 2px; border: none!important">هل أنت من المدخنين والكمية المستهلكة يوميا ؟</td>
                         </tr>
                         <tr>
-                           <td style="vertical-align: top;border: none!important; width: 30px;"></td>
+                           <td style="vertical-align: top; border: none!important; width: 30px;"></td>
                            <td style="padding-right: 2px; border: none!important">اذا كانت الاجابة بنعم رجاء اذكر النوع والكمية؟</td>
                         </tr>
                      </table>
                      <table ng-if="data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionKey == 'HQ16' &&
-data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionValue == 'Y'">
+                           data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15].questionValue == 'Y'">
                         <tr>
-                           <td style="border: none; width: 20% !important;">
-                              <span style="padding: 0px;">نوع :</span>
+                           <td style="vertical-align: top; border: none!important; width: 30px;"></td>
+                           <td style="border: none; padding: 0px">
+                              <span>نوع :</span>
                               <span>{{data.inputPdf.healthUnderwritings.smokerType != null ? data.inputPdf.healthUnderwritings.smokerType : ""}}</span>
                            </td>
-                           <td style="border: none; width: 20% !important;"></td>
-                           <td style="border: none; width: 60% !important;">
+                        </tr>
+                        <tr>
+                           <td style="vertical-align: top; border: none!important; width: 30px;"></td>
+                           <td style="border: none; padding: 0px">
                               <span>العدد :</span>
                               <span>{{data.inputPdf.healthUnderwritings.smokerUnit != null ? data.inputPdf.healthUnderwritings.smokerUnit : ""}}</span>
                            </td>
@@ -672,10 +827,15 @@ data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15]
 
             </table>
 
-            <table class="format-table-all-new-pns arabic-style avoid-break-inside" ng-if="data.inputPdf.healthDetails.length > 0">
+            <table class="format-table-all-new-pns arabic-style" ng-if="data.inputPdf.healthDetails.length > 0">
                <tr class="table-content-pns non-bottom-border">
                   <td colspan="5" dir="rtl">
                      إذا كانت الاجابة عن الأسئلة المذكورة أعلاة بنعم ، يرجي تحديد اسم الفرد المعني الذي يعاني من المرض ، أو الخاضع للمعالجة من المرض ، الرقم المناسب في الجدول أعلاه وجميع التفاصيل ذات الصلة
+                  </td>
+               </tr>
+               <tr class="table-content-pns">
+                  <td style="text-align: left;" colspan="5" dir="ltr">
+                     If the answer to any of the above questions is “yes”, please specify the name of the individual who is suffering from the disease or being treated for the disease, the appropriate number in the table above, and all relevant details.
                   </td>
                </tr>
                <tr class="table-header-green white-text-color text-align-center non-bottom-border">
@@ -700,13 +860,13 @@ data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15]
                </tr>
                <tr class="table-content-pns non-top-border">
                   <td dir="rtl">
-                     أؤكدوأقر الموقع أدناه أن المعلومات المتعلقة بي وبعائلتي المقدمة في هذا الطلب كاملة ودقيقة وصحيحة ، كما أوفوض شركة التأمين و شركة إدارة الخدمة الطبية  (TPA) أو أي طرف أخر قد عين حسب الأصول للإستفسار عن الوضع الطبي الخاص بي وبأفراد عائلتي ، وأن يوفر لهم جميع المعلومات المتعلقة بالملف الطبي من الأطباء والمستشفيات وغيرها من مقدمي الخدمات الطبية أو شركات التأمين أو شركات رعاية صحية أخرين ، وأني أجيز وأقر أنه يحق لهم الحصول علي الملفات الطبية الخاصة بنا لأغراض هذا الطلب وعقد التأمين الذي قد يصدر نتيجة لقبول هذا الطلب ، وأقر أني أتنازل عن الحق في السرية الطبية فيما يتعلق بي وبأفراد عائلتي بالقدر اللازم لشركة التأمين للتحقيق في دقة المعلومات الواردة في هذه الوثيقة أو في أي وقت في المستقبل لأي سبب من الأسباب ، لتقييم حقيقة الوضع الطبي الخاص  بي وبعائلتي بالوثيقة.
+                     أؤكدوأقر الموقع أدناه أن المعلومات المتعلقة بي وبعائلتي المقدمة في هذا الطلب كاملة ودقيقة وصحيحة ، كما أوفوض شركة التأمين و شركة إدارة الخدمة الطبية  (TPA) أو أي طرف أخر قد عين حسب الأصول للإستفسارعن الوضع الطبي الخاص بي وبأفراد عائلتي ، وأن يوفر لهم جميع المعلومات المتعلقة بالملف الطبي من الأطباء والمستشفيات وغيرها من مقدمي الخدمات الطبية أو شركات التأمين أو شركات رعاية صحية أخرين ، وأني أجيز وأقر أنه يحق لهم الحصول علي الملفات الطبية الخاصة بنا لأغراض هذا الطلب وعقد التأمين الذي قد يصدر نتيجة لقبول هذا الطلب ، وأقر أني أتنازل عن الحق في السرية الطبية فيما يتعلق بي وبأفراد عائلتي بالقدر اللازم لشركة التأمين للتحقيق في دقة المعلومات الواردة في هذه الوثيقة أو في أي وقت في المستقبل لأي سبب من الأسباب ، لتقييم حقيقة الوضع الطبي الخاص  بي وبعائلتي بالوثيقة.
                   </td>
                </tr>
             </table>
 
             <!-- Signature Application -->
-            <table style="margin-top: 25px !important;"
+            <table style="margin-top: 5px !important;"
                    class="format-table-all-new format-table-layout-fixed arabic-style avoid-break-inside">
                <tr style="width: 100%;"
                    class="table-header-green white-text-color text-align-center">
@@ -727,7 +887,7 @@ data.application.healthUnderwritingDetails.healthDeclaration.healthQuestions[15]
                   <td>التوقيع</td>
                   <td>التوقيع</td>
                </tr>
-               <tr style="height:90px;" class="table-content-pns text-align-center text-signature">
+               <tr style="height:60px;" class="table-content-pns text-align-center text-signature-mbs">
                   <td>........................................</td>
                   <td>........................................</td>
                </tr>
