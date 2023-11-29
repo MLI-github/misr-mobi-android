@@ -65,6 +65,14 @@
     background: white;
 }
 
+.header-space-pns:after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background: white;
+}
+
 .head {
     padding-left: 15px;
     padding-right: 15px;
@@ -316,6 +324,17 @@
     max-width: 184.6mm;
     width: 100%;
     margin: 5px 0px !important;
+    overflow-wrap: break-word;
+}
+
+.table-content-td td {
+    padding: 2px 5px !important;
+}
+
+.format-table-all-new-pns {
+    max-width: 184.6mm;
+    width: 100%;
+    margin: 2px 0px !important;
     overflow-wrap: break-word;
 }
 
